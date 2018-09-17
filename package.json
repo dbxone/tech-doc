@@ -1,5 +1,5 @@
 {
-  "name": "Technical-Documents",
+  "name": "dbx-techdoc",
   "version": "1.0.0",
   "description": "这是DBXhain的技术文档，查看全文点击[这里](/introduction.md)",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DophinL/Technical-Documents.git"
+    "url": "git+https://github.com/DophinL/dbx-techdoc.git"
   },
   "husky": {
     "hooks": {
@@ -19,9 +19,9 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/DophinL/Technical-Documents/issues"
+    "url": "https://github.com/DophinL/dbx-techdoc/issues"
   },
-  "homepage": "https://github.com/DophinL/Technical-Documents#readme",
+  "homepage": "https://github.com/DophinL/dbx-techdoc#readme",
   "devDependencies": {
     "babel-preset-env": "^1.7.0",
     "husky": "^1.0.0-rc.13"
