@@ -25,7 +25,7 @@ sudo apt-get install libstdc++-7-dev
 
 ### Linux系统
 
-DBXChain程序目前只提供Ubuntu 16.04 LTS 64位系统的安装包，[点击这里](https://github.com/dbxhain/dbx-core/releases/latest)下载最新程序。
+DBXChain程序目前只提供Ubuntu 16.04 LTS 64位系统的安装包，[点击这里](https://github.com/dbxone/dbx-core/releases/latest)下载最新程序。
 
 ## OS X系统
 
