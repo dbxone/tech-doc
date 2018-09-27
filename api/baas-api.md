@@ -25,8 +25,8 @@ PC端钱包/网页钱包使用教程:
 
 ## 3. BaaS存储服务地址
 
-* 线上正式地址:  `https://baas.dbxhain.cn/api/storage`
-* 线上开发者测试地址: `https://baas-developer.dbxhain.cn/api/storage`
+* 线上正式地址:  `https://baas.dbxchain.cn/api/storage`
+* 线上开发者测试地址: `https://baas-developer.dbxchain.cn/api/storage`
 
 ## 4. 如何调用SDK
 
@@ -34,8 +34,8 @@ SDK提供了和BaaS存储服务交互的方法封装。目前暂时提供Java版
 
 #### Java - maven
 
-* maven仓库地址\(HTML View\): `https://repo.dbxhain.cn/service/rest/repository/browse/maven-public/`
-* maven仓库引入地址: `https://repo.dbxhain.cn/repository/maven-public/`
+* maven仓库地址\(HTML View\): `https://repo.dbxchain.cn/service/rest/repository/browse/maven-public/`
+* maven仓库引入地址: `https://repo.dbxchain.cn/repository/maven-public/`
 
 **\(ps: 如果无法引入包，请将https更换成http尝试一下\)**
 
@@ -43,9 +43,9 @@ SDK提供了和BaaS存储服务交互的方法封装。目前暂时提供Java版
 
 ```xml
 <mirror>
-    <id>dbxhain</id>
+    <id>dbxchain</id>
     <mirrorOf>*</mirrorOf>
-    <url>http://repo.dbxhain.cn/repository/maven-public/</url>
+    <url>http://repo.dbxchain.cn/repository/maven-public/</url>
 </mirror>
 ```
 
