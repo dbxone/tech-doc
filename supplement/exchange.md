@@ -26,8 +26,8 @@ sudo apt-get install ntp
 
 | 平台 | 下载地址 |
 | :--- | :--- |
-| github | [https://github.com/dbxone/dbx-core/releases/download/1.0.171031/dbx\_1.0.171031.tar.gz](https://github.com/dbxone/dbx-core/releases/download/1.0.171031/dbx_1.0.171031.tar.gz) |
-| 阿里云 | [http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx\_1.0.171031.tar.gz](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx_1.0.171031.tar.gz) |
+| github | [https://github.com/dbxone/dbxchain/releases/download/1.0.171031/dbx\_1.0.171031.tar.gz](https://github.com/dbxone/dbxchain/releases/download/1.0.171031/dbx_1.0.171031.tar.gz) |
+| 阿里云 | [http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx\_1.0.171031.tar.gz](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx_1.0.171031.tar.gz) |
 
 ### 2. 解压程序 {#2-解压程序}
 
@@ -408,11 +408,11 @@ nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:28090  --enable-rpc-log
 
 建议使用脚本启动程序\(脚本中的帐户id需要做修改\)：
 
-[witness\_node启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/script/witness_start.sh)
+[witness\_node启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/witness_start.sh)
 
 和
 
-[cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/script/wallet_start.sh)
+[cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
 
 ## 六、注意事项 {#六-注意事项}
 
@@ -434,9 +434,9 @@ nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:28090  --enable-rpc-log
 
 ##### 相关文档： {#相关文档}
 
-1. [witness\_node启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/script/witness_start.sh)
-2. [cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/script/wallet_start.sh)
-3. [备用cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/script/start_backup_wallet.exp)，脚本提供3个主网接入点，如果本地witness\_node暂时不可用，可以执行此脚本，连接主网接入点
+1. [witness\_node启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/witness_start.sh)
+2. [cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
+3. [备用cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/start_backup_wallet.exp)，脚本提供3个主网接入点，如果本地witness\_node暂时不可用，可以执行此脚本，连接主网接入点
 4. [DBXChain冷钱包离线签名教程](https://doc.dbx.io/core/dbxleng-qian-bao-li-xian-qian-ming.html)
 5. [wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)
 
