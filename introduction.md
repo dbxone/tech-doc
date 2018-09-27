@@ -23,8 +23,7 @@ DBXChain程序目前只提供Ubuntu 16.04 LTS 64位系统的安装包，[点击�
 ```bash
 # 可以使用2个参数，节省内存： --track-account 和 --partial-operations=true
 nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoint=127.0.0.1:28090 \
---p2p-endpoint=0.0.0.0:6789 --log-file  \
---partial-operations=true >>witness.out 2>&1 &
+--p2p-endpoint=0.0.0.0:6789 --log-file  --partial-operations=true >>witness.out 2>&1 &
 ```
 
 端口种类及调用说明
@@ -37,8 +36,7 @@ nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoin
 命令行钱包cli\_wallet连接witness\_node:
 
 ```
-./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:28090 \
---enable-rpc-log -r 127.0.0.1:8091 --data-dir=trusted_node
+./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:28090 --enable-rpc-log -r 127.0.0.1:8091 --data-dir=trusted_node
 ```
 
 端口种类及调用说明
