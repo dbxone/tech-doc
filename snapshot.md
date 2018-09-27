@@ -2,11 +2,11 @@
 
 #### 下载最新版witness\_node程序，下载地址
 
-**程序可能会 更新，请**[**点击这里**](https://github.com/dbxone/dbx-core/releases/latest)**下载最新程序。**
+**程序可能会 更新，请**[**点击这里**](https://github.com/dbxone/dbxchain/releases/latest)**下载最新程序。**
 
-| 阿里云 | [http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx\_1.0.180604.tar.gz](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx_1.0.180604.tar.gz) |
+| 阿里云 | [http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx\_1.0.180604.tar.gz](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx_1.0.180604.tar.gz) |
 | :--- | :--- |
-| github | [https://github.com/dbxone/dbx-core/releases/download/1.0.180604/dbx\_1.0.180604.tar.gz](https://github.com/dbxone/dbx-core/releases/download/1.0.180604/dbx_1.0.180604.tar.gz) |
+| github | [https://github.com/dbxone/dbxchain/releases/download/1.0.180604/dbx\_1.0.180604.tar.gz](https://github.com/dbxone/dbxchain/releases/download/1.0.180604/dbx_1.0.180604.tar.gz) |
 
 #### 启动witness\_node程序, 在启动参数里指定区块高度和快照文件路径
 
@@ -50,7 +50,7 @@
 {"id":"2.16.2","accumulated_fba_fees":0,"designated_asset":"1.3.743"}
 ```
 
-上面的json文件中，每一行是一个json，其中id为对象id, 1.25.x为忠诚计划余额对象, 2.5.x为余额对象; 对象id文件参考[这里](https://github.com/dbxone/dbx-core/wiki/Objects-and-IDS)
+上面的json文件中，每一行是一个json，其中id为对象id, 1.25.x为忠诚计划余额对象, 2.5.x为余额对象; 对象id文件参考[这里](https://github.com/dbxone/dbxchain/wiki/Objects-and-IDS)
 
 如果要解析帐户DBX余额，需要解析1.25.x和2.5.x两个对象， asset\_id的1.3.1, owner为余额所属帐户。
 
