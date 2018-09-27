@@ -10,7 +10,7 @@
 * [上链彩蛋](qu-kuai-lian-shang-cun-zheng.md)
 * [DBXhain资产钱包接入说明](dbxhainzi-chan-qian-bao-jie-ru-shuo-ming.md)
 * [如何创建、发行资产](assets/asset-create.md)
-* [API调用](API summary.md)
+* [API调用](api-summary.md)
   * [安装环境](api/installation.md)
   * [Cli-wallet API调用](api/cli-wallet-api.md)
     * [set\_password](api/cli-wallet-api/setpassword.md)
