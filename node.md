@@ -1,4 +1,4 @@
-# 部署DBXhain节点
+# 部署DBXChain节点
 
 ## DBXChain简介
 
