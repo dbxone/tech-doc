@@ -1,4 +1,4 @@
-DBX-Core 中包含一系统operation, 每个operation对应一个序号，根据序号可以判断区块中包含哪些operation，比如区块[1769028](https://block.dbx.io/#/block/1769028)包含了一笔转帐交易，序号0对应转帐操作。 序号和operation的对应关系可参考[这里](https://github.com/dbxone/dbxchain/wiki/operations_introduction)。
+DBXChain 中包含一系统operation, 每个operation对应一个序号，根据序号可以判断区块中包含哪些operation，比如区块[1769028](https://block.dbx.io/#/block/1769028)包含了一笔转帐交易，序号0对应转帐操作。 序号和operation的对应关系可参考[这里](https://github.com/dbxone/dbxchain/wiki/operations_introduction)。
 
 每个操作的含义如下：
 
