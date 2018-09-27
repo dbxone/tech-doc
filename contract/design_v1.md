@@ -220,7 +220,7 @@ contract_call_operation
 
 
 3. 支持充值提现的transfer合约样例：
-https://github.com/dbxhain/dbx-core/tree/dev_master/contracts/examples/transfer
+https://github.com/dbxone/dbx-core/tree/dev_master/contracts/examples/transfer
 
 
 
@@ -341,11 +341,11 @@ DBX_ABI(hello, (hi)(bye))
 ```
 
 ### 相关文档
-1. github开源地址：https://github.com/dbxhain/dbx-core
+1. github开源地址：https://github.com/dbxone/dbx-core
 2. 源码编译:
--  ubuntu 16.04: https://github.com/dbxhain/dbx-core/wiki/BUILD_UBUNTU
--  os x: https://github.com/dbxhain/dbx-core/wiki/BUILD_OS_X
+-  ubuntu 16.04: https://github.com/dbxone/dbx-core/wiki/BUILD_UBUNTU
+-  os x: https://github.com/dbxone/dbx-core/wiki/BUILD_OS_X
 3. 相关API文档：
-- https://github.com/dbxhain/dbx-core/wiki/witness_node_api_json_rpc
-- https://github.com/dbxhain/dbx-core/wiki/wallet_api
-4. 其它文档：https://doc.dbx.io/dbxhain/
+- https://github.com/dbxone/dbx-core/wiki/witness_node_api_json_rpc
+- https://github.com/dbxone/dbx-core/wiki/wallet_api
+4. 其它文档：https://doc.dbx.io/dbxchain/
