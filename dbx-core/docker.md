@@ -19,7 +19,7 @@ Docker version 17.09.0-ce, build afdb6d4
 使用以下命令即可下载钱包和见证节点的镜像文件
 
 ```
-docker pull dbxdevelop/dbx-core
+docker pull dbxdevelop/dbxchain
 ```
 显示下载完成之后，运行
 
@@ -30,7 +30,7 @@ docker images
 
 ```
 REPOSITORY              TAG                 IMAGE ID            CREATED             SIZE
-dbxdevelop/dbx-core     latest              54cf6c48134b        3 hours ago         675MB
+dbxdevelop/dbxchain     latest              54cf6c48134b        3 hours ago         675MB
 ```
 ## 3.通过docker启动程序
 ### 1）运行环境变量（docker run采用“-e”添加环境变量）
@@ -59,13 +59,13 @@ log_file：日志是否打印在文件中，“true”则日志在文件中打�
 #### 启动钱包
 
 ```
-docker run -it -e bool_wallet='true' -e rpc_endpoint='0.0.0.0:8092' -e ws_server='wss://node15.dbx.io' -e data_dir='docker_filepath/trust_node' -p 8092:8092 -p 8093:8093 -v your_local_filepath:docker_filepath --name="dbx-cli-wallet" dbxdevelop/dbx-core
+docker run -it -e bool_wallet='true' -e rpc_endpoint='0.0.0.0:8092' -e ws_server='wss://node15.dbx.io' -e data_dir='docker_filepath/trust_node' -p 8092:8092 -p 8093:8093 -v your_local_filepath:docker_filepath --name="dbx-cli-wallet" dbxdevelop/dbxchain
 备注：docker_filepath和your_local_filepath为抽象地址，实际使用时需要填写实际存在的路径
 ```
 #### 启动见证人节点
 
 ```
-docker run -it -e bool_wallet='false' -e rpc_endpoint='0.0.0.0:8091' -e data_dir='/docker_filepath/trust_node' -e seed_nodes='["192.168.1.118:6790"]' -e p2p_endpoint='0.0.0.0:8093' -e genesis_json='genesis.json.bak' -p 8091:8091 -p 8092:8092 -p 8093:8093 -v your_local_filepath:docker_filepath --name="dbx-witness-node" dbxdevelop/dbx-core
+docker run -it -e bool_wallet='false' -e rpc_endpoint='0.0.0.0:8091' -e data_dir='/docker_filepath/trust_node' -e seed_nodes='["192.168.1.118:6790"]' -e p2p_endpoint='0.0.0.0:8093' -e genesis_json='genesis.json.bak' -p 8091:8091 -p 8092:8092 -p 8093:8093 -v your_local_filepath:docker_filepath --name="dbx-witness-node" dbxdevelop/dbxchain
 备注：docker_filepath和your_local_filepath为抽象地址，实际使用时需要填写实际存在的路径
 ```
 #### 关闭docker运行的程序
