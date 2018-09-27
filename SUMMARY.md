@@ -1,13 +1,13 @@
 # Summary
 
 * [DBXhain](README.md)
-* [客户端使用说明](Client instructions.md)
+* [客户端使用说明](client-instructions.md)
 * [DBXhain快速开始](node.md)
-* [私有链搭建](private chain.md)
-* [测试网络](test net.md)
-* [升级终身会员](sheng-ji-zhong-shen-hui-yuan.md)
+* [私有链搭建](private-chain.md)
+* [测试网络](testnet.md)
+* [升级终身会员](update-life-witness.md)
 * [见证人申请](apply witness .md)
-* [上链彩蛋](qu-kuai-lian-shang-cun-zheng.md)
+* [上链彩蛋](chain-store.md)
 * [DBXhain资产钱包接入说明](dbxhainzi-chan-qian-bao-jie-ru-shuo-ming.md)
 * [如何创建、发行资产](assets/asset-create.md)
 * [API调用](api-summary.md)
