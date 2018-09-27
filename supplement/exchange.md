@@ -26,7 +26,7 @@ sudo apt-get install ntp
 
 | 平台 | 下载地址 |
 | :--- | :--- |
-| github | [https://github.com/dbxhain/dbx-core/releases/download/1.0.171031/dbx\_1.0.171031.tar.gz](https://github.com/dbxhain/dbx-core/releases/download/1.0.171031/dbx_1.0.171031.tar.gz) |
+| github | [https://github.com/dbxone/dbx-core/releases/download/1.0.171031/dbx\_1.0.171031.tar.gz](https://github.com/dbxone/dbx-core/releases/download/1.0.171031/dbx_1.0.171031.tar.gz) |
 | 阿里云 | [http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx\_1.0.171031.tar.gz](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx_1.0.171031.tar.gz) |
 
 ### 2. 解压程序 {#2-解压程序}
