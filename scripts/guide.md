@@ -1,5 +1,5 @@
 ## api文档自动生成指南
-当提交时，如果改动的是 templates/api_template.ejs || contract-api.json || contract-api-example.js 其中之一，就会触发自动生成脚本，将contract-api.json和contract-api-example.js在内存中进行合并操作，作为数据项对api_template.ejs模板做渲染，最终生成dbx_contract_api_EN.md和dbx_contract_api.md（中文）。
+当提交时，如果改动的是 templates/api_template.ejs || contract-api.json || contract-api-example.js 其中之一，就会触发自动生成脚本，将contract-api.json和contract-api-example.js在内存中进行合并操作，作为数据项对api_template.ejs模板做渲染，最终生成contract-api-en.md和dbx_contract_api.md（中文）。
 
 ### 依赖
 本方案基于husky, 所以需要先安装nodejs，然后`npm install`安装node包。
