@@ -22,7 +22,7 @@ curl https://baas.dbxchain.cn/api/storage/provider
     "msg":"ok",
     "data":{
         "account_id":"1.2.639287", // 提供方正式环境baas account id
-        "name":"DBXhain Official BaaS Storage",
+        "name":"DBXChain Official BaaS Storage",
         "description":"DBXChainBaaS存储+存证服务",
         "fees":[ // 支持的支付资产类型以及费率
             {"fee_per_kbytes": 20, "asset_id":"1.3.1"} 
