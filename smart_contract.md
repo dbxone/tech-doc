@@ -14,11 +14,11 @@ https://github.com/dbxone/tech-doc/blob/master/dbx_contract_api.md
 智能合约存储参考文档：https://github.com/dbxone/tech-doc/blob/master/contract/contract_storage_usage.md
 
 ##### 智能合约示例:
-* helloworld合约： https://github.com/dbxone/dbx-core/tree/master/contracts/examples/helloworld
-* 充值提现合约： https://github.com/dbxone/dbx-core/tree/master/contracts/examples/bank
-* 红包合约： https://github.com/dbxone/dbx-core/tree/master/contracts/examples/redpacket
-* 线性释放资产合约：https://github.com/dbxone/dbx-core/tree/master/contracts/examples/linear_vesting_asset
-* 基于hash验证的猜谜合约：https://github.com/dbxone/dbx-core/tree/master/contracts/examples/riddle
+* helloworld合约： https://github.com/dbxone/dbxchain/tree/master/contracts/examples/helloworld
+* 充值提现合约： https://github.com/dbxone/dbxchain/tree/master/contracts/examples/bank
+* 红包合约： https://github.com/dbxone/dbxchain/tree/master/contracts/examples/redpacket
+* 线性释放资产合约：https://github.com/dbxone/dbxchain/tree/master/contracts/examples/linear_vesting_asset
+* 基于hash验证的猜谜合约：https://github.com/dbxone/dbxchain/tree/master/contracts/examples/riddle
 
 
 体验智能合约有两种方式： 使用智能合约IDE工具 和 使用cli_wallet
@@ -79,8 +79,8 @@ https://github.com/dbxone/tech-doc/blob/master/dbx_contract_api.md
 如果不想使用智能合约IDE工具，可以本地编译DBXhain程序，通过命令行方式编译、部署、调用智能合约。
 DBXhain源码编译，目前支持ubuntu系统和mac系统：
 
-- Build on Ubuntu： https://github.com/dbxone/dbx-core/wiki/BUILD_UBUNTU
-- Build on OS X： https://github.com/dbxone/dbx-core/wiki/BUILD_OS_X
+- Build on Ubuntu： https://github.com/dbxone/dbxchain/wiki/BUILD_UBUNTU
+- Build on OS X： https://github.com/dbxone/dbxchain/wiki/BUILD_OS_X
 
 #### 2. 编译合约
 使用dxx的模板创建一个helloworld合约
@@ -138,10 +138,10 @@ unlocked >>> call_contract nathan helloworld null hi "{\"user\":\"zhuliting\"}" 
 
 ```
 # 下载testnet的genesis.json文件
-wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/genesis/testnet-genesis.json -O genesis.json
+wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/genesis/testnet-genesis.json -O genesis.json
 
 # 下载程序包， ubuntu安装包
-wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx_ubuntu_1.0.180809.beta.tar.gz -O dbx_ubuntu_1.0.180809.beta.tar.gz
+wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx_ubuntu_1.0.180809.beta.tar.gz -O dbx_ubuntu_1.0.180809.beta.tar.gz
 # 解压
 tar zxvf dbx_ubuntu_1.0.180809.beta.tar.gz
 
