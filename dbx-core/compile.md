@@ -61,7 +61,7 @@ bash ./bootstrap.sh --prefix=/usr
 ## 下载源码，编译 {#下载源码，编译}
 
 ```
-git clone https://github.com/dbxhain/dbx-core.git
+git clone https://github.com/dbxone/dbx-core.git
 cd dbx-core
 git submodule update --init --recursive
 cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo .
