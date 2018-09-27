@@ -13,10 +13,10 @@
 
 ### 1. 下载程序, 解压 {#1-下载程序-解压}
 
-**首先请**[**点击这里**](https://github.com/dbxone/dbx-core/releases/latest)**下载最新程序, 解压**
+**首先请**[**点击这里**](https://github.com/dbxone/dbxchain/releases/latest)**下载最新程序, 解压**
 
 ```js
-wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx_ubuntu_1.0.180809.beta.tar.gz -O dbx_ubuntu_1.0.180809.beta.tar.gz
+wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx_ubuntu_1.0.180809.beta.tar.gz -O dbx_ubuntu_1.0.180809.beta.tar.gz
 # 解压程序
 tar zxvf dbx_ubuntu_1.0.180809.beta.tar.gz
 ```
@@ -24,7 +24,7 @@ tar zxvf dbx_ubuntu_1.0.180809.beta.tar.gz
 ### 2. 下载testnet的genesis.json文件 {#2-下载testnet的genesisjson文件}
 
 ```
-wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/genesis/testnet-genesis.json -O genesis.json
+wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/genesis/testnet-genesis.json -O genesis.json
 ```
 
 ### 3. 启动witness\_node，同步区块 {#3-启动witness_node同步区块}
