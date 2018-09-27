@@ -10,7 +10,7 @@ listChangedFiles.stdout.on('data', (data) => {
         arr.push(temp[0])
     }
 
-    if (arr.includes('dbx_contract_api.json') || arr.includes('dbx_contract_api_example.js') || arr.includes('templates/api_template.ejs')) {
+    if (arr.includes('contract-api.json') || arr.includes('contract-api-example.js') || arr.includes('templates/api_template.ejs')) {
         cp.exec(`babel-node ${path.join(__dirname, './generateApiDoc.js')}`, function (err, stdout, stderr) {
             if (err) {
                 throw stderr
