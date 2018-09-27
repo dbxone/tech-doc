@@ -2,8 +2,8 @@ var fs = require('fs')
 var path = require('path')
 var templateString = fs.readFileSync(path.join(__dirname, '../templates/api_template.ejs'), 'utf-8');
 var template = require('lodash').template
-import json from '../dbx_contract_api.json'
-import examples from '../dbx_contract_api_example.js'
+import json from '../contract-api.json'
+import examples from '../contract-api-example.js'
 
 // combo json and examples
 json.apis.forEach(api => {
