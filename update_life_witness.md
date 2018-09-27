@@ -19,7 +19,7 @@ mac环境下，打开terminal执行如下操作：
 wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/cli_wallet.20180621.tar.gz -O  cli_wallet.20180621.tar.gz && tar zxvf cli_wallet.20180621.tar.gz
 ```
 
-ubuntu环境最新的cli\_wallet下载，请访问[https://github.com/dbxhain/dbx-core/releases/latest](https://github.com/dbxhain/dbx-core/releases/latest)
+ubuntu环境最新的cli\_wallet下载，请访问[https://github.com/dbxone/dbx-core/releases/latest](https://github.com/dbxone/dbx-core/releases/latest)
 
 ```
 wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx_1.0.180619a.tar.gz -O dbx_1.0.180619a.tar.gz && tar zxvf dbx_1.0.180619a.tar.gz
