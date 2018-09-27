@@ -1,7 +1,7 @@
 {
   "name": "tech-doc",
   "version": "1.0.0",
-  "description": "这是DBXhain的技术文档，查看全文点击[这里](/introduction.md)",
+  "description": "这是DBXChain的技术文档，查看全文点击[这里](/introduction.md)",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
