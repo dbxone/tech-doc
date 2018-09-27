@@ -11,7 +11,7 @@ GET /provider
 
 ### 例子（以curl为例）
 ```sh
-curl https://baas.dbxhain.cn/api/storage/provider
+curl https://baas.dbxchain.cn/api/storage/provider
 ```
 
 ## 响应返回
