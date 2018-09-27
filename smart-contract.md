@@ -4,7 +4,7 @@
 ------------
 ### 一、智能合约介绍
 
-DBXhain智能合约2.0，底层使用WebAssembly虚拟机，目前支持C++语言的智能合约编写。
+DBXChain智能合约2.0，底层使用WebAssembly虚拟机，目前支持C++语言的智能合约编写。
 开发者使用C++编写智能合约，通过llvm将代码编译成WebAssembly（又名WASM），部署到区块链上，通过智能合约ABI(Application Binary Interface，应用程序的二进制接口)和智能合约交互。
 
 ##### 智能合约 API 参考文档
@@ -22,10 +22,10 @@ https://github.com/dbxone/tech-doc/blob/master/dbx_contract_api.md
 
 ### 二、快速开始 (使用本地命令行方式)
 
-#### 1. DBXhain源码编译
+#### 1. DBXChain源码编译
 
-如果不想使用智能合约IDE工具，可以本地编译DBXhain程序，通过命令行方式编译、部署、调用智能合约。
-DBXhain源码编译，目前支持ubuntu系统和mac系统：
+如果不想使用智能合约IDE工具，可以本地编译DBXChain程序，通过命令行方式编译、部署、调用智能合约。
+DBXChain源码编译，目前支持ubuntu系统和mac系统：
 
 - Build on Ubuntu： https://github.com/dbxone/dbxchain/wiki/BUILD_UBUNTU
 - Build on OS X： https://github.com/dbxone/dbxchain/wiki/BUILD_OS_X
@@ -80,9 +80,9 @@ unlocked >>> call_contract nathan helloworld null hi "{\"user\":\"zhuliting\"}" 
 ```
 
 ### 其它参考：
-#### 安装DBXhain testnet网络全节点程序
+#### 安装DBXChain testnet网络全节点程序
 如果不想使用testnet提供的接入点，也可以本地部署一个全节点。
-安装DBXhain testnet全节点安装方法：
+安装DBXChain testnet全节点安装方法：
 
 ```
 # 下载testnet的genesis.json文件
