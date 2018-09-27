@@ -2,7 +2,7 @@
 
 
 
-.DBX-Core is the DBX blockchain implementation and command-line interface. Current binary version of the DBX-Core software for ubuntu 16.04 LTS, see [here](https://github.com/dbxhain/dbx-core/releases).Visit [dbx.io](https://www.dbx.io/) to learn about DBX.
+.DBX-Core is the DBX blockchain implementation and command-line interface. Current binary version of the DBX-Core software for ubuntu 16.04 LTS, see [here](https://github.com/dbxone/dbx-core/releases).Visit [dbx.io](https://www.dbx.io/) to learn about DBX.
 
 # 
 
@@ -10,7 +10,7 @@
 
 ## 安装环境
 
-A decent C++11 compiler \(GNU GCC 5.4.1+ on ubuntu, or Apple LLVM version 8.1.0 \(clang-802.0.42\) on MacOS\). CMake version 2.8+. Boost version 1.57.0. The repository contains the install scripts for gcc5 and boost 1.57.0, see [here](https://github.com/dbxhain/dbx-core/tree/master/script).
+A decent C++11 compiler \(GNU GCC 5.4.1+ on ubuntu, or Apple LLVM version 8.1.0 \(clang-802.0.42\) on MacOS\). CMake version 2.8+. Boost version 1.57.0. The repository contains the install scripts for gcc5 and boost 1.57.0, see [here](https://github.com/dbxone/dbx-core/tree/master/script).
 
 ```
 # dependencies for OS X, macOS Sierra 10.12.6 recommended
@@ -45,14 +45,14 @@ OS X Build Instructions
 4. Install boost 1.57
 
    ```
-   wget 'https://raw.githubusercontent.com/dbxhain/dbx-core/master/script/boost_install.sh' -O boost_install.sh
+   wget 'https://raw.githubusercontent.com/dbxchain/dbx-core/master/script/boost_install.sh' -O boost_install.sh
    bash boost_install
    ```
 
 5. Build DBX-Core:
 
    ```
-   git clone https://github.com/dbxhain/dbx-core.git
+   git clone https://github.com/dbxone/dbx-core.git
    cd dbx-core
    git submodule update --init --recursive
    cmake -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib -DCMAKE_BUILD_TYPE=RelWithDebInfo .
@@ -90,7 +90,7 @@ sudo apt-get install cmake make python-dev libbz2-dev libdb++-dev libdb-dev libs
 1. Build Boost 1.57.0 The Boost which ships with Ubuntu 16.04 is too old. You need to download the Boost tarball for Boost 1.57.0.
 
 ```
-wget 'https://raw.githubusercontent.com/dbxhain/dbx-core/master/script/boost_install.sh' -O boost_install.sh
+wget 'https://raw.githubusercontent.com/dbxchain/dbx-core/master/script/boost_install.sh' -O boost_install.sh
 sudo bash boost_install.sh
 
 ```
@@ -98,7 +98,7 @@ sudo bash boost_install.sh
 1. Build DBX-Core
 
 ```
-git clone https://github.com/dbxhain/dbx-core.git
+git clone https://github.com/dbxone/dbx-core.git
 cd dbx-core
 git submodule update --init --recursive
 cmake -DOPENSSL_ROOT_DIR=/usr/bin -DOPENSSL_INCLUDE_DIR=/usr/include/openssl -DOPENSSL_LIBRARIES=/usr/lib/openssh -DCMAKE_BUILD_TYPE=RelWithDebInfo .
