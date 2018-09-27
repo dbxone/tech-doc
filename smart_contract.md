@@ -20,59 +20,7 @@ https://github.com/dbxone/tech-doc/blob/master/dbx_contract_api.md
 * 线性释放资产合约：https://github.com/dbxone/dbxchain/tree/master/contracts/examples/linear_vesting_asset
 * 基于hash验证的猜谜合约：https://github.com/dbxone/dbxchain/tree/master/contracts/examples/riddle
 
-
-体验智能合约有两种方式： 使用智能合约IDE工具 和 使用cli_wallet
-### 二、 快速开始 （通过智能合约IDE）
-#### 1. 注册testnet钱包帐户
-
-访问[testnet网页钱包](https://testnet.wallet.dbxchain.org/#/)  ```https://testnet.wallet.dbxchain.org/#/``` 注册钱包帐户。
-注册完成后，点击[这里](http://blockcity.mikecrm.com/2SVDb67) 申领测试DBX。
-
-
-#### 2. 下载智能合约IDE
-通过智能合约IDE，可以编写、编译、部署、调用智能合约。
-[IDE下载地址](https://github.com/dbxone/dbxchain-alpha/releases)
-
-#### 3.导入账户
-
-先去步骤一中的testnet网页钱包找到自己的活跃权限私钥
-
-![](./assets/ide/queryPvk.png)
-
-![](./assets/ide/queryPvk2.png)
-
-再打开客户端，进入设置页面，导入账户(密码不会上传到服务器，如果忘记需要移除账户重新导入)：
-
-![](./assets/ide/import.png)
-
-#### 4.选择模板工程
-
-![](./assets/ide/addProject.png)
-
-#### 5. 编译
-
-![](./assets/ide/compile.png)
-
-#### 6.部署
-
-部署之前需要先解锁钱包
-
-![](./assets/ide/deploy.png)
-
-![](./assets/ide/deploy2.png)
-
-#### 7.调用
-
-与部署一样，也需要先解锁钱包
-
-![](./assets/ide/call.png)
-
-![](./assets/ide/call2.png)
-
-
-
-
-### 三、快速开始 (使用本地命令行方式)
+### 二、快速开始 (使用本地命令行方式)
 
 #### 1. DBXhain源码编译
 
