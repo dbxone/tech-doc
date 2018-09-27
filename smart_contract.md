@@ -9,29 +9,29 @@ DBXhain智能合约2.0，底层使用WebAssembly虚拟机，目前支持C++语�
 
 ##### 智能合约 API 参考文档
 文档中列出了一些API和使用示例，可以在编写合约时调用：
-https://github.com/dbxhain/dbx-techdoc/blob/master/dbx_contract_api.md
+https://github.com/dbxone/tech-doc/blob/master/dbx_contract_api.md
 
-智能合约存储参考文档：https://github.com/dbxhain/dbx-techdoc/blob/master/contract/contract_storage_usage.md
+智能合约存储参考文档：https://github.com/dbxone/tech-doc/blob/master/contract/contract_storage_usage.md
 
 ##### 智能合约示例:
-* helloworld合约： https://github.com/dbxhain/dbx-core/tree/dev_master/contracts/examples/helloworld
-* 充值提现合约： https://github.com/dbxhain/dbx-core/tree/dev_master/contracts/examples/bank
-* 红包合约： https://github.com/dbxhain/dbx-core/tree/dev_master/contracts/examples/redpacket
-* 线性释放资产合约：https://github.com/dbxhain/dbx-core/tree/dev_master/contracts/examples/linear_vesting_asset
-* 基于hash验证的猜谜合约：https://github.com/dbxhain/dbx-core/tree/dev_master/contracts/examples/riddle
+* helloworld合约： https://github.com/dbxone/dbx-core/tree/master/contracts/examples/helloworld
+* 充值提现合约： https://github.com/dbxone/dbx-core/tree/master/contracts/examples/bank
+* 红包合约： https://github.com/dbxone/dbx-core/tree/master/contracts/examples/redpacket
+* 线性释放资产合约：https://github.com/dbxone/dbx-core/tree/master/contracts/examples/linear_vesting_asset
+* 基于hash验证的猜谜合约：https://github.com/dbxone/dbx-core/tree/master/contracts/examples/riddle
 
 
 体验智能合约有两种方式： 使用智能合约IDE工具 和 使用cli_wallet
 ### 二、 快速开始 （通过智能合约IDE）
 #### 1. 注册testnet钱包帐户
 
-访问[testnet网页钱包](https://testnet.wallet.dbxhain.org/#/)  ```https://testnet.wallet.dbxhain.org/#/``` 注册钱包帐户。
+访问[testnet网页钱包](https://testnet.wallet.dbxchain.org/#/)  ```https://testnet.wallet.dbxchain.org/#/``` 注册钱包帐户。
 注册完成后，点击[这里](http://blockcity.mikecrm.com/2SVDb67) 申领测试DBX。
 
 
 #### 2. 下载智能合约IDE
 通过智能合约IDE，可以编写、编译、部署、调用智能合约。
-[IDE下载地址](https://github.com/dbxhain/dbxhain-alpha/releases)
+[IDE下载地址](https://github.com/dbxone/dbxchain-alpha/releases)
 
 #### 3.导入账户
 
@@ -79,8 +79,8 @@ https://github.com/dbxhain/dbx-techdoc/blob/master/dbx_contract_api.md
 如果不想使用智能合约IDE工具，可以本地编译DBXhain程序，通过命令行方式编译、部署、调用智能合约。
 DBXhain源码编译，目前支持ubuntu系统和mac系统：
 
-- Build on Ubuntu： https://github.com/dbxhain/dbx-core/wiki/BUILD_UBUNTU
-- Build on OS X： https://github.com/dbxhain/dbx-core/wiki/BUILD_OS_X
+- Build on Ubuntu： https://github.com/dbxone/dbx-core/wiki/BUILD_UBUNTU
+- Build on OS X： https://github.com/dbxone/dbx-core/wiki/BUILD_OS_X
 
 #### 2. 编译合约
 使用dxx的模板创建一个helloworld合约
@@ -103,7 +103,7 @@ dxx -g helloworld/helloworld.abi helloworld/helloworld.cpp
 #### 4. 部署合约
 需要开启cli_wallet，连接本地节点或者远程testnet节点
 ```
-./programs/cli_wallet/cli_wallet -swss://testnet.dbxhain.org --chain-id c2af30ef9340ff81fd61654295e98a1ff04b23189748f86727d0b26b40bb0ff4
+./programs/cli_wallet/cli_wallet -swss://testnet.dbxchain.org --chain-id c2af30ef9340ff81fd61654295e98a1ff04b23189748f86727d0b26b40bb0ff4
 ```
 
 导入钱包私钥
@@ -146,18 +146,18 @@ wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbx-core/dbx_ubuntu_1.0.180
 tar zxvf dbx_ubuntu_1.0.180809.beta.tar.gz
 
 # 启动witness_node, 同步testnet区块数据
-./programs/witness_node/witness_node --data-dir=testnet_node --rpc-endpoint="0.0.0.0:28090" --p2p-endpoint="0.0.0.0:9999" --seed-nodes='["testnet.dbxhain.org:6789"]' --genesis-json genesis.json &
+./programs/witness_node/witness_node --data-dir=testnet_node --rpc-endpoint="0.0.0.0:28090" --p2p-endpoint="0.0.0.0:9999" --seed-nodes='["testnet.dbxchain.org:6789"]' --genesis-json genesis.json &
 
 # 启动完成后，可以观察./testnet_node/log/witness.log观察区块同步情况，区块同步过程中每10000个区块会打印一条日志，同步完成后，每3秒打印一条日志ß
 ```
 
-testnet 安装文档 ：https://github.com/dbxhain/dbx-techdoc/blob/master/test%20net.md
+testnet 安装文档 ：https://github.com/dbxone/tech-doc/blob/master/test%20net.md
 
-testnet 区块浏览器：https://testnet.explorer.dbxhain.org/#/
+testnet 区块浏览器：https://testnet.explorer.dbxchain.org/#/
 
-testnet 网页钱包：https://testnet.wallet.dbxhain.org/
+testnet 网页钱包：https://testnet.wallet.dbxchain.org/
 
-testnet 钱包接入点：wss://testnet.dbxhain.org
+testnet 钱包接入点：wss://testnet.dbxchain.org
 
 [note] 测试智能合约时需要注意：
 
