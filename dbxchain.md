@@ -1,8 +1,8 @@
-# DBX-CORE
+# DBXChain
 
 
 
-.DBX-Core is the DBX blockchain implementation and command-line interface. Current binary version of the DBX-Core software for ubuntu 16.04 LTS, see [here](https://github.com/dbxone/dbxchain/releases).Visit [dbx.io](https://www.dbx.io/) to learn about DBX.
+.DBXChain is the DBX blockchain implementation and command-line interface. Current binary version of the DBXChain software for ubuntu 16.04 LTS, see [here](https://github.com/dbxone/dbxchain/releases).Visit [dbx.io](https://www.dbx.io/) to learn about DBX.
 
 # 
 
@@ -49,7 +49,7 @@ OS X Build Instructions
    bash boost_install
    ```
 
-5. Build DBX-Core:
+5. Build DBXChain:
 
    ```
    git clone https://github.com/dbxone/dbxchain.git
@@ -95,7 +95,7 @@ sudo bash boost_install.sh
 
 ```
 
-1. Build DBX-Core
+1. Build DBXChain
 
 ```
 git clone https://github.com/dbxone/dbxchain.git
