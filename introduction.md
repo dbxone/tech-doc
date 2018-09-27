@@ -14,7 +14,7 @@ cli\_wallet 通过 websocket 方式连接到 witness\_node， 管理钱包文件
 
 ## **DBXChain程序下载**
 
-DBXChain程序目前只提供Ubuntu 16.04 LTS 64位系统的安装包，[点击这里](https://github.com/dbxhain/dbx-core/releases/latest)下载最新程序。
+DBXChain程序目前只提供Ubuntu 16.04 LTS 64位系统的安装包，[点击这里](https://github.com/dbxone/dbx-core/releases/latest)下载最新程序。
 
 ## 节点端口说明
 
