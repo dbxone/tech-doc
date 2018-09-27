@@ -1,5 +1,5 @@
 ## api文档自动生成指南
-当提交时，如果改动的是 templates/api_template.ejs || dbx_contract_api.json || dbx_contract_api_example.js 其中之一，就会触发自动生成脚本，将dbx_contract_api.json和dbx_contract_api_example.js在内存中进行合并操作，作为数据项对api_template.ejs模板做渲染，最终生成dbx_contract_api_EN.md和dbx_contract_api.md（中文）。
+当提交时，如果改动的是 templates/api_template.ejs || contract-api.json || contract-api-example.js 其中之一，就会触发自动生成脚本，将contract-api.json和contract-api-example.js在内存中进行合并操作，作为数据项对api_template.ejs模板做渲染，最终生成dbx_contract_api_EN.md和dbx_contract_api.md（中文）。
 
 ### 依赖
 本方案基于husky, 所以需要先安装nodejs，然后`npm install`安装node包。
@@ -12,7 +12,7 @@
 所以本方案目标是解决这几个问题。
 
 ### 添加example
-修改dbx_contract_api_example.js文件
+修改contract-api-example.js文件
 ```js
 apis = {
     get_action_asset_id: [{
@@ -42,7 +42,7 @@ content here
 `description`支持i18n，`en-US`和`zh-CN`必须严格一致。
 
 ### 添加api描述
-修改dbx_contract_api.json文件，该文件apis字段会用于生成api文档，其它字段暂时只用于前端ide智能提示。
+修改contract-api.json文件，该文件apis字段会用于生成api文档，其它字段暂时只用于前端ide智能提示。
 
 #### apis
 填写api，如`withdraw_asset`，用于自动补全及备注提示
