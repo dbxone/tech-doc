@@ -6,5 +6,5 @@ DBXChain数据交易客户端DBX-Box是基于Nodejs开发的一个部署在商�
 
 上图简单表述了这样的一个数据交易流程。
 
-**如需了解全文，请点击**[**这里**](https://github.com/dbxhain/dbx-box/blob/dev/README-CN.md)**。**
+**如需了解全文，请点击**[**这里**](https://github.com/dbxone/dbx-box/blob/dev/README-CN.md)**。**
 
