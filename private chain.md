@@ -4,7 +4,7 @@
 
 ## 1、环境安装
 
-请安装[见证人节点](https://github.com/dbxhain/dbx-core/releases)和[完整客户端](/introduction.md)。
+请安装[见证人节点](https://github.com/dbxone/dbx-core/releases)和[完整客户端](/introduction.md)。
 
 ## 2、创建一个存储私链文件的文件夹
 
