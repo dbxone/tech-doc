@@ -11,7 +11,7 @@
 **访问[testnet网页钱包](https://testnet.wallet.dbxchain.org/#/)  ```https://testnet.wallet.dbxchain.org/#/``` 注册钱包帐户。
 注册完成后，点击[这里](http://blockcity.mikecrm.com/2SVDb67) 申领测试DBX。**
 
-### 1. 下载程序, 解压 {#1-下载程序-解压}
+### 1. 下载程序, 解压
 
 **首先请**[**点击这里**](https://github.com/dbxone/dbxchain/releases/latest)**下载最新程序, 解压**
 
@@ -21,13 +21,13 @@ wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx_ubuntu_1.0.180
 tar zxvf dbx_ubuntu_1.0.180809.beta.tar.gz
 ```
 
-### 2. 下载testnet的genesis.json文件 {#2-下载testnet的genesisjson文件}
+### 2. 下载testnet的genesis.json文件
 
 ```
 wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/genesis/testnet-genesis.json -O genesis.json
 ```
 
-### 3. 启动witness\_node，同步区块 {#3-启动witness_node同步区块}
+### 3. 启动witness\_node，同步区块
 
 ```
 ./programs/witness_node/witness_node --data-dir=testnet_node --rpc-endpoint="0.0.0.0:38090" --p2p-endpoint="0.0.0.0:9999" --seed-nodes='["testnet.dbxchain.org:38091"]' --genesis-json genesis.json &
@@ -36,10 +36,10 @@ wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/genesis/testnet-ge
 目前测试网络数据量不大，可以跑全节点。通过后台日志文件testnet\_node/logs/witness.log可查看区块同步进度。 
 区块同步完成后，可以运行命令行钱包cli\_wallet。
 
-### 4. 运行命令行钱包cli\_wallet {#4-运行命令行钱包cli_wallet}
+### 4. 运行命令行钱包cli\_wallet
 
 ```
-./programs/cli_wallet/cli_wallet -sws://127.0.0.1:38090  -r 127.0.0.1:38091 --data-dir=testnet_node --chain-id c2af30ef9340ff81fd61654295e98a1ff04b23189748f86727d0b26b40bb0ff4
+./programs/cli_wallet/cli_wallet -sws://127.0.0.1:38090  -r 127.0.0.1:38091 --data-dir=testnet_node --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
 
 
