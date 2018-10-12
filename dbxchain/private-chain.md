@@ -160,7 +160,10 @@ locked >>>
 钱包解锁后，才能使用。解锁钱包
 
 ```
+locked >>> unlock supersecret  
 unlock supersecret
+null
+unlocked >>> 
 ```
 
 **一个钱包通过命令可以导入多个账户的私钥。** 
