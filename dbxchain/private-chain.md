@@ -1,7 +1,8 @@
 # 私有链搭建
 
+##1. witness\_node操作 —— 启动链
 
-## 1、创建和编辑初始文件
+###1.1 创建和编辑初始文件
 
 初始文件是用来定义区块链网络初始状态，如下：
 * 修改初始文件中账户， 以及账户名和公钥
@@ -19,7 +20,7 @@ $ witness_node --create-genesis-json my-genesis.json
 石墨烯系统中默认的初始化块中包含唯一一个账户`nathan`，创世区块中的所有见证人、理事会成员和基金会都是改账户。 
 
 
-### eg.1 修改`nathan`私钥
+#### eg.1 修改`nathan`私钥
 
 `nathan`的默认私钥为:
 > 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
@@ -27,13 +28,13 @@ $ witness_node --create-genesis-json my-genesis.json
 通过手动修改初始文件对私钥进行修改。
 
 
-### eg.2 修改活跃见证人更新时间
+#### eg.2 修改活跃见证人更新时间
 ```
 "maintenance_interval": 600
 ```
 
 
-## 2、初始化证人节点，获取链ID
+###1.2 初始化证人节点，获取链ID
 
 链ID是初始状态的哈希值。它用来区分不同的链。
 
@@ -54,7 +55,7 @@ witness_node --genesis-json my-genesis.json
 
 **`6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d` 即为链ID。**
 
-## 3、配置见证人
+###1.3 配置见证人
 
 编辑`witness_node_data_dir/config.ini`修改配置：
 
@@ -97,7 +98,7 @@ private-key = ["DBX6MRyA...T5GDW5CV","5KQwrPb...tP79zkvFD3"]
 * `witness-id`  用于授权本证人节点所代表的证人id产生区块，可指定多个。一般来说一个证人节点授权一个证人id，私链第一个节点指定了11个。
 
 
-## 4、开始生产区块
+###1.4 开始生产区块
 
 ```
 witness_node
@@ -121,7 +122,7 @@ witness_node
 2354605ms th_a  witness.cpp:185  block_production_loo ] Generated block #4 with timestamp 2016-01-21T22:39:10 at time 2016-01-21T22:39:10
 ```
 
-如果witness.log无日志生成，可以将日志打印打控制台，可以修改data/config.ini文件如下，然后重新启动witness
+如果witness.log无日志生成，可以将日志打印打控制台，可以修改`config.ini`文件如下，然后重新启动witness
 
 ```
 [logger.default]
@@ -129,8 +130,11 @@ level=debug
 appenders=stderr
 ```
 
-## 5、客户端（Cli）用法
+##2. cli_wallet操作
 
+###2.1 创建新钱包
+
+钱包用来保存账户的私钥，此处创建的钱包名称为`my-wallet.json`。
 ```
 cli_wallet -w my-wallet.json -s ws://127.0.0.1:38090 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
@@ -147,9 +151,9 @@ Please use the set_password method to initialize a new wallet before continuing
 new >>>
 ```
 
-### 创建一个新钱包
 
-钱包用来保存账户的私钥，因此需要设置钱包密码。此处设置钱包密码为`supersecret`
+使用钱包钱，需要为钱包设置密码，此处为`supersecret`：
+
 ```
 new >>> set_password supersecret
 set_password supersecret
@@ -157,7 +161,7 @@ null
 locked >>>
 ```
 
-钱包解锁后，才能使用。解锁钱包
+钱包解锁后，才能使用。解锁钱包：
 
 ```
 locked >>> unlock supersecret  
@@ -166,81 +170,81 @@ null
 unlocked >>> 
 ```
 
-**一个钱包通过命令可以导入多个账户的私钥。** 
 
-### 获得初始份额
+###2.2 导入nathan账户
 
-在石墨烯中，资产账户包含在钱包账户中， 要向你的钱包中添加钱包账户, 你需要知道账户名以及账户的私钥。 在例子中，我们将通过`import_key`命令向现有钱包中添加一个名叫`nathan`的账户：
+一个钱包通过命令可以保存多个账户。
+
+账户保存进钱包需要导入私钥，以下导入`nathan`账户：
 
 ```
 import_key nathan 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 ```
 
-**注意**
+###2.3 将链上资产赋给nathan账户
 
-注意`nathan`在初始文件中会被用于定义账户名. 如果你修改过`my-genesies.json` 文件，你可以填入一个不同的名字。并且，请注意`5KQwrPbwdL...P79zkvFD3`是定义在`config.ini`内的私钥
 
-现在我们已经将私钥导入进钱包，但没有和储蓄相关联。储蓄被保存在初始账户内。这些储蓄可以通过`import_balance`命令来申明，无需申明费用：
+将`config.ini`中设置链上资产DBX赋给`nathan`：
 
 ```
 import_balance nathan ["5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"] true
 ```
 
-因此，我们导入了一个名为`nathan`的账户，且账户储蓄已经完全与DBX相关联，因为我们已经声称这些储蓄被保存在了初始文件内。你可以通过以下命令来检视你的账户：
+此时可查看账户余额：
 
-```
-get_account nathan
-```
-
-用以下命令获取账户余额：
 
 ```
 list_account_balances nathan
 ```
 
-### 创建其他账户
+###2.4 升级nathan为终身会员\(LTM\)
 
-现在我们讲创建一个新的账户`alpha` ，这样我们可以在 `nathan`和`alpha`两个账户中来回转账了。
-
-通常我们用一个已有账户来创建新账户，因为登记员需要缴纳注册费用。 并且，登记员的账户需要进入Also, there is the requirement  lifetime member \(LTM\)状态。因此我们必须在创建新账户前，先将账户`nathan`升级到LTM状态， 使用`upgrade_account`命令来升级账户：
+终身会员拥有普通会员不具备的一些权限，比如通常我们用一个已有账户来创建新账户，只有成为终身会员才能注册其他账户，此处升级`nathan`为终身会员。
 
 ```
-upgrade_account nathan DBX true
+upgrade_account nathan true
 ```
 
-**注意**
-
-你需要重启客户端，否则将无法识别`nathan`已经成功升级。通过`ctrl-c`停止客户端，然后通过如下指令重启客户端：
+重启客户端，否则将无法识别`nathan`已经成功升级。通过`ctrl-c`停止客户端。
 
 ```
-cli_wallet --wallet-file=my-wallet.json --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d --server-rpc-endpoint=ws://127.0.0.1:31010
+cli_wallet -w my-wallet.json -s ws://127.0.0.1:38090 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
 
-确认`nathan`已经拥有LTM权限：
-
+查看账户属性
 ```
 get_account nathan
 ```
 
-返回的信息中，在`membership_expiration_date`边上你会发现`1969-12-31T23:59:59`。 如果你看到`1970-01-01T00:00:00`，说明之前的操作出现了错误，`nathan`没能成功升级。
+`membership_expiration_date`的属性值应该是`1969-12-31T23:59:59`，代表成功升级。
 
-成功升级后，我们可以通过`nathan`来注册新账户，但首先我们需要拥有新账户的公钥。通过使用`suggest_brain_key`命令来完成：
+
+###2.5 注册新账户alpha
+
+成功升级后，我们可以通过`nathan`来注册新账户，但首先我们需要拥有新账户的公私钥。
+
+生成公私钥对：
 
 ```
 suggest_brain_key
 ```
 
-然后调用register\_account / register\_account2接口创建新帐户
+注册新账户alpha
 
 ```
-register_account alpha DBX6vQtDEgHSickqe9itW8fbFyUrKZK5xsg4FRHzQZ7hStaWqEKhZ DBX6vQtDEgHSickqe9itW8fbFyUrKZK5xsg4FRHzQZ7hStaWqEKhZ nathan nathan 10
+register_account alpha DBX6vQtDEgHSickqe9itW8fbFyUrKZK5xsg4FRHzQZ7hStaWqEKhZ DBX6vQtDEgHSickqe9itW8fbFyUrKZK5xsg4FRHzQZ7hStaWqEKhZ nathan nathan 0 true
 ```
 
-最终将有类似如下的回复：
+
+###2.6 nathan转账给alpha
+
+```
+transfer nathan alpha 1 DBX "" true
+```
+
+查看nathan余额：
 
 ```
 list_account_balances alpha
 ```
-
-
 
