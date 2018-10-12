@@ -4,7 +4,6 @@
 
 **程序可能会 更新，请**[**点击这里**](https://github.com/dbxone/dbxchain/releases/latest)**下载最新程序。**
 
-| 阿里云 | [http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx\_1.0.180604.tar.gz](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx_1.0.180604.tar.gz) |
 | :--- | :--- |
 | github | [https://github.com/dbxone/dbxchain/releases/download/1.0.180604/dbx\_1.0.180604.tar.gz](https://github.com/dbxone/dbxchain/releases/download/1.0.180604/dbx_1.0.180604.tar.gz) |
 
