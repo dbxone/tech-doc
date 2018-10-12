@@ -149,19 +149,21 @@ new >>>
 
 ### 创建一个新钱包
 
-首先你需要为你的钱包创建一个新的密码。这个密码被用于加密所有钱包的私钥。在教程中我们使用如下密码：`supersecret`
-
-但你可以使用字母和数字的组合来创建属于你的密码。通过以下命令来创建你的密码：:
-
+钱包用来保存账户的私钥，因此需要设置钱包密码。此处设置钱包密码为`supersecret`
 ```
->>> set_password supersecret
+new >>> set_password supersecret
+set_password supersecret
+null
+locked >>>
 ```
 
-现在你可以解锁你新建的钱包了：
+钱包解锁后，才能使用。解锁钱包
 
 ```
 unlock supersecret
 ```
+
+**一个钱包通过命令可以导入多个账户的私钥。** 
 
 ### 获得初始份额
 
