@@ -1,10 +1,10 @@
-# get\_relative\_account\_history {#8-getrelativeaccounthistory}
+# get\_relative\_account\_history
 
-##### 说明：查询帐户最近的交易记录, 支持翻页 {#说明：查询帐户最近的交易记录-支持翻页}
+##### 说明：查询帐户最近的交易记录, 支持翻页
 
-##### usage: get\_relative\_account\_history account\_name\_or\_id limit\_num {#usage-getrelativeaccounthistory-accountnameorid-limitnum}
+##### usage: get\_relative\_account\_history account\_name\_or\_id limit\_num 
 
-##### 参数：account\_name\_or\_id, start, limit\_num, stop {#参数：accountnameorid-start-limitnum-stop}
+##### 参数：account\_name\_or\_id, start, limit\_num, stop
 
 | 参数 | 说明 |
 | :--- | :--- |
