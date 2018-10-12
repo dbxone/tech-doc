@@ -21,29 +21,27 @@ DBXChain程序目前只提供Ubuntu 16.04 LTS 64位系统的安装包，[点击�
 启动DBXChain见证节点witness\_node
 
 ```bash
-# 可以使用2个参数，节省内存： --track-account 和 --partial-operations=true
-nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoint=127.0.0.1:28090 \
---p2p-endpoint=0.0.0.0:6789 --log-file  --partial-operations=true >>witness.out 2>&1 &
+nohup ./programs/witness_node/witness_node --rpc-endpoint=127.0.0.1:38090 --p2p-endpoint=0.0.0.0:38091 >>witness.out 2>&1 &
 ```
 
 端口种类及调用说明
 
 | **端口类型** | **端口信息** |
 | :---: | :---: |
-| 28090 | witness\_node提供的rpc服务端口 |
-| 6789 | P2P网络的通信接口，用于广播交易消息体和区块 |
+| 38090 | witness\_node提供的rpc服务端口 |
+| 38091 | P2P网络的通信接口，用于广播交易消息体和区块 |
 
 命令行钱包cli\_wallet连接witness\_node:
 
 ```
-./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:28090 --enable-rpc-log -r 127.0.0.1:8091 --data-dir=trusted_node
+./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 --enable-rpc-log -r 127.0.0.1:8091 --data-dir=trusted_node
 ```
 
 端口种类及调用说明
 
 | **端口类型** | **端口信息** |
 | :---: | :---: |
-| 28090 | 连接witness\_node提供的rpc服务端口 |
+| 38090 | 连接witness\_node提供的rpc服务端口 |
 | 8091 | cli\_wallet提供的rpc服务端口 |
 
 
