@@ -31,16 +31,15 @@ eg.2 修改活跃见证人更新时间
 ```
 
 
-## 4、获得区块链ID
+## 4、初始化证人节点，获取链ID
 
-区块链ID是初始状态的哈希值。任何一笔交易都对应一个独有的有效区块链ID。因此如您编辑了您的初始文件，您的区块链ID将会变化，而且你将不能和现存的主链同步（除非现存的主链和你的初始文件正好相同）。
-
-运行以下命令:
+链ID是初始状态的哈希值。它用来区分不同的链。
 
 ```
-witness_node --data-dir data   # to use the default genesis, or
-witness_node --data-dir data --genesis-json my-genesis.json   # your own genesis block
+witness_node --genesis-json my-genesis.json
 ```
+
+如修改了初始文件，链ID将会变化，因此会创建出一条不同的链。
 
 当这条信息出现时:
 
