@@ -22,6 +22,7 @@ $ witness_node --create-genesis-json my-genesis.json
 eg.1 修改`nathan`私钥
 `nathan`的默认私钥为:
 > 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+
 通过手动修改初始文件对私钥进行修改。
 
 eg.2 修改活跃见证人更新时间
