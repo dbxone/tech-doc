@@ -17,7 +17,7 @@
 $ witness_node --create-genesis-json my-genesis.json
 ```
 
-石墨烯系统中默认的初始化块中包含唯一一个账户`nathan`，创世区块中的所有见证人、理事会成员和基金会都是改账户。 
+石墨烯系统中默认的初始化块中包含唯一一个账户`nathan`，创世区块中的所有见证人、理事会成员和基金会都是该账户。 
 
 
 #### eg.1 修改`nathan`私钥
@@ -87,7 +87,7 @@ witness-id = "1.6.11"
 private-key = ["DBX6MRyA...T5GDW5CV","5KQwrPb...tP79zkvFD3"]
 ```
 
-初始文件是用来定义区块链网络初始状态，如下：
+配置选项含义如下：
 
 * `p2p-endpoint`  指定开启的p2p监听端口，以方便其他节点连接，可以作为其他节点的seed-node 。
 * `rpc-endpoint`  指定开启的rpc监听端口，以方便cli-wallet 和web 钱包与证人节点连接。
@@ -122,7 +122,7 @@ witness_node
 2354605ms th_a  witness.cpp:185  block_production_loo ] Generated block #4 with timestamp 2016-01-21T22:39:10 at time 2016-01-21T22:39:10
 ```
 
-如果witness.log无日志生成，可以将日志打印打控制台，可以修改`config.ini`文件如下，然后重新启动witness
+如果witness.log无日志生成，可以将日志打印打控制台，可以修改`config.ini`文件如下，然后重新启动witness。
 
 ```
 [logger.default]
@@ -184,7 +184,7 @@ import_key nathan 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 ### 2.3 将链上资产赋给nathan账户
 
 
-将`config.ini`中设置链上资产DBX赋给`nathan`：
+将初始文件中设置链上资产DBX赋给`nathan`：
 
 ```
 import_balance nathan ["5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"] true
