@@ -1,6 +1,5 @@
 # 私有链搭建
 
----
 
 ## 1、创建和编辑初始文件
 
@@ -20,6 +19,7 @@ $ witness_node --create-genesis-json my-genesis.json
 石墨烯系统中默认的初始化块中包含唯一一个账户`nathan`，创世区块中的所有见证人、理事会成员和基金会都是改账户。 
 
 eg.1 修改`nathan`私钥
+
 `nathan`的默认私钥为:
 > 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 
