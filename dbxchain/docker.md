@@ -41,7 +41,7 @@ bool_wallet：运行模式，“true”或者不设置则运行钱包程序，�
 data_dir:数据文件目录，用于存放区块等数据
 
 以下参数为运行钱包程序下使用：
-ws_server:钱包连接节点参数，例如：“ws://127.0.0.1:8091”
+ws_server:钱包连接节点参数，例如：“ws://127.0.0.1:38091”
 rpc_endpoint:钱包提供rpc接口参数，例如：“0.0.0.0:8092”
 wallet_file:钱包数据文件，可以指定钱包文件，例如：“wallet.json”
 
@@ -65,7 +65,7 @@ docker run -it -e bool_wallet='true' -e rpc_endpoint='0.0.0.0:8092' -e ws_server
 #### 启动见证人节点
 
 ```
-docker run -it -e bool_wallet='false' -e rpc_endpoint='0.0.0.0:8091' -e data_dir='/docker_filepath/trust_node' -e seed_nodes='["192.168.1.118:6790"]' -e p2p_endpoint='0.0.0.0:8093' -e genesis_json='genesis.json.bak' -p 8091:8091 -p 8092:8092 -p 8093:8093 -v your_local_filepath:docker_filepath --name="dbx-witness-node" dbxdevelop/dbxchain
+docker run -it -e bool_wallet='false' -e rpc_endpoint='0.0.0.0:38091' -e data_dir='/docker_filepath/trust_node' -e seed_nodes='["192.168.1.118:6790"]' -e p2p_endpoint='0.0.0.0:8093' -e genesis_json='genesis.json.bak' -p 38091:38091 -p 8092:8092 -p 8093:8093 -v your_local_filepath:docker_filepath --name="dbx-witness-node" dbxdevelop/dbxchain
 备注：docker_filepath和your_local_filepath为抽象地址，实际使用时需要填写实际存在的路径
 ```
 #### 关闭docker运行的程序
