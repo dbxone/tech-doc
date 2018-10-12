@@ -25,13 +25,13 @@ witness\_node启 动 命 令 ， 后 台 启 动 :
 
 ```
 ./programs/witness_node/witness_node --data-dir=trusted_node \
---rpc-endpoint=127.0.0.1:28090 --p2p-endpoint=0.0.0.0:6789 --log-file &
+--rpc-endpoint=127.0.0.1:38090 --p2p-endpoint=0.0.0.0:38091 --log-file &
 ```
 
 cli\_wallet启动命令：
 
 ```
-./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:28090 --enable-rpc-log -r 127.0.0.1:8091 \
+./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 --enable-rpc-log -r 127.0.0.1:8091 \
 --data-dir=trusted_node
 ```
 
