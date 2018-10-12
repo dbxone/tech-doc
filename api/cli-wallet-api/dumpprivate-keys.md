@@ -1,10 +1,10 @@
-# dump\_private\_keys {#4-dumpprivatekeys}
+# dump\_private\_keys
 
-##### 说明：打印钱包拥有的所有公私钥对 {#说明：打印钱包拥有的所有公私钥对}
+##### 说明：打印钱包拥有的所有公私钥对
 
-##### usage: dump\_private\_keys {#usage-dumpprivatekeys}
+##### usage: dump\_private\_keys
 
-##### 参数: 无 {#参数-无}
+##### 参数: 无
 
 
 
