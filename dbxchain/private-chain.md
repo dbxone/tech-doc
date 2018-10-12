@@ -47,7 +47,7 @@ witness_node --genesis-json my-genesis.json
 
 ```
 3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
-3501235ms th_a main.cpp:166 main] Chain ID is 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
+3501235ms th_a main.cpp:166 main] Chain ID is `6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d`
 ```
 
 此时，默认数据文件夹`witness_node_data_dir`被创建，可以通过参数`--data-dir <data_dir>`来指定默认数据文件夹。
@@ -123,17 +123,9 @@ witness_node --data-dir data
 2322793ms th_a  main.cpp:176     main    ] Started witness node on a chain with 0 blocks.
 2322794ms th_a  main.cpp:177     main    ] Chain ID is 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 2324613ms th_a  witness.cpp:185  block_production_loo ] Generated block #1 with timestamp 2016-01-21T22:38:40 at time 2016-01-21T22:38:40
-2325604ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
-2342604ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
-2343609ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
 2344604ms th_a  witness.cpp:185  block_production_loo ] Generated block #2 with timestamp 2016-01-21T22:39:00 at time 2016-01-21T22:39:00
-2345605ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
 2349616ms th_a  witness.cpp:185  block_production_loo ] Generated block #3 with timestamp 2016-01-21T22:39:05 at time 2016-01-21T22:39:05
-2350602ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
-2353612ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
 2354605ms th_a  witness.cpp:185  block_production_loo ] Generated block #4 with timestamp 2016-01-21T22:39:10 at time 2016-01-21T22:39:10
-2355609ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
-2356609ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
 ```
 
 如果witness.log无日志生成，可以将日志打印打控制台，可以修改data/config.ini文件如下，然后重新启动witness
