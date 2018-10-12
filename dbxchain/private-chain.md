@@ -41,23 +41,16 @@ witness_node --genesis-json my-genesis.json
 
 **如修改了初始文件，链ID将会变化，因此会创建出一条不同的链。**
 
-当这条信息出现时:
+信息如下出现，代表初始化已经完成，按`ctrl-c` 关闭见证人节点:
 
 ```
 3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
 3501235ms th_a main.cpp:166 main] Chain ID is 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
 
-此时你的初始化已经完成，按`ctrl-c` 关闭见证人节点。
+此时，默认数据文件夹`witness_node_data_dir`被创建，可以通过参数`--data-dir <data_dir>`来指定默认数据文件夹。
 
-因此, 你应该生成了两个文件:
-
-* 在词典库`data`中创建了一个新文件`config.ini`
-* Your blockchain id is now known - it’s displayed in the message above.
-
-**注意**
-
-**请注意你的区块链ID会和上述例子中的ID不同。请记录下你的ID，在之后你将会用到它。**
+**`6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d` 即为链ID。**
 
 ## 5、配置见证人
 
