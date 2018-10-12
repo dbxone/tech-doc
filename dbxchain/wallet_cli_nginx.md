@@ -31,7 +31,7 @@ sudo apt-get install nginx
 server { 
     listen 8888;  # 监听端口
     location / { 
-        proxy_pass http://127.0.0.1:8091; 
+        proxy_pass http://127.0.0.1:38091; 
         proxy_http_version 1.1; 
 
         allow 192.168.1.119;  # 允许访问的IP
