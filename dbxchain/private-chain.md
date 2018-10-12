@@ -34,7 +34,7 @@ $ witness_node --create-genesis-json my-genesis.json
 ```
 
 
-###1.2 初始化证人节点，获取链ID
+### 1.2 初始化证人节点，获取链ID
 
 链ID是初始状态的哈希值。它用来区分不同的链。
 
@@ -55,7 +55,7 @@ witness_node --genesis-json my-genesis.json
 
 **`6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d` 即为链ID。**
 
-###1.3 配置见证人
+### 1.3 配置见证人
 
 编辑`witness_node_data_dir/config.ini`修改配置：
 
@@ -98,7 +98,7 @@ private-key = ["DBX6MRyA...T5GDW5CV","5KQwrPb...tP79zkvFD3"]
 * `witness-id`  用于授权本证人节点所代表的证人id产生区块，可指定多个。一般来说一个证人节点授权一个证人id，私链第一个节点指定了11个。
 
 
-###1.4 开始生产区块
+### 1.4 开始生产区块
 
 ```
 witness_node
@@ -130,9 +130,9 @@ level=debug
 appenders=stderr
 ```
 
-##2. cli_wallet操作
+## 2. cli_wallet操作
 
-###2.1 创建新钱包
+### 2.1 创建新钱包
 
 钱包用来保存账户的私钥，此处创建的钱包名称为`my-wallet.json`。
 ```
@@ -171,7 +171,7 @@ unlocked >>>
 ```
 
 
-###2.2 导入nathan账户
+### 2.2 导入nathan账户
 
 一个钱包通过命令可以保存多个账户。
 
@@ -181,7 +181,7 @@ unlocked >>>
 import_key nathan 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 ```
 
-###2.3 将链上资产赋给nathan账户
+### 2.3 将链上资产赋给nathan账户
 
 
 将`config.ini`中设置链上资产DBX赋给`nathan`：
@@ -197,7 +197,7 @@ import_balance nathan ["5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"] tr
 list_account_balances nathan
 ```
 
-###2.4 升级nathan为终身会员\(LTM\)
+### 2.4 升级nathan为终身会员\(LTM\)
 
 终身会员拥有普通会员不具备的一些权限，比如通常我们用一个已有账户来创建新账户，只有成为终身会员才能注册其他账户，此处升级`nathan`为终身会员。
 
@@ -219,7 +219,7 @@ get_account nathan
 `membership_expiration_date`的属性值应该是`1969-12-31T23:59:59`，代表成功升级。
 
 
-###2.5 注册新账户alpha
+### 2.5 注册新账户alpha
 
 成功升级后，我们可以通过`nathan`来注册新账户，但首先我们需要拥有新账户的公私钥。
 
@@ -236,7 +236,7 @@ register_account alpha DBX6vQtDEgHSickqe9itW8fbFyUrKZK5xsg4FRHzQZ7hStaWqEKhZ DBX
 ```
 
 
-###2.6 nathan转账给alpha
+### 2.6 nathan转账给alpha
 
 ```
 transfer nathan alpha 1 DBX "" true
@@ -248,3 +248,4 @@ transfer nathan alpha 1 DBX "" true
 list_account_balances alpha
 ```
 
+自此代表私链搭建成功！
