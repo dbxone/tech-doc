@@ -4,8 +4,7 @@
 
 ## 依赖安装
 
-openssl：如果openssl版本不是1.0.x，则需要源码安装openssl1.0.x。
-boost：依赖1.57.0
+openssl依赖版本1.0.x ; boost依赖版本1.57.0。
 
 ```
 sudo apt-get update
