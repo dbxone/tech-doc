@@ -10,24 +10,24 @@
 * 私链参数的最初基准（包括费用）
 * 初始见证人的账户签名秘钥
 
+
 创建一个名为`my-genesis.json`的初始文件：
 
 ```
 $ witness_node --create-genesis-json my-genesis.json
 ```
 
-基于石墨烯技术的区块链网络创世区块整合了。初始文件中对这些对象进行了初始配置。
-
 石墨烯系统中默认的初始化块中包含唯一一个账户`nathan`，创世区块中的所有见证人、理事会成员和基金会都是改账户。 
 
-该账户的默认私钥为
-
+eg.1 修改`nathan`私钥
+`nathan`的默认私钥为:
 > 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+通过手动修改初始文件对私钥进行修改。
 
-通过手动修改初始文件，可以对私钥继续修改。
-
-如果你想要自定义初始设定，打开`my-genesis.json`，你可以做以下的修改：
-
+eg.2 修改活跃见证人更新时间
+```
+"maintenance_interval": 600
+```
 
 
 ## 4、获得区块链ID
