@@ -4,13 +4,13 @@
 
 ##### usage: set\_password new\_password {#usage-setpassword-newpassword}
 
-##### 参数： {#参数：}
+##### 参数：
 
-| 参数 | 说明 |
+| 参数 | 说明 |
 | :--- | :--- |
 | new\_password | 钱包密码 |
 
-##### 示例： {#示例：}
+##### 示例：
 
 ```
 unlocked >>> set_password my_password
