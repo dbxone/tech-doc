@@ -1,8 +1,8 @@
-# 环境安装 {#环境安装}
+# 环境安装
 
 dbxui基于Nodejs开发，执行环境需要安装Nodejs6.0以上版本（非源码编译方式请使用v6.\*.\*版本）
 
-## 检查是否已安装 {#检查是否已安装}
+## 检查是否已安装
 
 命令行下执行下方命令，可以查看当前是否已安装Node以及当前安装的版本
 
@@ -10,7 +10,7 @@ dbxui基于Nodejs开发，执行环境需要安装Nodejs6.0以上版本（非源
 node -v
 ```
 
-## Nodejs安装 {#nodejs安装}
+## Nodejs安装
 
 **Mac，Linux**环境下建议使用[NVM](https://github.com/creationix/nvm)\(Node Version Manager\)进行安装：
 
