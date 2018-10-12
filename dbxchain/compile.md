@@ -1,10 +1,10 @@
-# 如何源码编译DBXChain见证节点和命令行钱包 {#如何源码编译DBXChain见证节点和命令行钱包}
+# 如何源码编译DBXChain见证节点和命令行钱包
 
 目前支持ubuntu 和 macOS。
 
-## 依赖安装 {#依赖安装}
+## 依赖安装
 
-### ubuntu系统 {#ubuntu系统}
+### ubuntu系统
 
 推荐系统为ubuntu16.04 LTS, 如果openssl版本不是1.0.x，则需要源码安装openssl1.0.x。
 
@@ -37,7 +37,7 @@ sudo ./b2 --buildtype=complete install
 
 ```
 
-### macOS {#macos}
+### macOS
 
 推荐macOS Sierra 10.12.6
 
@@ -58,7 +58,7 @@ bash ./bootstrap.sh --prefix=/usr
 
 ```
 
-## 下载源码，编译 {#下载源码，编译}
+## 下载源码，编译
 
 ```
 git clone https://github.com/dbxone/dbxchain.git
