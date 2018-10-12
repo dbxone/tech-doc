@@ -1,109 +1,52 @@
-# DBXChain
+## DBXChain简介
+
+DBXChain是一条公有链，是DBXChain数据交易所的底层区块链，不仅支撑着DBXChain的高频数据交易，还支持第三方开发应用，在DBXChain上开发应用不仅可以得到链上支持，还可以获得DBXChain多维度数据的对接，可以做出非常落地于民生的有价值应用。
+
+* [编译安装](compile.md)
+* [DBXChain节点介绍](node.md)
+* [搭建私链](private-chain.md)
 
 
+DBXChain节点介绍
+---------------
 
-.DBXChain is the DBX blockchain implementation and command-line interface. Current binary version of the DBXChain software for ubuntu 16.04 LTS, see [here](https://github.com/dbxone/dbxchain/releases).Visit [dbx.io](https://www.dbx.io/) to learn about DBX.
+DBXChain节点主要包含witness\_node和cli\_wallet两部分。
 
-# 
+witness\_node 通过 P2P 方式连接到DBXChain网络，从网络接收最新区块，向网络广播本地签署的交易包。
 
-# 
+cli\_wallet 通过 websocket 方式连接到 witness\_node， 管理钱包文件； 提供交易签名功能，签名后通过 witness\_node 向外广播； 通过 http rpc 的方式提供 API 供其他程序调用。
 
-## 安装环境
+## **DBXChain程序下载**
 
-A decent C++11 compiler \(GNU GCC 5.4.1+ on ubuntu, or Apple LLVM version 8.1.0 \(clang-802.0.42\) on MacOS\). CMake version 2.8+. Boost version 1.57.0. The repository contains the install scripts for gcc5 and boost 1.57.0, see [here](https://github.com/dbxone/dbxchain/tree/master/script).
+DBXChain程序目前只提供Ubuntu 16.04 LTS 64位系统的安装包，[点击这里](https://github.com/dbxone/dbxchain/releases/latest)下载最新程序。
 
-```
-# dependencies for OS X, macOS Sierra 10.12.6 recommended
-brew install openssl cmake git openssl autoconf automake doxygen autoreconfls libtool
+## 节点端口说明
 
-# dependencies for ubuntu 16.04 LTS
-sudo apt-get install cmake make python-dev libbz2-dev libdb++-dev libdb-dev libssl-dev openssl libreadline-dev autoconf libtool git ntp
-```
+启动DBXChain见证节点witness\_node
 
-### For OS X
-
-OS X Build Instructions
-
-===============================
-
-1. Install Homebrew by following the instructions here:[http://brew.sh/](http://brew.sh/)
-
-2. Initialize Homebrew:
-
-   ```
-   brew doctor
-   brew update
-
-   ```
-
-3. Install dependencies:
-
-   ```
-   brew install openssl cmake git openssl autoconf automake doxygen autoreconfls libtool wget
-   ```
-
-4. Install boost 1.57
-
-   ```
-   wget 'https://raw.githubusercontent.com/dbxchain/dbxchain/master/script/boost_install.sh' -O boost_install.sh
-   bash boost_install
-   ```
-
-5. Build DBXChain:
-
-   ```
-   git clone https://github.com/dbxone/dbxchain.git
-   cd dbxchain
-   git submodule update --init --recursive
-   cmake -DOPENSSL_ROOT_DIR=/usr/local/opt/openssl -DOPENSSL_INCLUDE_DIR=/usr/local/opt/openssl/include -DOPENSSL_LIBRARIES=/usr/local/opt/openssl/lib -DCMAKE_BUILD_TYPE=RelWithDebInfo .
-   make
-   ```
-
-
-
-### FOR Linux （Ubuntu）
-
-Ubuntu 16.04 LTS Build and Install Instructions
-
-===============================
-
-1. Install gcc5
-
-```
-sudo apt-get install software-properties-common
-
-# install gcc5 on ubuntu 16.04
-sudo add-apt-repository ppa:ubuntu-toolchain-r/test
-sudo apt-get update
-sudo apt-get install gcc-5 g++-5
-sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 60 --slave /usr/bin/g++ g++ /usr/bin/g++-5
-
+```bash
+nohup ./programs/witness_node/witness_node --rpc-endpoint=127.0.0.1:38090 --p2p-endpoint=0.0.0.0:38091 >>witness.out 2>&1 &
 ```
 
-1. Install dependencies:
+端口种类及调用说明
+
+| **端口类型** | **端口信息** |
+| :---: | :---: |
+| 38090 | witness\_node提供的rpc服务端口 |
+| 38091 | P2P网络的通信接口，用于广播交易消息体和区块 |
+
+命令行钱包cli\_wallet连接witness\_node:
 
 ```
-sudo apt-get install cmake make python-dev libbz2-dev libdb++-dev libdb-dev libssl-dev openssl libreadline-dev autoconf libtool git ntp
-
+./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 -r 127.0.0.1:38091
 ```
 
-1. Build Boost 1.57.0 The Boost which ships with Ubuntu 16.04 is too old. You need to download the Boost tarball for Boost 1.57.0.
+端口种类及调用说明
 
-```
-wget 'https://raw.githubusercontent.com/dbxchain/dbxchain/master/script/boost_install.sh' -O boost_install.sh
-sudo bash boost_install.sh
-
-```
-
-1. Build DBXChain
-
-```
-git clone https://github.com/dbxone/dbxchain.git
-cd dbxchain
-git submodule update --init --recursive
-cmake -DOPENSSL_ROOT_DIR=/usr/bin -DOPENSSL_INCLUDE_DIR=/usr/include/openssl -DOPENSSL_LIBRARIES=/usr/lib/openssh -DCMAKE_BUILD_TYPE=RelWithDebInfo .
-make
-```
+| **端口类型** | **端口信息** |
+| :---: | :---: |
+| 38090 | 连接witness\_node提供的rpc服务端口 |
+| 38091 | cli\_wallet提供的rpc服务端口 |
 
 
 
