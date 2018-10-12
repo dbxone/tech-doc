@@ -97,7 +97,7 @@ nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoin
 
 ```
 ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 \
---enable-rpc-log -r 127.0.0.1:8091 --data-dir=trusted_node
+--enable-rpc-log -r 127.0.0.1:38091 --data-dir=trusted_node
 ```
 
 cli\_wallet启动参数：
@@ -111,7 +111,7 @@ cli\_wallet启动参数：
 
 # cli_wallet提供的的websocket rpc地址, 开启cli_wallet的 API 服务
 # 注意：不要配置为0.0.0.0，因为所有主机都可以访问你的钱包。
--r 127.0.0.1:8091
+-r 127.0.0.1:38091
 
 # 运行在守护进程模式
 -d 
@@ -207,7 +207,7 @@ unlocked >>> get_block 881577
 
 ```
 nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 \
---enable-rpc-log -r 127.0.0.1:8091 -d >>wallet.out 2>1 &
+--enable-rpc-log -r 127.0.0.1:38091 -d >>wallet.out 2>1 &
 ```
 
 上述命令启动后，需要再多敲一次回车，然后在shell中输入exit来退出终端。相关的控制台输出被重定向到wallet.out文件。
@@ -234,7 +234,7 @@ cli\_wallet提供了3个查询交易历史的接口：get\_account\_history, get
 
 ```
 // unlock解锁钱包，其中my_password为解锁密码
-curl --data '{"jsonrpc": "2.0", "method": "unlock", "params": ["my_password"], "id": 1}' http://127.0.0.1:8091/rpc
+curl --data '{"jsonrpc": "2.0", "method": "unlock", "params": ["my_password"], "id": 1}' http://127.0.0.1:38091/rpc
 ```
 
 解锁成功，返回：
@@ -251,7 +251,7 @@ curl --data '{"jsonrpc": "2.0", "method": "unlock", "params": ["my_password"], "
 
 ```
 // get_account_id，传入参数为帐户名或帐户id
-curl --data '{"jsonrpc": "2.0", "method": "get_account_id", "params": ["dbx-light"], "id": 1}' http://127.0.0.1:8091/rpc
+curl --data '{"jsonrpc": "2.0", "method": "get_account_id", "params": ["dbx-light"], "id": 1}' http://127.0.0.1:38091/rpc
 ```
 
 返回结果如下，其中帐户id为1.2.3054, "1.2."表示类型是账户：
@@ -268,7 +268,7 @@ curl --data '{"jsonrpc": "2.0", "method": "get_account_id", "params": ["dbx-ligh
 
 ```
 // get_account_history_by_operations 第1个参数为帐户id，第2个参数为operation数组，可以传入空[]， 第3个参数为起始序号， 第4个参数为limit，表示获取最近limit笔交易历史
-curl --data '{"jsonrpc": "2.0", "method": "get_account_history_by_operations", "params": ["1.2.3054",[], 1, 10], "id": 1}' http://127.0.0.1:8091/rpc
+curl --data '{"jsonrpc": "2.0", "method": "get_account_history_by_operations", "params": ["1.2.3054",[], 1, 10], "id": 1}' http://127.0.0.1:38091/rpc
 ```
 
 ###### response： {#request-2}
@@ -347,7 +347,7 @@ curl --data '{"jsonrpc": "2.0", "method": "get_account_history_by_operations", "
 调用cli\_wallet的get\_dynamic\_global\_properties接口，查看当前最大的不可回退区块号\(也即最大的不可回退区块高度\)。小于此区块高度的区块，其包含的交易都是已经被确认不可回退的。可用作用户提现时参考，区块不可回退时再处理用户提现。
 
 ```
-curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "params": [], "id": 1}' http://127.0.0.1:8091/rpc
+curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "params": [], "id": 1}' http://127.0.0.1:38091/rpc
 ```
 
 返回结果：
@@ -403,7 +403,7 @@ curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "para
    如果遇到cli\_wallet后台运行一段时间后退出的情况，可能的原因是终端掉线，建议后台运行成功后，关闭当前终端。或者在启动命令行之前加上nohup:
 
 ```
-nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log -r 127.0.0.1:8091 -d >>wallet.out 2>1 &
+nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log -r 127.0.0.1:38091 -d >>wallet.out 2>1 &
 ```
 
 建议使用脚本启动程序\(脚本中的帐户id需要做修改\)：
@@ -426,7 +426,7 @@ nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log
 7. 系统中存在多种资产，其中资产id（asset\_id）1.3.1为DBX。监听用户充值时，请务必校验转帐交易中的asset\_id字段为1.3.1。
 8. 用户提现。调用transfer/transfer2处理用户提现时，转帐数量请传入字段串，加双引号。如下：
 9. ```
-   curl --data '{"jsonrpc": "2.0", "method": "transfer2", "params": ["from_account", "to_account", "100.01", "DBX", "",  true], "id": 1}' http://127.0.0.1:8091/rpc
+   curl --data '{"jsonrpc": "2.0", "method": "transfer2", "params": ["from_account", "to_account", "100.01", "DBX", "",  true], "id": 1}' http://127.0.0.1:38091/rpc
    ```
 10. DBX精度，为小数点后5位，即最小单位为0.00001 DBX。DBXChain中没有小数，数字在系统中被放大了10万倍，所以get\_account\_history / get\_account\_history\_by\_operations接口返回的数字，比如转帐的数量，需要除以10万，才是真正的数量。
 11. 钱包状态为locked状态时只能查询，不能转帐，不能解密转帐备注。如果需要转帐或者查询交易历史，需要先unlock。
