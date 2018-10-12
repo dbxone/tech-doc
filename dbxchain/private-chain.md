@@ -31,7 +31,7 @@ eg.2 修改活跃见证人更新时间
 ```
 
 
-## 4、初始化证人节点，获取链ID
+## 2、初始化证人节点，获取链ID
 
 链ID是初始状态的哈希值。它用来区分不同的链。
 
@@ -52,25 +52,18 @@ witness_node --genesis-json my-genesis.json
 
 **`6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d` 即为链ID。**
 
-## 5、配置见证人
+## 3、配置见证人
 
-用文本编辑器打开刚生成的`data/config.ini`, 做如下设置, 必要时请不要注释这些代码:
+编辑`witness_node_data_dir/config.ini`修改配置：
 
 ```
-rpc-endpoint = 127.0.0.1:11011
+p2p-endpoint = 0.0.0.0:31010
+seed-nodes = []
+rpc-endpoint = 0.0.0.0:38090
 genesis-json = my-genesis.json
 enable-stale-production = true
-```
 
-在`config.ini`中定位以下语句:
-
-```
 # ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times)
-```
-
-并添加如下词条:
-
-```
 witness-id = "1.6.1"
 witness-id = "1.6.2"
 witness-id = "1.6.3"
@@ -143,7 +136,7 @@ appenders=stderr
 现在可以将客户端和你的私链的见证人节点相关联。先确保你的见证人节点在运行状态，在另外一个CMD中运行以下命令：
 
 ```
-cli_wallet --wallet-file=my-wallet.json --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d --server-rpc-endpoint=ws://127.0.0.1:11011
+cli_wallet --wallet-file=my-wallet.json --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d --server-rpc-endpoint=ws://127.0.0.1:31010
 ```
 
 **注意**
@@ -213,7 +206,7 @@ upgrade_account nathan DBX true
 你需要重启客户端，否则将无法识别`nathan`已经成功升级。通过`ctrl-c`停止客户端，然后通过如下指令重启客户端：
 
 ```
-cli_wallet --wallet-file=my-wallet.json --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d --server-rpc-endpoint=ws://127.0.0.1:11011
+cli_wallet --wallet-file=my-wallet.json --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d --server-rpc-endpoint=ws://127.0.0.1:31010
 ```
 
 确认`nathan`已经拥有LTM权限：
