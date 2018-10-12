@@ -1,8 +1,8 @@
 # set\_password
 
-##### 说明：对钱包设置一个新密码。首次启动钱包，需要设置密码 {#说明：对钱包设置一个新密码。首次启动钱包，需要设置密码}
+##### 说明：对钱包设置一个新密码。首次启动钱包，需要设置密码
 
-##### usage: set\_password new\_password {#usage-setpassword-newpassword}
+##### usage: set\_password new\_password
 
 ##### 参数：
 
