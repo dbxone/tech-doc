@@ -8,6 +8,6 @@ DBXChain主要由dbxchain、dbxui、dbxfaucet三大部分组成。
 
 | **组成部分** | **功能介绍** |
 | :---: | :---: |
-| dbxchain | DBXChain公链，基于石墨烯技术，基于C++开发。 |
-| dbxui | 区块浏览器，web形式的浏览器客户端，基于Nodejs开发。 |
-| dbxfaucet | 水龙头，用于区块浏览器及其他dbx客户端进行用户注册服务，基于ruby开放。 |
+| [dbxchain](dbxchain/introduction.md) | DBXChain公链，基于石墨烯技术，基于C++开发。 |
+| [dbxui](dbxui/introduction.md) | 区块浏览器，web形式的浏览器客户端，基于Nodejs开发。 |
+| [dbxfaucet](dbxfaucet/introduction.md) | 水龙头，用于区块浏览器及其他dbx客户端进行用户注册服务，基于ruby开放。 |
