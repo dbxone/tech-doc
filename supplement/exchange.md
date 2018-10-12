@@ -43,8 +43,8 @@ tar zxvf dbx_1.0.171031.tar.gz
 
 ```
 # 可以使用2个参数，节省内存： --track-account 和 --partial-operations=true
-nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoint=127.0.0.1:28090 \
---p2p-endpoint=0.0.0.0:6789 --log-file --track-account "\"1.2.2999\""  --track-account "\"1.2.3000\"" \
+nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoint=127.0.0.1:38090 \
+--p2p-endpoint=0.0.0.0:38091 --log-file --track-account "\"1.2.2999\""  --track-account "\"1.2.3000\"" \
 --partial-operations=true >>witness.out 2>&1 &
 ```
 
@@ -55,10 +55,10 @@ nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoin
 --data-dir=trusted_node
 
 # 指定rpc服务侦听地址及端口(端口可修改)，127.0.0.1限定本地访问rpc服务，若不限定本地访问，可指定0.0.0.0
---rpc-endpoint=127.0.0.1:28090
+--rpc-endpoint=127.0.0.1:38090
 
 # 用于连接p2p网络，此参数不建议修改
---p2p-endpoint=0.0.0.0:6789 
+--p2p-endpoint=0.0.0.0:38091 
 
 # 输出日志文件，若无此参数，日志输出到控制台
 --log-file 
@@ -96,7 +96,7 @@ nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoin
 命令行钱包cli\_wallet连接witness\_node:
 
 ```
-./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:28090 \
+./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 \
 --enable-rpc-log -r 127.0.0.1:8091 --data-dir=trusted_node
 ```
 
@@ -206,7 +206,7 @@ unlocked >>> get_block 881577
 在导入钱包私钥后，ctrl + c退出，此时会生成本地的钱包文件。再重新启动，启动时带上参数 -d &， 如下：
 
 ```
-nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:28090 \
+nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 \
 --enable-rpc-log -r 127.0.0.1:8091 -d >>wallet.out 2>1 &
 ```
 
@@ -403,7 +403,7 @@ curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "para
    如果遇到cli\_wallet后台运行一段时间后退出的情况，可能的原因是终端掉线，建议后台运行成功后，关闭当前终端。或者在启动命令行之前加上nohup:
 
 ```
-nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:28090  --enable-rpc-log -r 127.0.0.1:8091 -d >>wallet.out 2>1 &
+nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log -r 127.0.0.1:8091 -d >>wallet.out 2>1 &
 ```
 
 建议使用脚本启动程序\(脚本中的帐户id需要做修改\)：
