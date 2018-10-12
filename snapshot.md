@@ -12,7 +12,7 @@
 
 ```
 ./programs/witness_node/witness_node --data-dir=trusted_node \
---rpc-endpoint="0.0.0.0:28090" --p2p-endpoint="0.0.0.0:6789" \
+--rpc-endpoint="0.0.0.0:38090" --p2p-endpoint="0.0.0.0:38091" \
  --log-file --max-ops-per-account=0 --partial-operations=true \
  --data-transaction-lifetime=1 \
  --plugins snapshot \
