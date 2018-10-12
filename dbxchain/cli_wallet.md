@@ -2,7 +2,8 @@
 
 | *参数 | 说明* |
 |:--- |:--- |
-| -h [ --help ] | Print this help message and exit. |
+| -h [ --help ] | Print this help message and exit. 
+帮助信息 |
 | -s [ --server-rpc-endpoint ] [=arg(=ws://127.0.0.1:8090)] | Server websocket RPC endpoint |
 | -u [ --server-rpc-user ] arg | Server Username |
 | -p [ --server-rpc-password ] arg | Server Password |
