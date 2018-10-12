@@ -31,7 +31,7 @@ witness\_node启 动 命 令 ， 后 台 启 动 :
 cli\_wallet启动命令：
 
 ```
-./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 --enable-rpc-log -r 127.0.0.1:8091 \
+./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 --enable-rpc-log -r 127.0.0.1:38091 \
 --data-dir=trusted_node
 ```
 
