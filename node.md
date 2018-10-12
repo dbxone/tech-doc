@@ -39,8 +39,8 @@ OS X系统运行，需要自主编译程序。点击[这里](/dbxchain.md)
 
 ```bash
 # 可以使用2个参数，节省内存： --track-account 和 --partial-operations=true
-nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoint=127.0.0.1:28090 \
---p2p-endpoint=0.0.0.0:6789  --track-account "\"1.2.2999\"" >>witness.out 2>&1 &
+nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoint=127.0.0.1:38090 \
+--p2p-endpoint=0.0.0.0:38091  --track-account "\"1.2.2999\"" >>witness.out 2>&1 &
 ```
 
 可使用--help 来查看命令参数  
@@ -51,10 +51,10 @@ witness\_node启动参数：
 --data-dir=trusted_node
 
 # 指定rpc服务侦听地址及端口(端口可修改)，127.0.0.1限定本地访问rpc服务，若不限定本地访问，可指定0.0.0.0
---rpc-endpoint=127.0.0.1:28090
+--rpc-endpoint=127.0.0.1:38090
 
 # 用于连接p2p网络，此参数不建议修改
---p2p-endpoint=0.0.0.0:6789 
+--p2p-endpoint=0.0.0.0:38091 
 
 # 内存中只跟踪指定帐户的交易历史，该选项可传入多次，跟踪多个帐户。请将1.2.2999 替换成你需要跟踪的账户数字 ID（在轻钱包账户页面里，账号头像下面会显示一个数字）
 --track-account "\"1.2.2999\"" 
