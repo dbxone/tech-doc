@@ -1,10 +1,10 @@
 # get\_account\_history\_by\_operations
 
-##### 说明：根据oeration\_type查询帐户最近的交易记录，支持翻页并且返回operation对应的txID {#说明：根据oerationtype查询帐户最近的交易记录，支持翻页并且返回operation对应的txid}
+##### 说明：根据oeration\_type查询帐户最近的交易记录，支持翻页并且返回operation对应的txID
 
-##### usage: get\_account\_history\_by\_operations \[\] start limit\_num {#usage-getaccounthistorybyoperations--start-limitnum}
+##### usage: get\_account\_history\_by\_operations \[\] start limit\_num
 
-##### 参数：account\_name\_or\_id, \[\], start, limit\_num {#参数：accountnameorid--start-limitnum}
+##### 参数：account\_name\_or\_id, \[\], start, limit\_num
 
 | 参数 | 说明 |
 | :--- | :--- |
