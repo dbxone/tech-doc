@@ -47,7 +47,7 @@ witness_node --genesis-json my-genesis.json
 
 ```
 3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
-3501235ms th_a main.cpp:166 main] Chain ID is `6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d`
+3501235ms th_a main.cpp:166 main] Chain ID is 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
 
 此时，默认数据文件夹`witness_node_data_dir`被创建，可以通过参数`--data-dir <data_dir>`来指定默认数据文件夹。
@@ -97,12 +97,10 @@ private-key = ["DBX6MRyA...T5GDW5CV","5KQwrPb...tP79zkvFD3"]
 * `witness-id`  用于授权本证人节点所代表的证人id产生区块，可指定多个。一般来说一个证人节点授权一个证人id，私链第一个节点指定了11个。
 
 
-## 6、开始生产区块
-
-通过以下步骤，你可以生产基于你私链的第一个区块了，在见证人节点中运行以下命令:
+## 4、开始生产区块
 
 ```
-witness_node --data-dir data
+witness_node
 ```
 
 之后私链的区块将开始生成，你会看到如下指示:
@@ -115,11 +113,6 @@ witness_node --data-dir data
 *   ------------------------   *
 *                              *
 ********************************
-```
-
-之后data/log/witness.log文件会有更多成功生成区块的日志生成:
-
-```
 2322793ms th_a  main.cpp:176     main    ] Started witness node on a chain with 0 blocks.
 2322794ms th_a  main.cpp:177     main    ] Chain ID is 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 2324613ms th_a  witness.cpp:185  block_production_loo ] Generated block #1 with timestamp 2016-01-21T22:38:40 at time 2016-01-21T22:38:40
@@ -136,19 +129,23 @@ level=debug
 appenders=stderr
 ```
 
-## 7、客户端（Cli）用法
-
-现在可以将客户端和你的私链的见证人节点相关联。先确保你的见证人节点在运行状态，在另外一个CMD中运行以下命令：
+## 5、客户端（Cli）用法
 
 ```
-cli_wallet --wallet-file=my-wallet.json --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d --server-rpc-endpoint=ws://127.0.0.1:31010
+cli_wallet -w my-wallet.json -s ws://127.0.0.1:38090 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
 
-**注意**
-
-请确保用**你自己私链的区块链ID**替代上述ID`8b7bd36a...4294824`区块链ID传递给客户端时需要匹配生成的ID，且给见证人节点需要使用此区块链ID。
-
-如果你收到`set_password`提示，意味着你的客户端已经成功匹配见证人节点。
+如下提示，意味着你的客户端已经成功匹配见证人节点。
+```
+1987712ms th_a       main.cpp:136                  main                 ] key_to_wif( committee_private_key ): 5KCBDTcyDqzsqehcb52tW5nU6pXife6V2rX9Yf7c3saYSzbDZ5W 
+1987713ms th_a       main.cpp:140                  main                 ] nathan_pub_key: DBX6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV 
+1987713ms th_a       main.cpp:141                  main                 ] key_to_wif( nathan_private_key ): 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3 
+Starting a new wallet with chain ID 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d (from CLI)
+1987714ms th_a       main.cpp:188                  main                 ] wdata.ws_server: ws://127.0.0.1:38090 
+1987717ms th_a       main.cpp:193                  main                 ] wdata.ws_user:  wdata.ws_password:  
+Please use the set_password method to initialize a new wallet before continuing
+new >>>
+```
 
 ### 创建一个新钱包
 
