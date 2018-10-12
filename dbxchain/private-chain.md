@@ -18,14 +18,16 @@ $ witness_node --create-genesis-json my-genesis.json
 
 石墨烯系统中默认的初始化块中包含唯一一个账户`nathan`，创世区块中的所有见证人、理事会成员和基金会都是改账户。 
 
-eg.1 修改`nathan`私钥
+
+### eg.1 修改`nathan`私钥
 
 `nathan`的默认私钥为:
 > 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
 
 通过手动修改初始文件对私钥进行修改。
 
-eg.2 修改活跃见证人更新时间
+
+### eg.2 修改活跃见证人更新时间
 ```
 "maintenance_interval": 600
 ```
@@ -41,7 +43,7 @@ witness_node --genesis-json my-genesis.json
 
 **如修改了初始文件，链ID将会变化，因此会创建出一条不同的链。**
 
-信息如下出现，代表初始化已经完成，按`ctrl-c` 关闭见证人节点:
+出现如下信息，代表初始化已经完成，按`ctrl-c` 关闭见证人节点:
 
 ```
 3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
