@@ -75,7 +75,7 @@ unlocked >>> deploy_contract helloworld your_account_name 0 0 ./helloworld DBX t
 部署合约成功后，可以使用call_contract接口查询合约
 
 ```
-unlocked >>> call_contract nathan helloworld null hi "{\"user\":\"zhuliting\"}" DBX true
+unlocked >>> call_contract nathan helloworld null hi "{\"user\":\"testuser\"}" DBX true
 
 ```
 
