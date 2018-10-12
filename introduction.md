@@ -34,7 +34,7 @@ nohup ./programs/witness_node/witness_node --rpc-endpoint=127.0.0.1:38090 --p2p-
 命令行钱包cli\_wallet连接witness\_node:
 
 ```
-./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 --enable-rpc-log -r 127.0.0.1:8091 --data-dir=trusted_node
+./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 -r 127.0.0.1:38091
 ```
 
 端口种类及调用说明
@@ -42,7 +42,7 @@ nohup ./programs/witness_node/witness_node --rpc-endpoint=127.0.0.1:38090 --p2p-
 | **端口类型** | **端口信息** |
 | :---: | :---: |
 | 38090 | 连接witness\_node提供的rpc服务端口 |
-| 8091 | cli\_wallet提供的rpc服务端口 |
+| 38091 | cli\_wallet提供的rpc服务端口 |
 
 
 
