@@ -38,7 +38,6 @@ OS X系统运行，需要自主编译程序。点击[这里](/dbxchain.md)
 ### 启动见证节点
 
 ```bash
-# 可以使用2个参数，节省内存： --track-account 和 --partial-operations=true
 nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoint=127.0.0.1:38090 \
 --p2p-endpoint=0.0.0.0:38091  --track-account "\"1.2.2999\"" >>witness.out 2>&1 &
 ```
