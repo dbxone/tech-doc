@@ -4,7 +4,7 @@
 
 ## 测试网络部署方法
 
-测试网络种子节点：testnet.dbxchain.org:6789 目前只有一个节点，社区开发者贡献节点可以加入测试网络，申请见证人。
+测试网络种子节点：testnet.dbxchain.org:38091 目前只有一个节点，社区开发者贡献节点可以加入测试网络，申请见证人。
 
 钱包接入点：`wss://testnet.dbxchain.org`
 
@@ -30,7 +30,7 @@ wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/genesis/testnet-ge
 ### 3. 启动witness\_node，同步区块 {#3-启动witness_node同步区块}
 
 ```
-./programs/witness_node/witness_node --data-dir=testnet_node --rpc-endpoint="0.0.0.0:28090" --p2p-endpoint="0.0.0.0:9999" --seed-nodes='["testnet.dbxchain.org:6789"]' --genesis-json genesis.json &
+./programs/witness_node/witness_node --data-dir=testnet_node --rpc-endpoint="0.0.0.0:38090" --p2p-endpoint="0.0.0.0:9999" --seed-nodes='["testnet.dbxchain.org:38091"]' --genesis-json genesis.json &
 ```
 
 目前测试网络数据量不大，可以跑全节点。通过后台日志文件testnet\_node/logs/witness.log可查看区块同步进度。 
@@ -39,7 +39,7 @@ wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/genesis/testnet-ge
 ### 4. 运行命令行钱包cli\_wallet {#4-运行命令行钱包cli_wallet}
 
 ```
-./programs/cli_wallet/cli_wallet -sws://127.0.0.1:28090  -r 127.0.0.1:8091 --data-dir=testnet_node --chain-id c2af30ef9340ff81fd61654295e98a1ff04b23189748f86727d0b26b40bb0ff4
+./programs/cli_wallet/cli_wallet -sws://127.0.0.1:38090  -r 127.0.0.1:8091 --data-dir=testnet_node --chain-id c2af30ef9340ff81fd61654295e98a1ff04b23189748f86727d0b26b40bb0ff4
 ```
 
 
