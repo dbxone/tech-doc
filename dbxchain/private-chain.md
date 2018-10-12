@@ -2,29 +2,32 @@
 
 ---
 
-## 1、环境安装
+## 1、创建和编辑初始文件
 
-请安装[见证人节点](https://github.com/dbxone/dbxchain/releases)和[完整客户端](/introduction.md)。
+初始文件是用来定义区块链网络初始状态，可以诸如以下的状态：
+    存在于初始区块的账户，包括账户的名字和公钥
+    资产及其初始分配状况（包括核心资产）
+    区块链参数的初始值
+    初始证人的帐户/签名密钥（或者其他任何帐户，注：默认的witness 是init0～inti10）。
 
-## 2、创建一个存储私链文件的文件夹
 
-创建一个新文件夹作为私链的根目录，并复制见证人节点文件和完整客户端复制到此目录下。
-
-## 3、初始文件
-
-通过初始文件初始化私链。
-
-基于石墨烯技术的区块链网络创世区块整合了所有见证人、理事会成员和基金会。单个称为`nathan`的账户可以通过以下私钥获得：
-
-> 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
-
-接下来将讲解如何使用以上私钥，并会说明如何定义你自己的创世文件。
-
-运行这条命令来创建一个名为`my-genesis.json`的初始文件：
+运行命令来创建一个名为`my-genesis.json`的初始文件：
 
 ```
 $ witness_node --create-genesis-json my-genesis.json
 ```
+
+通过初始文件初始化私链。
+
+基于石墨烯技术的区块链网络创世区块整合了。初始文件中对这些对象进行了初始配置。
+
+石墨烯系统中默认的初始化块中包含唯一一个账户`nathan`，创世区块中的所有见证人、理事会成员和基金会都是改账户。 
+
+该账户的默认私钥为
+
+> 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
+
+通过手动修改初始文件，可以对私钥继续修改。
 
 `my-genesis.json`这个文件将会存储在你私钥文件夹的根目录下，运行此命令后，所有见证人节点都会自行完成命令。
 
@@ -50,7 +53,7 @@ witness_node --data-dir data --genesis-json my-genesis.json   # your own genesis
 
 ```
 3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
-3501235ms th_a main.cpp:166 main] Chain ID is 8b7bd36a146a03d0e5d0a971e286098f41230b209d96f92465cd62bd64294824
+3501235ms th_a main.cpp:166 main] Chain ID is 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
 
 此时你的初始化已经完成，按`ctrl-c` 关闭见证人节点。
@@ -127,7 +130,7 @@ witness_node --data-dir data
 
 ```
 2322793ms th_a  main.cpp:176     main    ] Started witness node on a chain with 0 blocks.
-2322794ms th_a  main.cpp:177     main    ] Chain ID is 8b7bd36a146a03d0e5d0a971e286098f41230b209d96f92465cd62bd64294824
+2322794ms th_a  main.cpp:177     main    ] Chain ID is 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 2324613ms th_a  witness.cpp:185  block_production_loo ] Generated block #1 with timestamp 2016-01-21T22:38:40 at time 2016-01-21T22:38:40
 2325604ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
 2342604ms th_a  witness.cpp:194  block_production_loo ] Not producing block because slot has not yet arrived
@@ -155,7 +158,7 @@ appenders=stderr
 现在可以将客户端和你的私链的见证人节点相关联。先确保你的见证人节点在运行状态，在另外一个CMD中运行以下命令：
 
 ```
-cli_wallet --wallet-file=my-wallet.json --chain-id 8b7bd36a146a03d0e5d0a971e286098f41230b209d96f92465cd62bd64294824 --server-rpc-endpoint=ws://127.0.0.1:11011
+cli_wallet --wallet-file=my-wallet.json --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d --server-rpc-endpoint=ws://127.0.0.1:11011
 ```
 
 **注意**
@@ -225,7 +228,7 @@ upgrade_account nathan DBX true
 你需要重启客户端，否则将无法识别`nathan`已经成功升级。通过`ctrl-c`停止客户端，然后通过如下指令重启客户端：
 
 ```
-cli_wallet --wallet-file=my-wallet.json --chain-id 8b7bd36a146a03d0e5d0a971e286098f41230b209d96f92465cd62bd64294824 --server-rpc-endpoint=ws://127.0.0.1:11011
+cli_wallet --wallet-file=my-wallet.json --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d --server-rpc-endpoint=ws://127.0.0.1:11011
 ```
 
 确认`nathan`已经拥有LTM权限：
