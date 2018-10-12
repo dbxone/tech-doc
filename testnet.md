@@ -39,7 +39,7 @@ wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/genesis/testnet-ge
 ### 4. 运行命令行钱包cli\_wallet {#4-运行命令行钱包cli_wallet}
 
 ```
-./programs/cli_wallet/cli_wallet -sws://127.0.0.1:38090  -r 127.0.0.1:8091 --data-dir=testnet_node --chain-id c2af30ef9340ff81fd61654295e98a1ff04b23189748f86727d0b26b40bb0ff4
+./programs/cli_wallet/cli_wallet -sws://127.0.0.1:38090  -r 127.0.0.1:38091 --data-dir=testnet_node --chain-id c2af30ef9340ff81fd61654295e98a1ff04b23189748f86727d0b26b40bb0ff4
 ```
 
 
