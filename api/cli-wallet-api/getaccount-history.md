@@ -1,10 +1,10 @@
-# get\_account\_history {#7--getaccounthistory}
+# get\_account\_history
 
-##### 说明：查询帐户最近的交易记录 {#说明：查询帐户最近的交易记录}
+##### 说明：查询帐户最近的交易记录
 
-##### usage: get\_account\_history account\_name\_or\_id limit\_num {#usage-getaccounthistory-accountnameorid-limitnum}
+##### usage: get\_account\_history account\_name\_or\_id limit\_num
 
-##### 参数：account\_name\_or\_id, limit\_num {#参数：accountnameorid-limitnum}
+##### 参数：account\_name\_or\_id, limit\_num
 
 | 参数 | 说明 |
 | :--- | :--- |
