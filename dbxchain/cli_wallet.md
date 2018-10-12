@@ -1,6 +1,6 @@
 # cli_wallet 参数使用说明
 
-| **参数** | **说明** |
+| *参数 | 说明* |
 | :---: | :---: |
 | -h [ --help ] | Print this help message and exit. |
 | -s [ --server-rpc-endpoint ] [=arg(=ws://127.0.0.1:8090)] | Server websocket RPC endpoint |
