@@ -1,6 +1,6 @@
-# 交易所接入文档 {#交易所接入文档}
+# 交易所接入文档
 
-## 一、 介绍 {#一-介绍}
+## 一、 介绍
 
 DBXChain\(DBX\)钱包的对接方式和比特股\(BTS\)一样，需要运行以下两个程序：见证节点 witness\_node 和命令行钱包 cli\_wallet。
 
@@ -8,7 +8,7 @@ witness\_node 通过 P2P 方式连接到DBXChain网络，从网络接收最新�
 
 cli\_wallet 通过 websocket 方式连接到 witness\_node， 管理钱包文件； 提供交易签名功能，签名后通过 witness\_node 向外广播； 通过 http rpc 的方式提供 API 供其他程序调用。
 
-## 二、 软硬件需求 {#二-软硬件需求}
+## 二、 软硬件需求
 
 使用 Ubuntu 16.04 LTS 64位系统， 机器内存 8GB+，50GB 硬盘。 不需要安装依赖包。
 
@@ -18,9 +18,9 @@ witness\_node节点的运行要求当前的机器校准时间， 需要安装 NT
 sudo apt-get install ntp
 ```
 
-## 三、 部署和启动程序 {#三-部署和启动程序}
+## 三、 部署和启动程序
 
-### 1. 安装包下载 {#1-安装包下载}
+### 1. 安装包下载
 
 选择其中一个下载即可。
 
@@ -29,7 +29,7 @@ sudo apt-get install ntp
 | github | [https://github.com/dbxone/dbxchain/releases/download/1.0.171031/dbx\_1.0.171031.tar.gz](https://github.com/dbxone/dbxchain/releases/download/1.0.171031/dbx_1.0.171031.tar.gz) |
 | 阿里云 | [http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx\_1.0.171031.tar.gz](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx_1.0.171031.tar.gz) |
 
-### 2. 解压程序 {#2-解压程序}
+### 2. 解压程序
 
 将程序放置你的deploy目录，然后执行命令：
 
@@ -37,7 +37,7 @@ sudo apt-get install ntp
 tar zxvf dbx_1.0.171031.tar.gz
 ```
 
-### 3. 启动见证节点witness\_node， 同步数据 {#3-启动见证节点witness_node-同步数据}
+### 3. 启动见证节点witness\_node， 同步数据
 
 进入dbx目录，启动DBXChain见证节点witness\_node
 
@@ -91,7 +91,7 @@ nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoin
 
 完全同步区块，大约需要30分钟以上。通过后台日志文件trusted\_node/logs/witness.log可查看区块同步进度，访问[DBXChain区块浏览器](https://block.dbx.io/)查看最新区块。区块同步完成后，可以运行命令行钱包。
 
-### 4. 运行命令行钱包cli\_wallet {#4-运行命令行钱包cli_wallet}
+### 4. 运行命令行钱包cli\_wallet
 
 命令行钱包cli\_wallet连接witness\_node:
 
@@ -151,7 +151,7 @@ info
 
 更多cli\_wallet接口，可以查看[wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)。
 
-### 5. 使用命令行钱包cli\_wallet, 导入帐户私钥 {#5-使用命令行钱包cli_wallet-导入帐户私钥}
+### 5. 使用命令行钱包cli\_wallet, 导入帐户私钥
 
 如果你还没有帐户，需要先下载DBXChain轻钱包，或者访问在线钱包，注册帐号\(记得备份，保存好私钥\)。
 
@@ -201,7 +201,7 @@ unlocked >>> get_block 881577
 
 转帐有2个命令行接口:transfer和transfer2， 其中transfer2执行成功后，返回当前transaction的id
 
-### 6. 后台运行cli\_wallet {#6-后台运行cli_wallet}
+### 6. 后台运行cli\_wallet
 
 在导入钱包私钥后，ctrl + c退出，此时会生成本地的钱包文件。再重新启动，启动时带上参数 -d &， 如下：
 
@@ -212,9 +212,9 @@ nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 \
 
 上述命令启动后，需要再多敲一次回车，然后在shell中输入exit来退出终端。相关的控制台输出被重定向到wallet.out文件。
 
-## 四、 查询账户的交易历史， 监听用户充值 {#四-查询账户的交易历史-监听用户充值}
+## 四、 查询账户的交易历史， 监听用户充值
 
-#### 通过账户查询账户的交易历史，以及获取交易的txID {#通过账户查询账户的交易历史以及获取交易的txid}
+#### 通过账户查询账户的交易历史，以及获取交易的txID
 
 cli\_wallet不仅提供了命令行接口，还提供了json rpc接口。 钱包开启了 http rpc 方式的 API 服务时，效果与在钱包里输入命令相同。可以过wscat或者使用http客户端\(如curl\)来调用。
 
@@ -228,9 +228,9 @@ cli\_wallet提供了3个查询交易历史的接口：get\_account\_history, get
 
 **详细过程如下，以帐户dbx-light为例**：
 
-#### 1. 解锁钱包: {#1-解锁钱包}
+#### 1. 解锁钱包:
 
-###### request： {#request}
+###### request：
 
 ```
 // unlock解锁钱包，其中my_password为解锁密码
@@ -243,11 +243,11 @@ curl --data '{"jsonrpc": "2.0", "method": "unlock", "params": ["my_password"], "
 {"id":1,"jsonrpc":"2.0","result":null}
 ```
 
-#### 2. 获取dbx-light的帐户id: {#2-获取dbx-light的帐户id}
+#### 2. 获取dbx-light的帐户id:
 
 若已知帐户id，可以跳过此步骤。
 
-###### request： {#request-2}
+###### request：
 
 ```
 // get_account_id，传入参数为帐户名或帐户id
@@ -260,18 +260,18 @@ curl --data '{"jsonrpc": "2.0", "method": "get_account_id", "params": ["dbx-ligh
 {"id":1,"result":"1.2.3054"}
 ```
 
-#### 3. 调用钱包的get\_account\_history\_by\_operations接口， 查询帐户交易历史，接口返回信息包含txID: {#3-调用钱包的get_account_history_by_operations接口-查询帐户交易历史接口返回信息包含txid}
+#### 3. 调用钱包的get\_account\_history\_by\_operations接口， 查询帐户交易历史，接口返回信息包含txID: 
 
 若没有调用unlock解锁钱包，则查询出的转帐交易memo是无法解密的。此处，只有交易双方才能解密memo。
 
-###### request： {#request-2}
+###### request：
 
 ```
 // get_account_history_by_operations 第1个参数为帐户id，第2个参数为operation数组，可以传入空[]， 第3个参数为起始序号， 第4个参数为limit，表示获取最近limit笔交易历史
 curl --data '{"jsonrpc": "2.0", "method": "get_account_history_by_operations", "params": ["1.2.3054",[], 1, 10], "id": 1}' http://127.0.0.1:38091/rpc
 ```
 
-###### response： {#request-2}
+###### response：
 
 ```
 {
@@ -342,7 +342,7 @@ curl --data '{"jsonrpc": "2.0", "method": "get_account_history_by_operations", "
 
 **注意：对交易所来说，转帐操作的资产id必须要是1.3.1\(DBX\)。**
 
-#### 不可回退区块 {#不可回退区块}
+#### 不可回退区块
 
 调用cli\_wallet的get\_dynamic\_global\_properties接口，查看当前最大的不可回退区块号\(也即最大的不可回退区块高度\)。小于此区块高度的区块，其包含的交易都是已经被确认不可回退的。可用作用户提现时参考，区块不可回退时再处理用户提现。
 
@@ -374,7 +374,7 @@ curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "para
 }
 ```
 
-## 五、常见问题 {#五-常见问题}
+## 五、常见问题
 
 **区块同步时报错**
 
@@ -414,7 +414,7 @@ nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log
 
 [cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
 
-## 六、注意事项 {#六-注意事项}
+## 六、注意事项
 
 1. 用户充值。每笔转账可以带一个备注，交易所通过这个备注来区分是哪个用户的充值。具体备注与交易所用户关联关系，请交易所自行设定。备注是加密的，只有转帐双方才可以解密。
 2. 转帐手续费问题。转帐的手续费由2部分组成：基本手续费 + memo费用，其中基本手续费为0.05DBX, memo费用按总字节长度收费，0.5DBX/`KB`。一次转帐手续费计算：`0.05 + 0.5*(KBs of memo) DBX ， 取KB时截断取整`。 带备注的转帐，手续费一般在\[0.05, 0.15\] DBX之间\(假设备注长度不超过100字节\)。
@@ -432,13 +432,10 @@ nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log
 11. 钱包状态为locked状态时只能查询，不能转帐，不能解密转帐备注。如果需要转帐或者查询交易历史，需要先unlock。
 12. **transfer/transfer2转帐时，第3个参数转帐数量如果包含小数，必须加双引号，否则转帐会失败。建议转帐数量统一加上双引号。**
 
-##### 相关文档： {#相关文档}
+##### 相关文档：
 
 1. [witness\_node启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/witness_start.sh)
 2. [cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
 3. [备用cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/start_backup_wallet.exp)，脚本提供3个主网接入点，如果本地witness\_node暂时不可用，可以执行此脚本，连接主网接入点
 4. [DBXChain冷钱包离线签名教程](https://doc.dbx.io/core/dbxleng-qian-bao-li-xian-qian-ming.html)
 5. [wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)
-
-
-
