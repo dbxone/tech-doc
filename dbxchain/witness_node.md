@@ -63,6 +63,7 @@ witness\_node启动参数：
 | --io-threads [=arg(=0)] | Number of IO threads, default to 0 for  auto-configuration |
 
 插件选项
+
 | 参数 | 说明 |
 |:--- |:--- |
 | --enable-stale-production | Enable block production, even if the chain is stale. |
@@ -71,11 +72,13 @@ witness\_node启动参数：
 | --private-key arg (=["DBX6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]) | Tuple of [PublicKey, WIF private key] (may specify multiple times) |
 
 debug_witness插件选项
+
 | 参数 | 说明 |
 |:--- |:--- |
 | --debug-private-key arg (=["DBX6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]) | Tuple of [PublicKey, WIF private key] (may specify multiple times) |
 
 account_history插件选项
+
 | 参数 | 说明 |
 |:--- |:--- |
 | --track-account arg | Account ID to track history for (may specify multiple times) |
@@ -83,6 +86,7 @@ account_history插件选项
 | --max-ops-per-account arg | Maximum number of operations per account will be kept in memory |
 
 elasticsearch插件选项
+
 | 参数 | 说明 |
 |:--- |:--- |
 | --elasticsearch-node-url arg | Elastic Search database node url |
@@ -92,6 +96,7 @@ elasticsearch插件选项
 | --elasticsearch-visitor arg | Use visitor to index additional  data(slows down the replay) |
 
 market_history插件选项
+
 | 参数 | 说明 |
 |:--- |:--- |
 | --bucket-size arg |(=[60,300,900,1800,3600,14400,86400]) Track market history by grouping orders into buckets of equal size measured in  seconds specified as a JSON array of  numbers |
@@ -100,11 +105,13 @@ market_history插件选项
 | --max-order-his-seconds-per-market arg (=259200) Will only store matched orders in last  X seconds for each market in order  history for querying, or those meet the other option, which has more data  (default: 259200 (3 days)) |
 
 delayed_node插件选项
+
 | 参数 | 说明 |
 |:--- |:--- |
 | --trusted-node arg | RPC endpoint of a trusted validating  node (required) |
 
 snapshot插件选项，在指定的时间或者指定的出块号时创建快照。
+
 | 参数 | 说明 |
 |:--- |:--- |
 | --snapshot-at-block arg | Block number after which to do a  snapshot |
@@ -112,6 +119,7 @@ snapshot插件选项，在指定的时间或者指定的出块号时创建快照
 | --snapshot-to arg | Pathname of JSON file where to store  the snapshot |
 
 es_objects插件选项. 在es数据库中存储链对象
+
 | 参数 | 说明 |
 |:--- |:--- |
 | --es-objects-elasticsearch-url arg | Elasticsearch node url |
@@ -126,6 +134,7 @@ es_objects插件选项. 在es数据库中存储链对象
 | --es-objects-asset-bitasset arg | Store feed data |
 
 grouped_orders插件选项
+
 | 参数 | 说明 |
 |:--- |:--- |
 | --tracked-groups arg (=[10,100]) | Group orders by percentage increase on  price. Specify a JSON array of numbers  here, each number is a group, number 1  means 0.01%. |
