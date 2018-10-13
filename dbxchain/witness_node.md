@@ -41,9 +41,9 @@ witness\_node启动参数：
 | 参数 | 说明 |
 |:--- |:--- |
 | -h [ --help ] | Print this help message and exit. |
-| -d [ --data-dir ] arg |(="witness_node_data_dir") Directory containing databases,  configuration file, etc. |
+| -d [ --data-dir ] arg (="witness_node_data_dir") | Directory containing databases,  configuration file, etc. |
 | -v [ --version ] | Display version information |
-| --create-genesis-json arg | Path to create a Genesis State at. If a well-formed JSON file exists at the path, it will be parsed and any missing fields in a Genesis State will be added, and any unknown fields will be removed. If no file or an invalid file is found, it will be replaced with an example Genesis State. |
+| --create-genesis-json arg | Path to create a Genesis State at. If a well-formed JSON file exists at the path, it will <br> be parsed and any missing fields in a Genesis State will be added, and any unknown fields will be removed. If no file or an invalid file is found, it will be replaced with an example Genesis State. |
 | --replay-blockchain | Rebuild object graph by replaying all blocks |
 | --resync-blockchain | Delete all blocks and re-sync with  network from scratch |
 | --force-validate | Force validation of all transactions |
@@ -63,8 +63,6 @@ witness\_node启动参数：
 | --io-threads [=arg(=0)] | Number of IO threads, default to 0 for  auto-configuration |
 
 插件选项
-
-| 参数 | 说明 |
 |:--- |:--- |
 | --enable-stale-production | Enable block production, even if the chain is stale. |
 | --required-participation | Percent of witnesses (0-99) that must be participating in order to produce blocks |
