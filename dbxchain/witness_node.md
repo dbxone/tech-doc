@@ -69,13 +69,13 @@ witness\_node启动参数：
 | --enable-stale-production | Enable block production, even if the chain is stale. |
 | --required-participation | Percent of witnesses (0-99) that must be participating in order to produce blocks |
 | -w [ --witness-id ] arg | ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times) |
-| --private-key arg (=["DBX6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]) | Tuple of [PublicKey, WIF private key] (may specify multiple times) |
+| --private-key arg <br> (=["DBX6MR...W5CV","5KQwrP...vFD3"]) | Tuple of [PublicKey, WIF private key] (may specify multiple times) |
 
 debug_witness插件选项
 
 | 参数 | 说明 |
 |:--- |:--- |
-| --debug-private-key arg (=["DBX6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]) | Tuple of [PublicKey, WIF private key] (may specify multiple times) |
+| --debug-private-key arg <br> (=["DBX6MR...W5CV","5KQwrP...vFD3"]) | Tuple of [PublicKey, WIF private key] (may specify multiple times) |
 
 account_history插件选项
 
@@ -101,8 +101,8 @@ market_history插件选项
 |:--- |:--- |
 | --bucket-size arg |(=[60,300,900,1800,3600,14400,86400]) Track market history by grouping orders into buckets of equal size measured in  seconds specified as a JSON array of  numbers |
 | --history-per-size arg (=1000) | How far back in time to track history  for each bucket size, measured in the  number of buckets (default: 1000) |
-| --max-order-his-records-per-market arg (=1000) Will only store this amount of matched  orders for each market in order history for querying, or those meet the other  option, which has more data (default:  1000) |
-| --max-order-his-seconds-per-market arg (=259200) Will only store matched orders in last  X seconds for each market in order  history for querying, or those meet the other option, which has more data  (default: 259200 (3 days)) |
+| --max-order-his-records-per-market arg (=1000) | Will only store this amount of matched  orders for each market in order history for querying, or those meet the other  option, which has more data (default:  1000) |
+| --max-order-his-seconds-per-market arg (=259200) | Will only store matched orders in last  X seconds for each market in order  history for querying, or those meet the other option, which has more data  (default: 259200 (3 days)) |
 
 delayed_node插件选项
 
