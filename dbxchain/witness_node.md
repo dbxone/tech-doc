@@ -1,4 +1,4 @@
-# 私有链搭建
+# witness_node 参数介绍
 
 ## 1. witness\_node操作 —— 启动链
 
@@ -11,241 +11,106 @@
 * 初始见证人的账户签名秘钥
 
 
-创建一个名为`my-genesis.json`的初始文件：
+### 启动见证节点
 
-```
-$ witness_node --create-genesis-json my-genesis.json
-```
-
-石墨烯系统中默认的初始化块中包含唯一一个账户`nathan`，创世区块中的所有见证人、理事会成员和基金会都是该账户。 
-
-
-#### eg.1 修改`nathan`私钥
-
-`nathan`的默认私钥为:
-> 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
-
-通过手动修改初始文件对私钥进行修改。
-
-
-#### eg.2 修改活跃见证人更新时间
-```
-"maintenance_interval": 600
+```bash
+nohup witness_node --rpc-endpoint=127.0.0.1:38090 --p2p-endpoint=0.0.0.0:38091 2>&1 &
 ```
 
-
-### 1.2 初始化证人节点，获取链ID
-
-链ID是初始状态的哈希值。它用来区分不同的链。
+可使用--help 来查看命令参数
+witness\_node启动参数：
 
 ```
-witness_node --genesis-json my-genesis.json
-```
+# 指定数据及配置文件存储的目录
+--data-dir=trusted_node
 
-**如修改了初始文件，链ID将会变化，因此会创建出一条不同的链。**
+# 指定rpc服务侦听地址及端口(端口可修改)，127.0.0.1限定本地访问rpc服务，若不限定本地访问，可指定0.0.0.0
+--rpc-endpoint=127.0.0.1:38090
 
-出现如下信息，代表初始化已经完成，按`ctrl-c` 关闭见证人节点:
+# 用于连接p2p网络，此参数不建议修改
+--p2p-endpoint=0.0.0.0:38091
 
-```
-3501235ms th_a main.cpp:165 main] Started witness node on a chain with 0 blocks.
-3501235ms th_a main.cpp:166 main] Chain ID is 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
-```
-
-此时，默认数据文件夹`witness_node_data_dir`被创建，可以通过参数`--data-dir <data_dir>`来指定默认数据文件夹。
-
-**`6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d` 即为链ID。**
-
-### 1.3 配置见证人
-
-编辑`witness_node_data_dir/config.ini`修改配置：
+# 内存中只跟踪指定帐户的交易历史，该选项可传入多次，跟踪多个帐户。请将1.2.2999 替换成你需要跟踪的账户数字 ID（在轻钱包账户页面里，账号头像下面会显示一个数字）
+--track-account "\"1.2.2999\""
 
 ```
-p2p-endpoint = 0.0.0.0:31010
-seed-nodes = []
-rpc-endpoint = 0.0.0.0:38090
-genesis-json = my-genesis.json
-enable-stale-production = true
 
-# ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times)
-witness-id = "1.6.1"
-witness-id = "1.6.2"
-witness-id = "1.6.3"
-witness-id = "1.6.4"
-witness-id = "1.6.5"
-witness-id = "1.6.6"
-witness-id = "1.6.7"
-witness-id = "1.6.8"
-witness-id = "1.6.9"
-witness-id = "1.6.10"
-witness-id = "1.6.11"
-```
+完全同步区块，大约需要30分钟以上。通过后台日志文件trusted\_node/logs/witness.log可查看区块同步进度，访问[DBXChain区块浏览器](https://block.dbx.io)查看最新区块。
+待区块同步至最新，DBXChain节点即部署成功。
 
-上述列表授权了见证人节点用见证人ID来生成区块. 正常情况下，每个见证人的节点不同，但在私有链中，我们会先设定成全体见证人在同一个节点生产区块。这些见证人ID的私钥（用来签署区块）已经在`config.ini`中提供：
+| *参数 | 说明* |
+|:--- |:--- | |
+| -h [ --help ] | Print this help message and exit. |
+| -d [ --data-dir ] arg |(="witness_node_data_dir") Directory containing databases,  configuration file, etc. |
+| -v [ --version ] | Display version information |
+ |
+| --create-genesis-json arg | Path to create a Genesis State at. If a well-formed JSON file exists at the path, it will be parsed and any missing fields in a Genesis State will be added, and any unknown fields will be removed. If no file or an invalid file is found, it will be replaced with an example Genesis State. |
+| --replay-blockchain | Rebuild object graph by replaying all blocks |
+| --resync-blockchain | Delete all blocks and re-sync with  network from scratch |
+| --force-validate | Force validation of all transactions |
+| --genesis-timestamp arg | Replace timestamp from genesis.json  with current time plus this many  seconds (experts only!) |
+ |
+| --p2p-endpoint arg | Endpoint for P2P node to listen on |
+| -s [ --seed-node ] arg | P2P nodes to connect to on startup (may specify multiple times) |
+| --seed-nodes arg | JSON array of P2P nodes to connect to  on startup |
+| -c [ --checkpoint ] arg | Pairs of [BLOCK_NUM,BLOCK_ID] that  should be enforced as checkpoints. |
+| --rpc-endpoint [=arg(=127.0.0.1:8090)] Endpoint for websocket RPC to listen on |
+| --rpc-tls-endpoint [=arg(=127.0.0.1:8089)] Endpoint for TLS websocket RPC to  listen on |
+| -p [ --server-pem ] [=arg(=server.pem)] The TLS certificate file for this  server |
+| -P [ --server-pem-password ] arg | Password for this certificate |
+| --genesis-json arg | File to read Genesis State from |
+| --dbg-init-key arg | Block signing key to use for init  witnesses, overrides genesis file |
+| --api-access arg | JSON file specifying API permissions |
+| --plugins arg | Space-separated list of plugins to  activate |
+| --io-threads [=arg(=0)] | Number of IO threads, default to 0 for  auto-configuration |
 
-```
-# Tuple of [PublicKey, WIF private key] (may specify multiple times)
-private-key = ["DBX6MRyA...T5GDW5CV","5KQwrPb...tP79zkvFD3"]
-```
+插件选项
+|:--- |:--- | |
+| --enable-stale-production | Enable block production, even if the chain is stale. |
+| --required-participation | Percent of witnesses (0-99) that must be participating in order to produce blocks |
+| -w [ --witness-id ] arg | ID of witness controlled by this node (e.g. "1.6.5", quotes are required, may specify multiple times) |
+| --private-key arg (=["DBX6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]) | Tuple of [PublicKey, WIF private key] (may specify multiple times) |
 
-配置选项含义如下：
+debug_witness插件选项 |
+| --debug-private-key arg (=["DBX6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV","5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"]) | Tuple of [PublicKey, WIF private key] (may specify multiple times) |
 
-* `p2p-endpoint`  指定开启的p2p监听端口，以方便其他节点连接，可以作为其他节点的seed-node 。
-* `rpc-endpoint`  指定开启的rpc监听端口，以方便cli-wallet 和web 钱包与证人节点连接。
-* `genesis-json`  设置genesis.json 的路径，通常只在创建新链生产创世区块时设置。
-* `enable-stale-production`  让本节点无视区块链数据的时间，无论如何都生成区块数据。该字段通常只在创建新链生产创世区块时设为true。当已存在区块链时，一定要将本参数设为false或者不管，否则会因数据不完整导致分叉。
-* `seed-nodes`  设置种子节点集合，以方便快速连接到区块链网络和同步区块链数据。在创建新链生产创世区块时设为空，以防止连接到正式网络（代码）中的默认种子节
-点。当连接已有区块链网络时，尽可能多的设置种子节点以加快同步速度。
-* `witness-id`  用于授权本证人节点所代表的证人id产生区块，可指定多个。一般来说一个证人节点授权一个证人id，私链第一个节点指定了11个。
+account_history插件选项 |
+| --track-account arg | Account ID to track history for (may specify multiple times) |
+| --partial-operations arg | Keep only those operations in memory that are related to account history tracking |
+| --max-ops-per-account arg | Maximum number of operations per account will be kept in memory |
 
+elasticsearch插件选项 |
+| --elasticsearch-node-url arg | Elastic Search database node url |
+| --elasticsearch-bulk-replay arg | Number of bulk documents to index on replay(5000) |
+| --elasticsearch-bulk-sync arg | Number of bulk documents to index on a syncronied chain(10) |
+| --elasticsearch-logs arg | Log bulk events to database |
+| --elasticsearch-visitor arg | Use visitor to index additional  data(slows down the replay) |
 
-### 1.4 开始生产区块
+market_history插件选项 |
+| --bucket-size arg |(=[60,300,900,1800,3600,14400,86400]) Track market history by grouping orders into buckets of equal size measured in  seconds specified as a JSON array of  numbers |
+| --history-per-size arg (=1000) | How far back in time to track history  for each bucket size, measured in the  number of buckets (default: 1000) |
+| --max-order-his-records-per-market arg |(=1000) Will only store this amount of matched  orders for each market in order history for querying, or those meet the other  option, which has more data (default:  1000) |
+| --max-order-his-seconds-per-market arg |(=259200) Will only store matched orders in last  X seconds for each market in order  history for querying, or those meet the other option, which has more data  (default: 259200 (3 days)) |
 
-```
-witness_node
-```
+delayed_node插件选项 |
+| --trusted-node arg | RPC endpoint of a trusted validating  node (required) |
 
-之后私链的区块将开始生成，你会看到如下指示:
+snapshot插件选项，在指定的时间或者指定的出块号时创建快照。 |
+| --snapshot-at-block arg | Block number after which to do a  snapshot |
+| --snapshot-at-time arg | Block time (ISO format) after which to  do a snapshot |
+| --snapshot-to arg | Pathname of JSON file where to store  the snapshot |
 
-```
-********************************
-*                              *
-*   ------- NEW CHAIN ------   *
-*   - Welcome to Graphene! -   *
-*   ------------------------   *
-*                              *
-********************************
-2322793ms th_a  main.cpp:176     main    ] Started witness node on a chain with 0 blocks.
-2322794ms th_a  main.cpp:177     main    ] Chain ID is 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
-2324613ms th_a  witness.cpp:185  block_production_loo ] Generated block #1 with timestamp 2016-01-21T22:38:40 at time 2016-01-21T22:38:40
-2344604ms th_a  witness.cpp:185  block_production_loo ] Generated block #2 with timestamp 2016-01-21T22:39:00 at time 2016-01-21T22:39:00
-2349616ms th_a  witness.cpp:185  block_production_loo ] Generated block #3 with timestamp 2016-01-21T22:39:05 at time 2016-01-21T22:39:05
-2354605ms th_a  witness.cpp:185  block_production_loo ] Generated block #4 with timestamp 2016-01-21T22:39:10 at time 2016-01-21T22:39:10
-```
+es_objects插件选项. 在es数据库中存储链对象 |
+| --es-objects-elasticsearch-url arg | Elasticsearch node url |
+| --es-objects-logs arg | Log bulk events to database |
+| --es-objects-bulk-replay arg | Number of bulk documents to index on  replay(5000) |
+| --es-objects-bulk-sync arg | Number of bulk documents to index on a  syncronied chain(10) |
+| --es-objects-proposals arg | Store proposal objects |
+| --es-objects-accounts arg | Store account objects |
+| --es-objects-assets arg | Store asset objects |
+| --es-objects-balances arg | Store balances objects |
+| --es-objects-limit-orders arg | Store limit order objects |
+| --es-objects-asset-bitasset arg | Store feed data |
 
-如果witness.log无日志生成，可以将日志打印打控制台，可以修改`config.ini`文件如下，然后重新启动witness。
-
-```
-[logger.default]
-level=debug
-appenders=stderr
-```
-
-## 2. cli_wallet操作
-
-### 2.1 创建新钱包
-
-钱包用来保存账户的私钥，此处创建的钱包名称为`my-wallet.json`。
-```
-cli_wallet -w my-wallet.json -s ws://127.0.0.1:38090 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
-```
-
-如下提示，意味着你的客户端已经成功匹配见证人节点。
-```
-1987712ms th_a       main.cpp:136                  main                 ] key_to_wif( committee_private_key ): 5KCBDTcyDqzsqehcb52tW5nU6pXife6V2rX9Yf7c3saYSzbDZ5W 
-1987713ms th_a       main.cpp:140                  main                 ] nathan_pub_key: DBX6MRyAjQq8ud7hVNYcfnVPJqcVpscN5So8BhtHuGYqET5GDW5CV 
-1987713ms th_a       main.cpp:141                  main                 ] key_to_wif( nathan_private_key ): 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3 
-Starting a new wallet with chain ID 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d (from CLI)
-1987714ms th_a       main.cpp:188                  main                 ] wdata.ws_server: ws://127.0.0.1:38090 
-1987717ms th_a       main.cpp:193                  main                 ] wdata.ws_user:  wdata.ws_password:  
-Please use the set_password method to initialize a new wallet before continuing
-new >>>
-```
-
-
-使用钱包钱，需要为钱包设置密码，此处为`supersecret`：
-
-```
-new >>> set_password supersecret
-set_password supersecret
-null
-locked >>>
-```
-
-钱包解锁后，才能使用。解锁钱包：
-
-```
-locked >>> unlock supersecret  
-unlock supersecret
-null
-unlocked >>> 
-```
-
-
-### 2.2 导入nathan账户
-
-一个钱包通过命令可以保存多个账户。
-
-账户保存进钱包需要导入私钥，以下导入`nathan`账户：
-
-```
-import_key nathan 5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3
-```
-
-### 2.3 将链上资产赋给nathan账户
-
-
-将初始文件中设置链上资产DBX赋给`nathan`：
-
-```
-import_balance nathan ["5KQwrPbwdL6PhXujxW37FSSQZ1JiwsST4cqQzDeyXtP79zkvFD3"] true
-```
-
-此时可查看账户余额：
-
-
-```
-list_account_balances nathan
-```
-
-### 2.4 升级nathan为终身会员\(LTM\)
-
-终身会员拥有普通会员不具备的一些权限，比如通常我们用一个已有账户来创建新账户，只有成为终身会员才能注册其他账户，此处升级`nathan`为终身会员。
-
-```
-upgrade_account nathan true
-```
-
-重启客户端，否则将无法识别`nathan`已经成功升级。通过`ctrl-c`停止客户端。
-
-```
-cli_wallet -w my-wallet.json -s ws://127.0.0.1:38090 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
-```
-
-查看账户属性
-```
-get_account nathan
-```
-
-`membership_expiration_date`的属性值应该是`1969-12-31T23:59:59`，代表成功升级。
-
-
-### 2.5 注册新账户alpha
-
-成功升级后，我们可以通过`nathan`来注册新账户，但首先我们需要拥有新账户的公私钥。
-
-生成公私钥对：
-
-```
-suggest_brain_key
-```
-
-注册新账户alpha
-
-```
-register_account alpha DBX6vQtDEgHSickqe9itW8fbFyUrKZK5xsg4FRHzQZ7hStaWqEKhZ DBX6vQtDEgHSickqe9itW8fbFyUrKZK5xsg4FRHzQZ7hStaWqEKhZ nathan nathan 0 true
-```
-
-
-### 2.6 nathan转账给alpha
-
-```
-transfer nathan alpha 1 DBX "" true
-```
-
-查看nathan余额：
-
-```
-list_account_balances alpha
-```
-
-自此代表私链搭建成功！
+grouped_orders插件选项 |
+| --tracked-groups arg (=[10,100]) | Group orders by percentage increase on  price. Specify a JSON array of numbers  here, each number is a group, number 1  means 0.01%. |
