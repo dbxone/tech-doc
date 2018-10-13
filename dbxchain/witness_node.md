@@ -1,58 +1,21 @@
 # witness_node 参数介绍
 
-## 1. witness\_node操作 —— 启动链
-
-### 1.1 创建和编辑初始文件
-
-初始文件是用来定义区块链网络初始状态，如下：
-* 修改初始文件中账户， 以及账户名和公钥
-* 区块链资产和初次分发（包含核心资产）
-* 私链参数的最初基准（包括费用）
-* 初始见证人的账户签名秘钥
-
-
-### 启动见证节点
-
-```bash
-nohup witness_node --rpc-endpoint=127.0.0.1:38090 --p2p-endpoint=0.0.0.0:38091 2>&1 &
-```
-
-可使用--help 来查看命令参数
-witness\_node启动参数：
-
-```
-# 指定数据及配置文件存储的目录
---data-dir=trusted_node
-
-# 指定rpc服务侦听地址及端口(端口可修改)，127.0.0.1限定本地访问rpc服务，若不限定本地访问，可指定0.0.0.0
---rpc-endpoint=127.0.0.1:38090
-
-# 用于连接p2p网络，此参数不建议修改
---p2p-endpoint=0.0.0.0:38091
-
-# 内存中只跟踪指定帐户的交易历史，该选项可传入多次，跟踪多个帐户。请将1.2.2999 替换成你需要跟踪的账户数字 ID（在轻钱包账户页面里，账号头像下面会显示一个数字）
---track-account "\"1.2.2999\""
-
-```
-
-完全同步区块，大约需要30分钟以上。通过后台日志文件trusted\_node/logs/witness.log可查看区块同步进度，访问[DBXChain区块浏览器](https://block.dbx.io)查看最新区块。
-待区块同步至最新，DBXChain节点即部署成功。
 
 | 参数 | 说明 |
 |:--- |:--- |
-| -h [ --help ] | Print this help message and exit. |
-| -d [ --data-dir ] arg (="witness_node_data_dir") | Directory containing databases,  configuration file, etc. |
-| -v [ --version ] | Display version information |
-| --create-genesis-json arg | Path to create a Genesis State at. If a well-formed JSON file exists at the path, it will <br> be parsed and any missing fields in a Genesis State will be added, and any unknown fields will be removed. If no file or an invalid file is found, it will be replaced with an example Genesis State. |
+| -h [ --help ] | Print this help message and exit. <br> 帮助信息 |
+| -d [ --data-dir ] arg (="witness_node_data_dir") | Directory containing databases, configuration file, etc. <br> 指定数据及配置文件存储的目录 |
+| -v [ --version ] | Display version information <br> 版本信息 |
+| --create-genesis-json arg | Path to create a Genesis State at. If a well-formed JSON file exists at the path, it will be parsed and any missing fields in a Genesis State will be added, and any unknown fields will be removed. If no file or an invalid file is found, it will be replaced with an example Genesis State. <br> 创建初始文件，如果文件已经存在，将对此文件进行解析，添加上不存在配置选项，同时删除不识别的选型。|
 | --replay-blockchain | Rebuild object graph by replaying all blocks |
 | --resync-blockchain | Delete all blocks and re-sync with  network from scratch |
 | --force-validate | Force validation of all transactions |
 | --genesis-timestamp arg | Replace timestamp from genesis.json  with current time plus this many  seconds (experts only!) |
-| --p2p-endpoint arg | Endpoint for P2P node to listen on |
+| --p2p-endpoint arg | Endpoint for P2P node to listen on <br> 用于节点之间的p2p链接服务 |
 | -s [ --seed-node ] arg | P2P nodes to connect to on startup (may specify multiple times) |
 | --seed-nodes arg | JSON array of P2P nodes to connect to  on startup |
 | -c [ --checkpoint ] arg | Pairs of [BLOCK_NUM,BLOCK_ID] that  should be enforced as checkpoints. |
-| --rpc-endpoint [=arg(=127.0.0.1:8090)] | Endpoint for websocket RPC to listen on |
+| --rpc-endpoint [=arg(=127.0.0.1:8090)] | Endpoint for websocket RPC to listen on <br> 用于给客户端提供rpc服务 |
 | --rpc-tls-endpoint [=arg(=127.0.0.1:8089)] | Endpoint for TLS websocket RPC to  listen on |
 | -p [ --server-pem ] [=arg(=server.pem)] | The TLS certificate file for this  server |
 | -P [ --server-pem-password ] arg | Password for this certificate |
@@ -63,6 +26,8 @@ witness\_node启动参数：
 | --io-threads [=arg(=0)] | Number of IO threads, default to 0 for  auto-configuration |
 
 插件选项
+
+| 参数 | 说明 |
 |:--- |:--- |
 | --enable-stale-production | Enable block production, even if the chain is stale. |
 | --required-participation | Percent of witnesses (0-99) that must be participating in order to produce blocks |
@@ -79,7 +44,7 @@ account_history插件选项
 
 | 参数 | 说明 |
 |:--- |:--- |
-| --track-account arg | Account ID to track history for (may specify multiple times) |
+| --track-account arg | Account ID to track history for (may specify multiple times) <br> 内存中只跟踪指定帐户的交易历史，该选项可传入多次，跟踪多个帐户。请将1.2.2999 替换成你需要跟踪的账户数字 ID（在轻钱包账户页面里，账号头像下面会显示一个数字）|
 | --partial-operations arg | Keep only those operations in memory that are related to account history tracking |
 | --max-ops-per-account arg | Maximum number of operations per account will be kept in memory |
 
