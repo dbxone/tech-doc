@@ -8,16 +8,16 @@
 cd /etc/apt/
 cp sources.list sources.list.bak
 
-echo 'deb http://mirrors.aliyun.com/ubuntu/ vivid main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ vivid-security main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ vivid-updates main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ vivid-proposed main restricted universe multiverse
-deb http://mirrors.aliyun.com/ubuntu/ vivid-backports main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ vivid main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ vivid-security main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ vivid-updates main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ vivid-proposed main restricted universe multiverse
-deb-src http://mirrors.aliyun.com/ubuntu/ vivid-backports main restricted universe multiverse' > sources.list
+echo 'deb http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse
+deb http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-security main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-updates main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-proposed main restricted universe multiverse
+deb-src http://mirrors.aliyun.com/ubuntu/ xenial-backports main restricted universe multiverse' > sources.list
 sudo apt-get update
 sudo apt-get install nginx
 
