@@ -2,34 +2,33 @@
 
 DBXChain数据交易客户端dbxui是基于Nodejs开发的一个部署在商户和数据源本地的客户端，商户和数据源可以通过本地调用的方式购买和出售数据，数据交易的全程请求参数和回传数据都是经过加密处理的，而dbxui简化了这样的一个流程。
 
-上图简单表述了这样的一个数据交易流程。
-
-**如需了解全文，请点击**[**这里**](https://github.com/dbxone/dbxui/blob/dev/README-CN.md)**。**
-
 # 环境安装
 
-dbxui基于Nodejs开发，执行环境需要安装Nodejs6.0以上版本（非源码编译方式请使用v6.\*.\*版本）
+dbxui基于Nodejs开发，执行环境为Ubuntu16.04。dbxui需要安装Nodejs8.0以上版本.
 
-## 检查是否已安装
-
-命令行下执行下方命令，可以查看当前是否已安装Node以及当前安装的版本
+## 安装nodejs
 
 ```
+curl -sL https://deb.nodesource.com/setup_10.x | sudo -E bash -
+apt install -y nodejs
 node -v
+npm -v
 ```
 
-## Nodejs安装
+## 配置npm源
+vim ~/.npmrc
 
-**Mac，Linux**环境下建议使用[NVM](https://github.com/creationix/nvm)\(Node Version Manager\)进行安装：
+```
+registry=https://registry.npm.taobao.org
+sass_binary_site=https://npm.taobao.org/mirrors/node-sass/
+phantomjs_cdnurl=http://npm.taobao.org/mirrors/phantomjs
+ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
+```
 
-通过nvm可以快速安装`nvm install <version>`和切换`nvm use <version>`不同的Node版本
-
-**Windows**系统请在[官方](https://nodejs.org/)下载一键安装包：
-
-| 系统 | 下载地址 |
-| :--- | :--- |
-| 32位 | [https://nodejs.org/dist/v6.11.1/node-v6.11.1-x86.msi](https://nodejs.org/dist/v6.11.1/node-v6.11.1-x86.msi) |
-| 64位 | [https://nodejs.org/dist/v6.11.1/node-v6.11.1-x64.msi](https://nodejs.org/dist/v6.11.1/node-v6.11.1-x64.msi) |
+## 安装yarn
+```
+npm i -g yarn
+```
 
 ## 依赖安装
 
@@ -54,6 +53,3 @@ npm run server
 ```
 
 ## 
-
-
-
