@@ -1,5 +1,5 @@
 
-#  智能合约快速入门（testnet）
+#  智能合约快速入门
 
 ------------
 ### 一、智能合约介绍
@@ -28,7 +28,6 @@ https://github.com/dbxone/tech-doc/blob/contract/dbx_contract_api.md
 DBXChain源码编译，目前支持ubuntu系统和mac系统：
 
 - Build on Ubuntu： https://github.com/dbxone/dbxchain/wiki/BUILD_UBUNTU
-- Build on OS X： https://github.com/dbxone/dbxchain/wiki/BUILD_OS_X
 
 #### 2. 编译合约
 使用dxx的模板创建一个helloworld合约
