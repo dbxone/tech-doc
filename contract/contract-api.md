@@ -2,35 +2,24 @@
 | belong | api name | description |
 | --- | --- | --- |
 | <graphenelib/action.h> | [current_receiver](#current_receiver) | 返回当前合约账号的id |
-| <graphenelib/action.h> | get_action_asset_id | 返回本次调用向合约发送的资产id |
-| <graphenelib/action.h> | get_action_asset_amount | 返回本次调用向合约发送的资产数量 |
-| <graphenelib/asset.h> | withdraw_asset | 将当前合约的资产转移到外部账户 |
-| <graphenelib/asset.h> | get_balance | 获取外部账户的某资产余额 |
-| <graphenelib/crypto.h> | sha256 | 计算数据的sha256 |
-| <graphenelib/crypto.h> | sha512 | 计算数据的sha512 |
-| <graphenelib/crypto.h> | ripemd160 | 计算数据的ripemd160 |
-| <graphenelib/crypto.h> | verify_signature | 验证签名 |
-| <graphenelib/global.h> | get_head_block_num | 获取最新区块号 |
-| <graphenelib/global.h> | get_head_block_id | 获取最新区块hash |
-| <graphenelib/global.h> | get_head_block_time | 获取最新区块的时间，返回值单位秒 |
-| <graphenelib/global.h> | get_trx_sender | 获取调用合约的账号的instance_id |
-| <graphenelib/global.h> | get_account_id | 根据账号名获取账号的instance_id |
-| <graphenelib/global.h> | get_asset_id | 根据资产名获取资产的instance_id |
-| <graphenelib/system.h> | graphene_assert | 如果条件不满足，中断本次合约的执行并会滚所有状态 |
-| <graphenelib/system.h> | graphene_assert_message | 如果条件不满足，输出必要的信息，但是本次合约的执行会继续 |
-| <graphenelib/system.h> | [print](#void_print) | 用于调试时日志的打印 |
+| <graphenelib/action.h> | [get_action_asset_id](#get_action_asset_id) | 返回本次调用向合约发送的资产id |
+| <graphenelib/action.h> | [get_action_asset_amount](#get_action_asset_amount) | 返回本次调用向合约发送的资产数量 |
+| <graphenelib/asset.h> | [withdraw_asset](#withdraw_asset) | 将当前合约的资产转移到外部账户 |
+| <graphenelib/asset.h> | [get_balance](#get_balance) | 获取外部账户的某资产余额 |
+| <graphenelib/crypto.h> | [sha256](#sha256) | 计算数据的sha256 |
+| <graphenelib/crypto.h> | [sha512](#sha512) | 计算数据的sha512 |
+| <graphenelib/crypto.h> | [ripemd160](#ripemd160) | 计算数据的ripemd160 |
+| <graphenelib/crypto.h> | [verify_signature](#verify_signature) | 验证签名 |
+| <graphenelib/global.h> | [get_head_block_num](#get_head_block_num) | 获取最新区块号 |
+| <graphenelib/global.h> | [get_head_block_id](#get_head_block_id) | 获取最新区块hash |
+| <graphenelib/global.h> | [get_head_block_time](#get_head_block_time) | 获取最新区块的时间，返回值单位秒 |
+| <graphenelib/global.h> | [get_trx_sender](#get_trx_sender) | 获取调用合约的账号的instance_id |
+| <graphenelib/global.h> | [get_account_id](#get_account_id) | 根据账号名获取账号的instance_id |
+| <graphenelib/global.h> | [get_asset_id](#get_asset_id) | 根据资产名获取资产的instance_id |
+| <graphenelib/system.h> | [graphene_assert](#graphene_assert) | 如果条件不满足，中断本次合约的执行并会滚所有状态 |
+| <graphenelib/system.h> | [graphene_assert_message](#graphene_assert_message) | 如果条件不满足，输出必要的信息，但是本次合约的执行会继续 |
+| <graphenelib/system.h> | [print](#print) | 用于调试时日志的打印 |
 
-
-<a name="current_receiver"></a>
-## uint64_t current_receiver()
-
-desc: 返回当前合约账号的id
-
-
-## uint64_t get_action_asset_id()
----------------------------------
-
-desc: 返回本次调用向合约发送的资产id
 
 
 
@@ -69,21 +58,26 @@ call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}
 
 
 
-## uint64_t get_action_asset_amount()
--------------------------------------
 
-desc: 返回本次调用向合约发送的资产数量
+<a name="current_receiver"></a>
+## uint64_t current_receiver()
+返回当前合约的帐户id，取最后48位。 如果帐户id为1.2.12345，则后48位即12345
+
+<a name="get_action_asset_id"></a>
+## uint64_t get_action_asset_id();
+调用合约时，向合约发送的资产id，取资产id的后48位。
+
+
+<a name="get_action_asset_amount"></a>
+int64_t get_action_asset_amount();
+调用合约时，向合约发送的资产数量（放大10万倍的）
 
 
 
 
+<a name="withdraw_asset"></a>
 ## void withdraw_asset(uint64_t from, uint64_t to, uint64_t asset_id, int64_t amount)
--------------------------------------------------------------------------------------
-
-desc: 将当前合约的资产转移到外部账户
-
-
-**params:**
+将当前合约的资产转移到外部账户
 
 \<uint64_t\> from: 从哪个账号转账，一般是_self
 
@@ -102,7 +96,7 @@ desc: 将当前合约的资产转移到外部账户
 desc: 获取外部账户的某资产余额
 
 
-**params:**
+
 
 \<int64_t\> account: 外部账户的instace_id
 
@@ -116,7 +110,7 @@ desc: 获取外部账户的某资产余额
 desc: 计算数据的sha256
 
 
-**params:**
+
 
 \<char\> data: 用于计算sha256的字符串首地址
 
@@ -132,7 +126,7 @@ desc: 计算数据的sha256
 desc: 计算数据的sha512
 
 
-**params:**
+
 
 \<char\> data: 用于计算sha512的字符串首地址
 
@@ -148,7 +142,7 @@ desc: 计算数据的sha512
 desc: 计算数据的ripemd160
 
 
-**params:**
+
 
 \<char\> data: 用于计算ripemd160的字符串首地址
 
@@ -164,7 +158,7 @@ desc: 计算数据的ripemd160
 desc: 验证签名
 
 
-**params:**
+
 
 \<const char\> data: 签名的原始字符串
 
@@ -212,7 +206,7 @@ desc: 获取调用合约的账号的instance_id
 desc: 根据账号名获取账号的instance_id
 
 
-**params:**
+
 
 \<const char *\> data: 账号名，例如nathan
 
@@ -228,7 +222,7 @@ include: <graphenelib/global.h>
 desc: 根据资产名获取资产的instance_id
 
 
-**params:**
+
 
 \<const char *\> data: 资产名
 
@@ -244,7 +238,7 @@ include: <graphenelib/system.h>
 desc: 如果条件不满足，中断本次合约的执行并会滚所有状态
 
 
-**params:**
+
 
 \<uint32_t\> test: 
 
@@ -260,7 +254,7 @@ include: <graphenelib/system.h>
 desc: 如果条件不满足，输出必要的信息，但是本次合约的执行会继续
 
 
-**params:**
+
 
 \<uint32_t\> test: 
 
@@ -269,47 +263,9 @@ desc: 如果条件不满足，输出必要的信息，但是本次合约的执�
 \<uint32_t\> msg_len: 
 
 
-void print( const char* ptr )；
-  -----
-
-desc: 用于调试时日志的打印
-
-
-**params:**
-
-\<const char*\> ptr: 
-
-
-
-
-#####  头文件   #include <graphenelib/action.h>
-
-```
-// 返回当前合约的帐户id，取最后48位。 如果帐户id为1.2.12345，则后48位即12345
-uint64_t current_receiver();
-
-// 调用合约时，向合约发送的资产id，取资产id的后48位
-uint64_t get_action_asset_id();
-
-// 调用合约时，向合约发送的资产数量（放大10万倍的）
-int64_t get_action_asset_amount();
-```
-
-  
-#####  头文件   #include <graphenelib/asset.h>
-
-```
-// 从合约中转帐到外部帐户
-void withdraw_asset(uint64_t from, uint64_t to, uint64_t asset_id, int64_t amount);
-
 // 获取链帐户上余额
 int64_t get_balance(int64_t *account, int64_t *asset_id);
-```
- 
-  
-#####  头文件   #include <graphenelib/crypto.h>
 
-```
 //  生成sha256
 void sha256(char *data, uint32_t length, checksum256 *hash);
 
@@ -324,8 +280,6 @@ bool verify_signature(const char *data, uint32_t datalen, signature* sig,  const
  ```
  
  
-#####  头文件   #include <graphenelib/global.h>
-
  ```
 // 返回最新区块号
 int64_t get_head_block_num();
@@ -347,8 +301,6 @@ int64_t get_asset_id(const char *data, uint32_t length);
 ```
  
  
-#####  头文件   #include <graphenelib/system.hh>
-
 ```
 // 断言，test必须为true
 void  graphene_assert( uint32_t test, const char* msg );
@@ -357,14 +309,13 @@ void  graphene_assert( uint32_t test, const char* msg );
 void  graphene_assert_message( uint32_t test, const char* msg, uint32_t msg_len );
 ```
  
- 
-#####  头文件   #include <graphenelib/print.hpp>
 
-```
- inline void print( const char* ptr )；
- 
+inline void print( const char* ptr )；
 
- ```
+desc: 用于调试时日志的打印
+
+\<const char*\> ptr: 
+
 
 
 
