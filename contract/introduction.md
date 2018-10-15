@@ -57,7 +57,7 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 
 ## 4. 智能合约 API 参考文档
 * [api参考文档](contract-api.md)
-* [存储参考文档](contract-storage_usage.md)
+* [存储参考文档](contract-storage-usage.md)
 
 
 
