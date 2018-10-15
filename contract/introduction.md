@@ -47,21 +47,20 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 
 
 
-##### 智能合约 API 参考文档
+## 3. 智能合约示例
+
+* [helloworld合约](examples/helloworld.md)
+* [充值提现合约](examples/bank.md)
+* [红包合约](examples/redpacket.md)
+* [线性释放资产合约](examples/linear_vesting_asset.md)
+* [基于hash验证的猜谜合约](examples/riddle.md)
+
+
+## 4. 智能合约 API 参考文档
 文档中列出了一些API和使用示例，可以在编写合约时调用：
 https://github.com/dbxone/tech-doc/blob/master/contract/contract-api.md
 
 智能合约存储参考文档：https://github.com/dbxone/tech-doc/blob/master/contract/contract_storage_usage.md
-
-##### 智能合约示例:
-* helloworld合约： https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/helloworld
-* 充值提现合约： https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/bank
-* 红包合约： https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/redpacket
-* 线性释放资产合约：https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/linear_vesting_asset
-* 基于hash验证的猜谜合约：https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/riddle
-
-### 二、快速开始 (使用本地命令行方式)
-
 
 #### 2. 编译合约
 使用dxx的模板创建一个helloworld合约
