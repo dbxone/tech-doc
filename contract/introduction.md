@@ -2,10 +2,19 @@
 #  智能合约快速入门
 
 ------------
-### 一、智能合约介绍
+### 1、智能合约介绍
 
 DBXChain智能合约2.0，底层使用WebAssembly虚拟机，目前支持C++语言的智能合约编写。
 开发者使用C++编写智能合约，通过llvm将代码编译成WebAssembly（又名WASM），部署到区块链上，通过智能合约ABI(Application Binary Interface，应用程序的二进制接口)和智能合约交互。
+
+#### 2. DBXChain链智能合约编译
+
+DBXChain源码编译，目前支持Ubuntu16.04系统：
+
+- [Build on Ubuntu16.04](compile.md)
+
+
+可以本地编译DBXChain程序，通过命令行方式编译、部署、调用智能合约。
 
 ##### 智能合约 API 参考文档
 文档中列出了一些API和使用示例，可以在编写合约时调用：
@@ -22,12 +31,6 @@ https://github.com/dbxone/tech-doc/blob/contract/dbx_contract_api.md
 
 ### 二、快速开始 (使用本地命令行方式)
 
-#### 1. DBXChain源码编译
-
-如果不想使用智能合约IDE工具，可以本地编译DBXChain程序，通过命令行方式编译、部署、调用智能合约。
-DBXChain源码编译，目前支持ubuntu系统和mac系统：
-
-- Build on Ubuntu： https://github.com/dbxone/dbxchain/wiki/BUILD_UBUNTU
 
 #### 2. 编译合约
 使用dxx的模板创建一个helloworld合约
