@@ -22,7 +22,7 @@
 
 
 
-## current_receiver()
+## uint64_t current_receiver()
 
 desc: 返回当前合约账号的id
 
