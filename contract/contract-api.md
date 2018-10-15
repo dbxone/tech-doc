@@ -51,8 +51,8 @@ void deposit()
 GRAPHENE_ABI(helloworld, (deposit))
 ```
 
-对这个合约通过钱包客户端调用
-call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}" DBX true
+对这个合约通过钱包客户端调用 <br>
+call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}" DBX true <br>
 调用helloworld的deposit方法，在deposit方法的实现中调用get_action_asset_id()将返回1
             
 
@@ -69,11 +69,8 @@ call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}
 
 
 <a name="get_action_asset_amount"></a>
-int64_t get_action_asset_amount();
+## int64_t get_action_asset_amount();
 调用合约时，向合约发送的资产数量（放大10万倍的）
-
-
-
 
 <a name="withdraw_asset"></a>
 ## void withdraw_asset(uint64_t from, uint64_t to, uint64_t asset_id, int64_t amount)
@@ -87,229 +84,133 @@ int64_t get_action_asset_amount();
 
 
 
+<a name="get_balance"></a>
 ## int64_t get_balance(int64_t account, int64_t asset_id)
---------------------------------------------------------
 
-desc: 获取外部账户的某资产余额
+获取外部账户的某资产余额
 
-
-
-
-\<int64_t\> account: 外部账户的instace_id
-
+\<int64_t\> account: 外部账户的instace_id <br>
 \<int64_t\> asset_id: 指定资产的instance_id
 
+<a name="sha256"></a>
+## void sha256(const char *data, uint32_t length, checksum256 *hash)
+计算数据的sha256
 
-
-
-## void sha256(char data, uint32_t length, const checksum256 * hash)
-
-desc: 计算数据的sha256
-
-
-
-
-\<char\> data: 用于计算sha256的字符串首地址
-
-\<uint32_t\> length: data字符串的长度
-
+\<char\> data: 用于计算sha256的字符串首地址 <br>
+\<uint32_t\> length: data字符串的长度 <br>
 \<const checksum256 *\> hash: 出参 用于存储计算的sha256
 
 
+<a name="sha512"></a>
+## void sha512(const char *data, uint32_t length, checksum512 *hash)
 
+计算数据的sha512
 
-## void sha512(char data, uint32_t length, const checksum512 * hash)
-
-desc: 计算数据的sha512
-
-
-
-
-\<char\> data: 用于计算sha512的字符串首地址
-
-\<uint32_t\> length: data字符串的长度
-
+\<char\> data: 用于计算sha512的字符串首地址 <br>
+\<uint32_t\> length: data字符串的长度 <br>
 \<const checksum512 *\> hash: 出参 用于存储计算的sha512
 
 
 
+<a name="ripemd160"></a>
+## void ripemd160(const char *data, uint32_t length, checksum160 *hash)
 
-## void ripemd160(char data, uint32_t length, const checksum160 * hash)
+计算数据的ripemd160
 
-desc: 计算数据的ripemd160
-
-
-
-
-\<char\> data: 用于计算ripemd160的字符串首地址
-
-\<uint32_t\> length: data字符串的长度
-
-\<const checksum160 *\> hash: 出参 用于存储计算的ripemd160
+\<char\> data: 用于计算ripemd160的字符串首地址 <br>
+\<uint32_t\> length: data字符串的长度 <br>
+\<const checksum160 *\> hash: 出参 用于存储计算的ripemd160 <br>
 
 
 
+<a name="verify_signature"></a>
+## bool verify_signature(const char *data, uint32_t datalen, const signature* sig,  const char *pub_key, uint32_t pub_keylen)
 
-## bool verify_signature(const char data, uint32_t datalen, signature sig, const char * pub_key, uint32_t pub_keylen)
-
-desc: 验证签名
-
-
+验证签名
 
 
-\<const char\> data: 签名的原始字符串
-
-\<uint32_t\> datalen: data字符串的长度
-
-\<signature\> sig: 签名数据
-
-\<const char *\> pub_key: 签名私钥对应的公钥
-
+\<const char\> data: 签名的原始字符串 <br>
+\<uint32_t\> datalen: data字符串的长度 <br>
+\<signature\> sig: 签名数据 <br>
+\<const char *\> pub_key: 签名私钥对应的公钥 <br>
 \<uint32_t\> pub_keylen: 公钥的长度
 
 
 
-
+<a name="get_head_block_num"></a>
 ## int64_t get_head_block_num()
 
-desc: 获取最新区块号
+获取最新区块号
 
 
 
-
+<a name="get_head_block_id"></a>
 ## int64_t get_head_block_id()
 
-desc: 获取最新区块hash
+获取最新区块hash
 
 
 
-
+<a name="get_head_block_time"></a>
 ## int64_t get_head_block_time()
 
-desc: 获取最新区块的时间，返回值单位秒
+获取最新区块的时间，返回值单位秒
 
 
 
-
+<a name="get_trx_sender"></a>
 ## int64_t get_trx_sender()
 
-desc: 获取调用合约的账号的instance_id
+获取调用合约的账号的instance_id
 
 
 
-
+<a name="get_account_id"></a>
 ## int64_t get_account_id(const char * data, uint32_t length)
 
-desc: 根据账号名获取账号的instance_id
+根据账号名获取账号的instance_id
 
 
-
-
-\<const char *\> data: 账号名，例如nathan
-
+\<const char *\> data: 账号名，例如nathan <br>
 \<uint32_t\> length: 账号名的长度，例如nathan的长度是6
 
 
 
-
+<a name="get_asset_id"></a>
 ## int64_t get_asset_id(const char * data, uint32_t length)
 
-include: <graphenelib/global.h>
+根据资产名获取资产的instance_id
 
-desc: 根据资产名获取资产的instance_id
-
-
-
-
-\<const char *\> data: 资产名
-
+\<const char *\> data: 资产名 <br>
 \<uint32_t\> length: 账号名的长度，例如nathan的长度是6
 
 
 
-
+<a name="graphene_assert"></a>
 ## void graphene_assert(uint32_t test, const char* msg)
 
-include: <graphenelib/system.h>
+如果条件不满足，中断本次合约的执行并会滚所有状态
 
-desc: 如果条件不满足，中断本次合约的执行并会滚所有状态
-
-
-
-
-\<uint32_t\> test: 
-
-\<const char*\> msg: 
+\<uint32_t\> test:  <br>
+\<const char*\> msg: <br>
 
 
 
-
+<a name="graphene_assert_message"></a>
 ## void graphene_assert_message(uint32_t test, const char* msg, uint32_t msg_len)
 
-include: <graphenelib/system.h>
+如果条件不满足，输出必要的信息，但是本次合约的执行会继续
 
-desc: 如果条件不满足，输出必要的信息，但是本次合约的执行会继续
-
-
-
-
-\<uint32_t\> test: 
-
-\<const char*\> msg: 
-
-\<uint32_t\> msg_len: 
+\<uint32_t\> test: <br>
+\<const char*\> msg:  <br> 
+\<uint32_t\> msg_len:  <br>
 
 
-// 获取链帐户上余额
-int64_t get_balance(int64_t *account, int64_t *asset_id);
 
-//  生成sha256
-void sha256(char *data, uint32_t length, checksum256 *hash);
+<a name="print"></a>
+## inline void print( const char* ptr )；
 
-// 生成sha512
-void sha512(char *data, uint32_t length, checksum512 *hash);
-
-// ripemd160
-void ripemd160(char *data, uint32_t length, checksum160 *hash);
-
-// 验签
-bool verify_signature(const char *data, uint32_t datalen, signature* sig,  const char *pub_key, uint32_t pub_keylen);
- ```
- 
- 
- ```
-// 返回最新区块号
-int64_t get_head_block_num();
-    
-// 获取最新区块id
-void get_head_block_id(checksum256* hash);
-    
-// 返回最新区块头时间
-int64_t get_head_block_time();
-    
-// 返回交易的发送者帐户id (后48位)
-int64_t get_trx_sender();
-    
-// 根据帐户名查询帐户id (后48位)
-int64_t get_account_id(const char *data, uint32_t length);
-    
-// 根据资产符号查询资产id(后48位)
-int64_t get_asset_id(const char *data, uint32_t length);
-```
- 
- 
-```
-// 断言，test必须为true
-void  graphene_assert( uint32_t test, const char* msg );
-
-// 断言
-void  graphene_assert_message( uint32_t test, const char* msg, uint32_t msg_len );
-```
- 
-
-inline void print( const char* ptr )；
-
-desc: 用于调试时日志的打印
+用于调试时日志的打印
 
 \<const char*\> ptr: 
 
