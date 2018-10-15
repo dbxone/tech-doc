@@ -18,7 +18,7 @@
 | <graphenelib/global.h> | get_asset_id | 根据资产名获取资产的instance_id |
 | <graphenelib/system.h> | graphene_assert | 如果条件不满足，中断本次合约的执行并会滚所有状态 |
 | <graphenelib/system.h> | graphene_assert_message | 如果条件不满足，输出必要的信息，但是本次合约的执行会继续 |
-| <graphenelib/system.h> | [print](#fun_print) | 用于调试时日志的打印 |
+| <graphenelib/system.h> | [print](#void_print_const_char_ptr) | 用于调试时日志的打印 |
 
 
 
@@ -288,10 +288,8 @@ desc: 如果条件不满足，输出必要的信息，但是本次合约的执�
 \<uint32_t\> msg_len: 
 
 
-fun_print
----------
-
-<span id="fun_print">void print(const char* ptr)<span>
+void print(const char* ptr)
+---------------------------
 
 desc: 用于调试时日志的打印
 
