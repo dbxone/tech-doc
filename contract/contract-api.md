@@ -290,7 +290,7 @@ desc: 如果条件不满足，输出必要的信息，但是本次合约的执�
 
 
 
-<span id="fun_print">##  void print(const char* ptr)
+<span id="fun_print">void print(const char* ptr)<span>
 
 desc: 用于调试时日志的打印
 
