@@ -51,7 +51,7 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 * [helloworld合约](examples/helloworld.md)
 * [充值提现合约](examples/bank.md)
 * [红包合约](examples/redpacket.md)
-* [线性释放资产合约](examples/linear_vesting_asset.md)
+* [线性释放资产合约](examples/linear-vesting-asset.md)
 * [基于hash验证的猜谜合约](examples/riddle.md)
 
 
