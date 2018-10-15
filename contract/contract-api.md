@@ -21,7 +21,7 @@
 | <graphenelib/system.h> | [print](#void_print) | 用于调试时日志的打印 |
 
 
-
+current_receiver
 ## uint64_t current_receiver()
 
 desc: 返回当前合约账号的id
