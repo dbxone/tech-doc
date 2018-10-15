@@ -21,44 +21,6 @@
 | <graphenelib/system.h> | [print](#print) | 用于调试时日志的打印 |
 
 
-
-
-### example1
-```c++
-#include <graphenelib/action.h>
-#include <graphenelib/contract.hpp>
-#include <graphenelib/dispatcher.hpp>
-#include <graphenelib/types.h>
-
-using namespace graphene;
-
-class helloworld : public contract
-{
-public:
-helloworld(uint64_t id) 
-    : contract(id)
-{   
-}   
-
-//@abi action
-//@abi payable
-void deposit()
-{   
-    uint64_t asset_id = get_action_asset_id();
-}   
-};
-
-GRAPHENE_ABI(helloworld, (deposit))
-```
-
-对这个合约通过钱包客户端调用 <br>
-call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}" DBX true <br>
-调用helloworld的deposit方法，在deposit方法的实现中调用get_action_asset_id()将返回1
-            
-
-
-
-
 <a name="current_receiver"></a>
 ## uint64_t current_receiver()
 返回当前合约的帐户id，取最后48位。 如果帐户id为1.2.12345，则后48位即12345
@@ -207,7 +169,7 @@ call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}
 
 
 <a name="print"></a>
-## inline void print( const char* ptr )；[example](#https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/helloworld)
+## inline void print( const char* ptr )；[example](examples/helloworld.md)
 
 用于调试时日志的打印
 

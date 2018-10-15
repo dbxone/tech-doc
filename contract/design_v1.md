@@ -27,7 +27,7 @@ wast生成方法：
 
 
 ### 合约的创建和调用接口
-#### 1. 部署(创建)合约 create_contract
+#### 1. 部署(创建)合约 deploy_contract
 
 ```
 {
