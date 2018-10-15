@@ -12,6 +12,8 @@ DBXChain是一条公有链，是DBXChain数据交易所的底层区块链，不�
 | [测试网络]() | |
 | [搭建私链]() | |
 | [创建发行资产]() | |
+| [智能合约开发]() | |
+
 
 | [dbxchain](dbxchain/introduction.md) | DBXChain公链，基于石墨烯技术，基于C++开发。 |
 | [dbxui](dbxui/introduction.md) | 区块浏览器，web形式的浏览器客户端，基于Nodejs开发。 |
