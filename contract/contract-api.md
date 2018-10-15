@@ -288,7 +288,7 @@ desc: 如果条件不满足，输出必要的信息，但是本次合约的执�
 \<uint32_t\> msg_len: 
 
 
-void print
+void_print
 ----------
 
 desc: 用于调试时日志的打印
