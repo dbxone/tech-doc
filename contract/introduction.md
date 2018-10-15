@@ -7,14 +7,17 @@
 DBXChain智能合约2.0，底层使用WebAssembly虚拟机，目前支持C++语言的智能合约编写。
 开发者使用C++编写智能合约，通过llvm将代码编译成WebAssembly（又名WASM），部署到区块链上，通过智能合约ABI(Application Binary Interface，应用程序的二进制接口)和智能合约交互。
 
-## 2. DBXChain链智能合约编译
+## 2. 快速开始
 
-DBXChain源码编译，目前支持Ubuntu16.04系统：
+可以本地编译搭建DBXChain私链，通过命令行方式编译、部署、调用智能合约。
 
-- [Build on Ubuntu16.04](compile.md)
+### 2.1 [本地编译DBXChain链](compile.md)
+
+### 2.2 [本地搭建私链](../dbxchian/private-chain.md)
+
+### 2.3 [本地编译部署运行合约](../dbxchian/private-chain.md)
 
 
-可以本地编译DBXChain程序，通过命令行方式编译、部署、调用智能合约。
 
 ##### 智能合约 API 参考文档
 文档中列出了一些API和使用示例，可以在编写合约时调用：
