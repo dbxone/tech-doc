@@ -113,7 +113,7 @@ unlocked >>> call_contract nathan apitest null show "{\"account_to\":\"alpha\", 
 ### 调用转账接口
 
 ```
-unlocked >>> call_contract nathan apitest null withdraw_asset "{\"account_to\":\"alpha\", \"asset\":\"DBX\", \"amount\":\"50\"}" DBX true
+unlocked >>> call_contract nathan apitest null transfer "{\"account_to\":\"alpha\", \"asset\":\"DBX\", \"amount\":\"50\"}" DBX true
 
 ```
 | 参数 | 解释 |
