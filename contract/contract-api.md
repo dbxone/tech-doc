@@ -1,7 +1,7 @@
 ## Index Table
 | belong | api name | description |
 | --- | --- | --- |
-| <graphenelib/action.h> | [current receiver](#wang) | 返回当前合约账号的id |
+| <graphenelib/action.h> | [current_receiver](#current_receiver) | 返回当前合约账号的id |
 | <graphenelib/action.h> | get_action_asset_id | 返回本次调用向合约发送的资产id |
 | <graphenelib/action.h> | get_action_asset_amount | 返回本次调用向合约发送的资产数量 |
 | <graphenelib/asset.h> | withdraw_asset | 将当前合约的资产转移到外部账户 |
@@ -21,9 +21,7 @@
 | <graphenelib/system.h> | [print](#void_print) | 用于调试时日志的打印 |
 
 
-<a name="wang"></a>
-
-current receiver
+<a name="current_receiver"></a>
 ## uint64_t current_receiver()
 
 desc: 返回当前合约账号的id
