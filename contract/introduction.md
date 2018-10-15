@@ -13,9 +13,9 @@ DBXChain智能合约2.0，底层使用WebAssembly虚拟机，目前支持C++语�
 
 ### 2.1 [本地编译DBXChain链](compile.md)
 
-### 2.2 [本地搭建私链](../dbxchian/private-chain.md)
+### 2.2 [本地搭建私链](../dbxchain/private-chain.md)
 
-### 2.3 [本地编译部署运行合约](../dbxchian/private-chain.md)
+### 2.3 [本地编译部署运行合约](../dbxchain/private-chain.md)
 
 
 
