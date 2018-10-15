@@ -1,7 +1,7 @@
 ## Index Table
 | belong | api name | description |
 | --- | --- | --- |
-| <graphenelib/action.h> | current_receiver | 返回当前合约账号的id |
+| <graphenelib/action.h> | [current_receiver](#current_receiver) | 返回当前合约账号的id |
 | <graphenelib/action.h> | get_action_asset_id | 返回本次调用向合约发送的资产id |
 | <graphenelib/action.h> | get_action_asset_amount | 返回本次调用向合约发送的资产数量 |
 | <graphenelib/asset.h> | withdraw_asset | 将当前合约的资产转移到外部账户 |
@@ -23,17 +23,13 @@
 
 
 ## uint64_t current_receiver()
-
-include: <graphenelib/action.h>
+------------------------------
 
 desc: 返回当前合约账号的id
 
 
-
-
 ## uint64_t get_action_asset_id()
-
-include: <graphenelib/action.h>
+---------------------------------
 
 desc: 返回本次调用向合约发送的资产id
 
@@ -75,8 +71,7 @@ call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}
 
 
 ## uint64_t get_action_asset_amount()
-
-include: <graphenelib/action.h>
+-------------------------------------
 
 desc: 返回本次调用向合约发送的资产数量
 
@@ -84,8 +79,7 @@ desc: 返回本次调用向合约发送的资产数量
 
 
 ## void withdraw_asset(uint64_t from, uint64_t to, uint64_t asset_id, int64_t amount)
-
-include: <graphenelib/asset.h>
+-------------------------------------------------------------------------------------
 
 desc: 将当前合约的资产转移到外部账户
 
@@ -104,8 +98,7 @@ desc: 将当前合约的资产转移到外部账户
 
 
 ## int64_t get_balance(int64_t account, int64_t asset_id)
-
-include: <graphenelib/asset.h>
+--------------------------------------------------------
 
 desc: 获取外部账户的某资产余额
 
