@@ -53,6 +53,15 @@ unlocked >>> deploy_contract helloworld your_account_name 0 0 ./helloworld DBX t
 ## 4. 调用合约
 
 ```
-unlocked >>> call_contract nathan helloworld null hi "{\"user\":\"abcdefg\"}" DBX true
+unlocked >>> call_contract your_accoutn_name helloworld null hi "{\"user\":\"abcdefg\"}" DBX true
 
 ```
+| 参数 | 解释 |
+| :--- | :--- |
+| your_accoutn_name | 调用合约的账户 |
+| helloworld | 调用的哪个合约 |
+| null | 设置调用合约的手续费 |
+| hi | 调用合约的哪个方法 |
+| "{\"user\":\"abcdefg\"} | 调用的合约方法的参数 |
+| DBX | 手续费资产类型 |
+| true | 发起广播 |
