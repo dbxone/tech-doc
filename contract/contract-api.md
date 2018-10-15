@@ -80,11 +80,8 @@ int64_t get_action_asset_amount();
 将当前合约的资产转移到外部账户
 
 \<uint64_t\> from: 从哪个账号转账，一般是_self
-
 \<uint64_t\> to: 转账到哪个外部账户，必须只传账号的instance_id，比如外部账户是1.2.33，那么传33即可
-
 \<uint64_t\> asset_id: 指定转账的资产id，必须只传资产id的instance_id, 比如资产id是1.3.0， 那么传0即可
-
 \<int64_t\> amount: 转账金额，这个数字包含了资产的精度，比如想转1个DBX，那么应该写100000
 
 
