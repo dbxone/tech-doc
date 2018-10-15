@@ -37,9 +37,6 @@ class helloworld : public contract
 GRAPHENE_ABI(helloworld, (hi))
 ```
 
-## 1. 编译合约
-
-
 ## 2. 编译合约，生成wast和abi
 
 编译合约，生成wast和abi文件:
