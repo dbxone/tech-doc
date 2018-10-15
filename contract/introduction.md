@@ -49,9 +49,9 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 
 ##### 智能合约 API 参考文档
 文档中列出了一些API和使用示例，可以在编写合约时调用：
-https://github.com/dbxone/tech-doc/blob/contract/dbx_contract_api.md
+https://github.com/dbxone/tech-doc/blob/master/contract/contract-api.md
 
-智能合约存储参考文档：https://github.com/dbxone/tech-doc/blob/contract/contract/contract_storage_usage.md
+智能合约存储参考文档：https://github.com/dbxone/tech-doc/blob/master/contract/contract_storage_usage.md
 
 ##### 智能合约示例:
 * helloworld合约： https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/helloworld
