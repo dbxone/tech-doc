@@ -3,8 +3,8 @@
 | --- | --- | --- |
 | <graphenelib/action.h> | [current_receiver](#current_receiver) | 返回当前合约账号的id |
 | <graphenelib/action.h> | get_action_asset_id | 返回本次调用向合约发送的资产id |
-| <graphenelib/action.h> | get_action_asset_amount | 返回本次调用向合约发送的资产数量 <br> int64_t get_action_asset_amount(); |
-| <graphenelib/asset.h> | withdraw_asset | 将当前合约的资产转移到外部账户 <br> void withdraw_asset(uint64_t from, uint64_t to, uint64_t asset_id, int64_t amount) <br> from: 从哪个账号转账，一般是_self <br>转账到哪个外部账户，必须只传账号的instance_id，比如外部账户是1.2.33，那么传33即可 <br> asset_id: 指定转账的资产id，必须只传资产id的instance_id, 比如资产id是1.3.0， 那么传0即可 <br> amount: 转账金额，这个数字包含了资产的精度，比如想转1个DBX，那么应该写100000 |
+| <graphenelib/action.h> | get_action_asset_amount | 返回本次调用向合约发送的资产数量 |
+| <graphenelib/asset.h> | withdraw_asset | 将当前合约的资产转移到外部账户 |
 | <graphenelib/asset.h> | get_balance | 获取外部账户的某资产余额 |
 | <graphenelib/crypto.h> | sha256 | 计算数据的sha256 |
 | <graphenelib/crypto.h> | sha512 | 计算数据的sha512 |
@@ -18,11 +18,11 @@
 | <graphenelib/global.h> | get_asset_id | 根据资产名获取资产的instance_id |
 | <graphenelib/system.h> | graphene_assert | 如果条件不满足，中断本次合约的执行并会滚所有状态 |
 | <graphenelib/system.h> | graphene_assert_message | 如果条件不满足，输出必要的信息，但是本次合约的执行会继续 |
-| <graphenelib/system.h> | [print](#print) | 用于调试时日志的打印 |
+| <graphenelib/system.h> | [print](#void_print) | 用于调试时日志的打印 |
 
 
 
-## uint64_t current_receiver()
+## current_receiver()
 
 desc: 返回当前合约账号的id
 
@@ -66,6 +66,14 @@ GRAPHENE_ABI(helloworld, (deposit))
 call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}" DBX true
 调用helloworld的deposit方法，在deposit方法的实现中调用get_action_asset_id()将返回1
             
+
+
+
+## uint64_t get_action_asset_amount()
+-------------------------------------
+
+desc: 返回本次调用向合约发送的资产数量
+
 
 
 
@@ -262,7 +270,7 @@ desc: 如果条件不满足，输出必要的信息，但是本次合约的执�
 
 
 void print( const char* ptr )；
-     -----
+  -----
 
 desc: 用于调试时日志的打印
 
@@ -283,7 +291,8 @@ uint64_t current_receiver();
 // 调用合约时，向合约发送的资产id，取资产id的后48位
 uint64_t get_action_asset_id();
 
-
+// 调用合约时，向合约发送的资产数量（放大10万倍的）
+int64_t get_action_asset_amount();
 ```
 
   
