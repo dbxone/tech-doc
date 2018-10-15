@@ -70,7 +70,7 @@ unlocked >>> deploy_contract helloworld your_account_name 0 0 ./helloworld DBX t
 ```
 | 参数 | 解释 |
 | :--- | :--- |
-| your_accoutn_name | 部署合约的账户 |
+| your_account_name | 部署合约的账户 |
 | 0 | 虚拟机类型 |
 | 0 | 虚拟机版本 |
 | ./helloworld | 为wast/abi文件所在路径 |
@@ -80,12 +80,12 @@ unlocked >>> deploy_contract helloworld your_account_name 0 0 ./helloworld DBX t
 ## 4. 调用合约
 
 ```
-unlocked >>> call_contract your_accoutn_name helloworld null hi "{\"user\":\"abcdefg\"}" DBX true
+unlocked >>> call_contract your_account_name helloworld null hi "{\"user\":\"abcdefg\"}" DBX true
 
 ```
 | 参数 | 解释 |
 | :--- | :--- |
-| your_accoutn_name | 调用合约的账户 |
+| your_account_name | 调用合约的账户 |
 | helloworld | 调用的哪个合约 |
 | null | 设置调用合约的手续费 |
 | hi | 调用合约的哪个方法 |
@@ -99,8 +99,10 @@ unlocked >>> call_contract your_accoutn_name helloworld null hi "{\"user\":\"abc
 在witness_node运行日志中可以查看到如下运行信息:
 
 ```
-[(22,hi)->22] CONSOLE OUTPUT BEGIN =====================
+[(20,hi)->20] CONSOLE OUTPUT BEGIN =====================
 hi, abcdefg
 
-[(22,hi)->22] CONSOLE OUTPUT END =====================
+[(20,hi)->20] CONSOLE OUTPUT END =====================
 ```
+
+此处helloworld的智能合约id是20.
