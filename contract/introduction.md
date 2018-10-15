@@ -39,12 +39,11 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 
 可以本地编译搭建DBXChain私链，通过命令行方式编译、部署、调用智能合约。
 
-### 2.1 [本地编译DBXChain链](compile.md)
+### 2.1 [编译DBXChain链](compile.md)
 
-### 2.2 [本地搭建私链](../dbxchain/private-chain.md)
+### 2.2 [搭建私链](../dbxchain/private-chain.md)
 
-### 2.3 [本地编译部署运行合约](../dbxchain/private-chain.md)
-
+### 2.3 [编译部署运行合约](contract-run.md)
 
 
 ## 3. 智能合约示例
@@ -57,59 +56,10 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 
 
 ## 4. 智能合约 API 参考文档
-文档中列出了一些API和使用示例，可以在编写合约时调用：
-https://github.com/dbxone/tech-doc/blob/master/contract/contract-api.md
+* [api参考文档](contract-api.md)
+* [存储参考文档](contract-storage_usage.md)
 
-智能合约存储参考文档：https://github.com/dbxone/tech-doc/blob/master/contract/contract_storage_usage.md
 
-#### 2. 编译合约
-使用dxx的模板创建一个helloworld合约
-```
-dxx -n helloworld
-```
-
-#### 3. 编译合约，生成wast和abi
-编译合约，生成wast和wasm文件
-
-```
-dxx -o helloworld/helloworld.wast helloworld/helloworld.cpp
-```
-生成abi文件
-
-```
-dxx -g helloworld/helloworld.abi helloworld/helloworld.cpp
-```
-
-#### 4. 部署合约
-需要开启cli_wallet，连接本地节点或者远程testnet节点
-```
-./programs/cli_wallet/cli_wallet -swss://testnet.dbxchain.org --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
-```
-
-导入钱包私钥
-
-```
-# 如果是新钱包，需要设置一个解锁密码，此处为mylocalpassword
-
-new >>> set_password mylocalpassword
-
-# 解锁
-locked >>> unlock mylocalpassword
-
-# 导入钱包私钥
-unlocked >>> import_key your_account_name your_private_key
-
-# 部署合约, 指定合约名为helloworld，发起的钱包帐户为your_accoutn_name， 0和0分别为vm type和vm version，./helloworld为wast/abi文件所在路径， DBX表示手续费资产类型，true表示发起广播
-unlocked >>> deploy_contract helloworld your_account_name 0 0 ./helloworld DBX true
-```
-
-#### 5. 调用合约
-部署合约成功后，可以使用call_contract接口查询合约
-
-```
-unlocked >>> call_contract nathan helloworld null hi "{\"user\":\"abcdefg\"}" DBX true
-
-```
 
 ### 其它参考：
 #### 安装DBXChain testnet网络全节点程序
