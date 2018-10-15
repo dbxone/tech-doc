@@ -83,7 +83,7 @@ dxx -g helloworld/helloworld.abi helloworld/helloworld.cpp
 #### 4. 部署合约
 需要开启cli_wallet，连接本地节点或者远程testnet节点
 ```
-./programs/cli_wallet/cli_wallet -swss://testnet.dbxchain.org --chain-id c2af30ef9340ff81fd61654295e98a1ff04b23189748f86727d0b26b40bb0ff4
+./programs/cli_wallet/cli_wallet -swss://testnet.dbxchain.org --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
 
 导入钱包私钥
