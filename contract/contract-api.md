@@ -18,7 +18,7 @@
 | <graphenelib/global.h> | get_asset_id | 根据资产名获取资产的instance_id |
 | <graphenelib/system.h> | graphene_assert | 如果条件不满足，中断本次合约的执行并会滚所有状态 |
 | <graphenelib/system.h> | graphene_assert_message | 如果条件不满足，输出必要的信息，但是本次合约的执行会继续 |
-| <graphenelib/system.h> | [print](#void_print) | 用于调试时日志的打印 |
+| <graphenelib/system.h> | [print](#print) | 用于调试时日志的打印 |
 
 
 
@@ -114,8 +114,6 @@ desc: 获取外部账户的某资产余额
 
 ## void sha256(char data, uint32_t length, const checksum256 * hash)
 
-include: <graphenelib/crypto.h>
-
 desc: 计算数据的sha256
 
 
@@ -131,8 +129,6 @@ desc: 计算数据的sha256
 
 
 ## void sha512(char data, uint32_t length, const checksum512 * hash)
-
-include: <graphenelib/crypto.h>
 
 desc: 计算数据的sha512
 
@@ -150,8 +146,6 @@ desc: 计算数据的sha512
 
 ## void ripemd160(char data, uint32_t length, const checksum160 * hash)
 
-include: <graphenelib/crypto.h>
-
 desc: 计算数据的ripemd160
 
 
@@ -167,8 +161,6 @@ desc: 计算数据的ripemd160
 
 
 ## bool verify_signature(const char data, uint32_t datalen, signature sig, const char * pub_key, uint32_t pub_keylen)
-
-include: <graphenelib/crypto.h>
 
 desc: 验证签名
 
@@ -190,16 +182,12 @@ desc: 验证签名
 
 ## int64_t get_head_block_num()
 
-include: <graphenelib/global.h>
-
 desc: 获取最新区块号
 
 
 
 
 ## int64_t get_head_block_id()
-
-include: <graphenelib/global.h>
 
 desc: 获取最新区块hash
 
@@ -208,8 +196,6 @@ desc: 获取最新区块hash
 
 ## int64_t get_head_block_time()
 
-include: <graphenelib/global.h>
-
 desc: 获取最新区块的时间，返回值单位秒
 
 
@@ -217,16 +203,12 @@ desc: 获取最新区块的时间，返回值单位秒
 
 ## int64_t get_trx_sender()
 
-include: <graphenelib/global.h>
-
 desc: 获取调用合约的账号的instance_id
 
 
 
 
 ## int64_t get_account_id(const char * data, uint32_t length)
-
-include: <graphenelib/global.h>
 
 desc: 根据账号名获取账号的instance_id
 
@@ -288,8 +270,8 @@ desc: 如果条件不满足，输出必要的信息，但是本次合约的执�
 \<uint32_t\> msg_len: 
 
 
-void_print ## aaaaaaa
-----------
+void print( const char* ptr )；
+     -----
 
 desc: 用于调试时日志的打印
 
