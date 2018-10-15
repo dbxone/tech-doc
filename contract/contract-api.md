@@ -4,7 +4,7 @@
 | <graphenelib/action.h> | [current_receiver](#current_receiver) | 返回当前合约账号的id |
 | <graphenelib/action.h> | get_action_asset_id | 返回本次调用向合约发送的资产id |
 | <graphenelib/action.h> | get_action_asset_amount | 返回本次调用向合约发送的资产数量 <br> int64_t get_action_asset_amount(); |
-| <graphenelib/asset.h> | withdraw_asset | 将当前合约的资产转移到外部账户 <br> void withdraw_asset(uint64_t from, uint64_t to, uint64_t asset_id, int64_t amount) <br> \<uint64_t\> from: 从哪个账号转账，一般是_self <br> \<uint64_t\> to: 转账到哪个外部账户，必须只传账号的instance_id，比如外部账户是1.2.33，那么传33即可 <br> \<uint64_t\> asset_id: 指定转账的资产id，必须只传资产id的instance_id, 比如资产id是1.3.0， 那么传0即可 <br> \<int64_t\> amount: 转账金额，这个数字包含了资产的精度，比如想转1个DBX，那么应该写100000 |
+| <graphenelib/asset.h> | withdraw_asset | 将当前合约的资产转移到外部账户 <br> void withdraw_asset(uint64_t from, uint64_t to, uint64_t asset_id, int64_t amount) <br> from: 从哪个账号转账，一般是_self <br>转账到哪个外部账户，必须只传账号的instance_id，比如外部账户是1.2.33，那么传33即可 <br> asset_id: 指定转账的资产id，必须只传资产id的instance_id, 比如资产id是1.3.0， 那么传0即可 <br> amount: 转账金额，这个数字包含了资产的精度，比如想转1个DBX，那么应该写100000 |
 | <graphenelib/asset.h> | get_balance | 获取外部账户的某资产余额 |
 | <graphenelib/crypto.h> | sha256 | 计算数据的sha256 |
 | <graphenelib/crypto.h> | sha512 | 计算数据的sha512 |
