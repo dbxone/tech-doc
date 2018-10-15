@@ -9,16 +9,16 @@ DBXChain智能合约2.0，底层使用WebAssembly虚拟机，目前支持C++语�
 
 ##### 智能合约 API 参考文档
 文档中列出了一些API和使用示例，可以在编写合约时调用：
-https://github.com/dbxone/tech-doc/blob/master/dbx_contract_api.md
+https://github.com/dbxone/tech-doc/blob/contract/dbx_contract_api.md
 
-智能合约存储参考文档：https://github.com/dbxone/tech-doc/blob/master/contract/contract_storage_usage.md
+智能合约存储参考文档：https://github.com/dbxone/tech-doc/blob/contract/contract/contract_storage_usage.md
 
 ##### 智能合约示例:
-* helloworld合约： https://github.com/dbxone/dbxchain/tree/master/contracts/examples/helloworld
-* 充值提现合约： https://github.com/dbxone/dbxchain/tree/master/contracts/examples/bank
-* 红包合约： https://github.com/dbxone/dbxchain/tree/master/contracts/examples/redpacket
-* 线性释放资产合约：https://github.com/dbxone/dbxchain/tree/master/contracts/examples/linear_vesting_asset
-* 基于hash验证的猜谜合约：https://github.com/dbxone/dbxchain/tree/master/contracts/examples/riddle
+* helloworld合约： https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/helloworld
+* 充值提现合约： https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/bank
+* 红包合约： https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/redpacket
+* 线性释放资产合约：https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/linear_vesting_asset
+* 基于hash验证的猜谜合约：https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/riddle
 
 ### 二、快速开始 (使用本地命令行方式)
 
@@ -99,7 +99,7 @@ tar zxvf dbx_ubuntu_1.0.180809.beta.tar.gz
 # 启动完成后，可以观察./testnet_node/log/witness.log观察区块同步情况，区块同步过程中每10000个区块会打印一条日志，同步完成后，每3秒打印一条日志ß
 ```
 
-testnet 安装文档 ：https://github.com/dbxone/tech-doc/blob/master/test%20net.md
+testnet 安装文档 ：https://github.com/dbxone/tech-doc/blob/contract/test%20net.md
 
 testnet 区块浏览器：https://testnet.explorer.dbxchain.org/#/
 

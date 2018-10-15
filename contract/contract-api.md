@@ -128,7 +128,6 @@ call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}
 
 验证签名
 
-
 \<const char\> data: 签名的原始字符串 <br>
 \<uint32_t\> datalen: data字符串的长度 <br>
 \<signature\> sig: 签名数据 <br>
@@ -208,15 +207,8 @@ call_contract nathan helloworld {"amount":10000000,"asset_id":1.3.1} deposit "{}
 
 
 <a name="print"></a>
-## inline void print( const char* ptr )；
+## inline void print( const char* ptr )；[example](#https://github.com/dbxone/dbxchain/tree/contract/contracts/examples/helloworld)
 
 用于调试时日志的打印
 
 \<const char*\> ptr: 
-
-
-
-
-# examples
-
-## helloworld
