@@ -53,6 +53,7 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 ## 3. 智能合约示例
 
 * [helloworld合约](examples/helloworld.md)
+* [基本api测试](examples/api-test.md)
 * [充值提现合约](examples/bank.md)
 * [红包合约](examples/redpacket.md)
 * [线性释放资产合约](examples/linear-vesting-asset.md)
