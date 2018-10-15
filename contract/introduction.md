@@ -65,7 +65,7 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 
 
 
-### 其它参考：
+## 其它参考：
 #### 安装DBXChain testnet网络全节点程序
 如果不想使用testnet提供的接入点，也可以本地部署一个全节点。
 安装DBXChain testnet全节点安装方法：
