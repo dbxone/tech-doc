@@ -28,9 +28,7 @@ class helloworld : public contract
     /// @abi action
     void hi(std::string user)
     {
-        for (int i = 0; i < 2; ++i) {
-            print("hi, ", user, "\n");
-        }
+        print("hi, ", user, "\n");
     }
 };
 
@@ -94,3 +92,15 @@ unlocked >>> call_contract your_accoutn_name helloworld null hi "{\"user\":\"abc
 | "{\"user\":\"abcdefg\"} | 调用的合约方法的参数 |
 | DBX | 手续费资产类型 |
 | true | 发起广播 |
+
+
+## 5. 结果
+
+在witness_node运行日志中可以查看到如下运行信息:
+
+```
+[(22,hi)->22] CONSOLE OUTPUT BEGIN =====================
+hi, abcdefg
+
+[(22,hi)->22] CONSOLE OUTPUT END =====================
+```
