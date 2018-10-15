@@ -25,33 +25,6 @@ wast生成方法：
 4. binaryen 将汇编文件转成.wast
 ````
 
-### 合约帐户设计
-  1. 帐户分2种：普通帐户和合约帐户
-  2. 合约帐户，由普通帐户通过部署合约的方式创建，合约帐户无私钥，资产权限由合约代码控制
-  3. 合约帐户对象，code字段存储合约代码, abi存储合约代码和abi
-  4. 合约代码不支持更新
-
-### 合约的持久化存储
-  1. 定义合约的数据存储格式； 定义线性存储空间，每个元素是一个struct类型
-  2. witness_node运行时，合约的持久化存储，放内存；程序退出时，写入磁盘；后期可以考虑优化内存(磁盘+缓存)。
-  3. 封装读写持久化存储的API，  提供读、写、检索方法的接口供合约调用
-  4. 合约只能写自己的存储空间，可以读其它合约的存储空间，但不可直接写；  同一合约内不同帐户的存储空间，由用户合约代码控制权限
-  5. 合约内可以根据区块号获取区块，读取外部状态
-
-### 智能合约公共库，供智能合约在虚拟机内部调用
- 1. 提供API，获取head block num,  获取head block id
- 2. get_balance 获取外部帐户余额
- 3. 加解密API、验签API
- 4. 持久化存储API
-
-### 销毁合约(暂不支持)
-合约内可以提供销毁方法，如：
-selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
-回收的存储空间，按全局手续费参数计算，奖励给合约创建者(从系统资金池中获取,  最多返还存储价格的20%)。
-
-
-### 合约调用合约(暂不支持)
-  1.  目前只能由普通帐户和合约帐户交互，不支持合约间交互
 
 ### 合约的创建和调用接口
 #### 1. 部署(创建)合约 create_contract
@@ -339,13 +312,3 @@ DBX_ABI(hello, (hi)(bye))
   "abi_extensions": []
 }
 ```
-
-### 相关文档
-1. github开源地址：https://github.com/dbxone/dbxchain
-2. 源码编译:
--  ubuntu 16.04: https://github.com/dbxone/dbxchain/wiki/BUILD_UBUNTU
--  os x: https://github.com/dbxone/dbxchain/wiki/BUILD_OS_X
-3. 相关API文档：
-- https://github.com/dbxone/dbxchain/wiki/witness_node_api_json_rpc
-- https://github.com/dbxone/dbxchain/wiki/wallet_api
-4. 其它文档：https://doc.dbx.io/dbxchain/
