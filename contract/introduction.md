@@ -34,6 +34,10 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 ### 1.5 合约调用合约(暂不支持)
 目前只能由普通帐户和合约帐户交互，不支持合约间交互。
 
+### 1.6 技术实现
+1. 合约代码： 暂时支持C++，后续会支持更多语言
+2. 编译工具：llvm + binaryen， 将C++代码编译成wasm代码
+3. 智能合约执行环境： WebAssembly作为底层执行VM，VM调用封装的API读取外部状态、读写外部存储。 wasm-jit 地址：https://github.com/WebAssembly/wasm-jit-prototype
 
 ## 2. 快速开始
 
