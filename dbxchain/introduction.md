@@ -43,7 +43,9 @@ web在线钱包，区块浏览器，同时也是在线的钱包。web形式的�
 # 技术要点
 * [编译安装](compile.md)
 * [witness_node参数介绍](witness_node.md)
+* [witness_node api 介绍](witness_node-api.md)
 * [cli_wallet参数介绍](cli_wallet.md)
+* [cli_wallet api 介绍](cli_wallet-api.md)
 * [同步节点](sync.md)
 * [账户注册](register.md)
 * [搭建私链](private-chain.md)
