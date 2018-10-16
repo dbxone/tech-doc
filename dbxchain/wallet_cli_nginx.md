@@ -1,4 +1,4 @@
-# nginx代理配置cli\_wallet端口转发
+# nginx代理配置cli_wallet端口转发
 
 钱包的rpc服务仅限本地访问，如果需要其它机器访问钱包的rpc服务，可以在钱包节点上配置nginx代理，并限制IP访问。
 
@@ -25,7 +25,7 @@ sudo apt-get install nginx
 
 ### 2. 配置nginx
 
-新增cli\_wallet.conf，放于/etc/nginx/conf.d 目录下，内容如下：
+新增cli_wallet.conf，放于/etc/nginx/conf.d 目录下，内容如下：
 
 ```
 server { 

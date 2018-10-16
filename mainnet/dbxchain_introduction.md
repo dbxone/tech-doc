@@ -19,10 +19,11 @@
 ## 同步节点数据
 
 ```
-witness_node --rpc-endpoint="127.0.0.1:38090" &
+witness_node --p2p-endpoint="url" --rpc-endpoint="127.0.0.1:38090" &
 ```
 
-就是这样了, 根据上面的步骤:
+* url替换成主网或者测试网节点url
+
 
 * 启动了一个节点监听在 `127.0.0.1:38090`
 

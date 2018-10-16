@@ -6,7 +6,7 @@
 
 ## 简要步骤：
 
-1. 在离线机器，启动witness\_node及cli\_wallet，在cli\_wallet端使用suggest\_brain\_key命令离线生成密钥对;
+1. 在离线机器，启动witness\_node及cli_wallet，在cli_wallet端使用suggest\_brain\_key命令离线生成密钥对;
 2. 使用轻钱包\(light\_wallet\)修改帐户的活跃权限公钥，移除原来的公钥，添加上述生成的公钥，则私钥离线存储，账户进入冷存状态；
 
 3. 需要动用冷存账户时，启动离线机器，生成一个转帐操作的广播消息体;
@@ -17,7 +17,7 @@
 
 ##### 1）准备工作
 
-* 两台机器\(一台作为离线机器，一台作为在线机器\)，安装并启动witness\_node及cli\_wallet，且均同步区块到本地，保证所用的账户在链上
+* 两台机器\(一台作为离线机器，一台作为在线机器\)，安装并启动witness\_node及cli_wallet，且均同步区块到本地，保证所用的账户在链上
 
 ##### 2）启动命令：
 
@@ -27,7 +27,7 @@ witness\_node启 动 命 令 ， 后 台 启 动 :
 ./programs/witness_node/witness_node --rpc-endpoint=127.0.0.1:38090 --p2p-endpoint=0.0.0.0:38091 --log-file &
 ```
 
-cli\_wallet启动命令：
+cli_wallet启动命令：
 
 ```
 ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 -r 127.0.0.1:38091
@@ -35,7 +35,7 @@ cli\_wallet启动命令：
 
 ##### 3）离线生成密钥对
 
-使用离线的机器，启动witness\_node和cli\_wallet，并在cli\_wallet端输入suggest\_brain\_key命令\(前提钱包已经解锁\)，离线生成密钥对。
+使用离线的机器，启动witness\_node和cli_wallet，并在cli_wallet端输入suggest\_brain\_key命令\(前提钱包已经解锁\)，离线生成密钥对。
 
 ```
 unlocked >>> suggest_brain_key 
@@ -55,7 +55,7 @@ unlocked >>> suggest_brain_key
 
 ##### 5）动用冷存账户转账
 
-启动离线机器的witness\_node和cli\_wallet， 导入帐户私钥\(以下命令均在cli\_wallet中执行\):
+启动离线机器的witness\_node和cli_wallet， 导入帐户私钥\(以下命令均在cli_wallet中执行\):
 
 ```
 unlock >>> import_key <account_name> <wif_priv_key> true
@@ -207,7 +207,7 @@ unlocked >>> sign_builder_transaction 0 false
 }
 ```
 
-6）启动在线的机器的witness\_node和cli\_wallet， 然后将上一步生成的报文复制到此机器中:
+6）启动在线的机器的witness\_node和cli_wallet， 然后将上一步生成的报文复制到此机器中:
 
 ```
 broadcast_transaction $tx

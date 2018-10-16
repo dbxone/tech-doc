@@ -1,9 +1,9 @@
 ## 上链彩蛋
 --------------------
 
-目前仅支持cli\_wallet操作。要求cli\_wallet已经导入帐户私钥。
+目前仅支持cli_wallet操作。要求cli_wallet已经导入帐户私钥。
 
-### 1. 启动cli\_wallet, 连接到主网的node1钱包接入点
+### 1. 启动cli_wallet, 连接到主网的node1钱包接入点
 
 ```
 ./programs/cli_wallet/cli_wallet -swss://node1.dbx.io -w wallet.json
