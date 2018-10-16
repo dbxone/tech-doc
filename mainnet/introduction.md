@@ -3,14 +3,18 @@
 主网节点主要有dbxchain、dbxui、dbxfaucet三大部分组成：
 
 * [dbxchain](dbxchain_introduction.md)
+
 DBXChain公链，基于石墨烯技术，基于C++开发。dbxchain主要由witness_node和cli_wallet程序组成。
+
 witness_node  网络节点程序，它负责出块，同步数据块，网络共识等等。<br>
 cli_wallet  命令行钱包客户端，用以进行账户注册，转账，查看交易等等。
 
 * [dbxui](dbxui_introduction.md) 
+
 web在线钱包，区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。 <br> http://wallet.dbxchain.io
 
 * [dbxfaucet](dbxfaucet_introduction.md) 
+
 水龙头，用于web钱包客户端连接，继续宁账户注册服务，基于ruby开发。
 
 
