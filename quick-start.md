@@ -19,14 +19,14 @@
 ### 2. 启动节点
 
 ```
-witness_node --rpc-endpoint="127.0.0.1:38090
+witness_node --rpc-endpoint="127.0.0.1:38090" &
 ```
 
 就是这样了, 根据上面的步骤:
 
-* 启动了一个节点监听在 `127.0.0.1:28090`
+* 启动了一个节点监听在 `127.0.0.1:38090`
 
-* 指定了区块信息保存在 `./trusted_node` 目录下
+* 区块信息被保存在 `witness_node_data_dir` 默认目录下
 
 友情提示
 
@@ -65,19 +65,26 @@ DBXChain采用账户模型，并且引入了推荐注册机制，因此在DBXCha
 推荐对私钥安全要求较高的开发者使用这种方式完成注册，保证私钥是离线的
 
 #### 步骤1: 通过cli_wallet来生成一对公私钥
-./programs/cli_wallet/cli_wallet --suggest-brain-key
+
+```
+cli_wallet --suggest-brain-key
 {
   "brain_priv_key": "SHAP CASCADE AIRLIKE WRINKLE CUNETTE FROWNY MISREAD MOIST HANDSET COLOVE EMOTION UNSPAN SEAWARD HAGGIS TEENTY NARRAS",
   "wif_priv_key": "5J2FpCq3UmvcodkCCofXSNvHYTodufbPajwpoEFAh2TJf27EuL3",
   "pub_key": "DBX75UwALPEFECfHLjHyNSxCk1j7XzSvApQiXKEbanWgr7yvXXbdG"
 }
+```
+
 字段解释
 
-brain_priv_key: 助记词，是私钥的原始文本，通过助记词可以还原出私钥
-wif_priv_key: 私钥，在程序中使用
-pub_key: 公钥，用于链上账户注册
+* brain_priv_key: 助记词，是私钥的原始文本，通过助记词可以还原出私钥
+* wif_priv_key: 私钥，在程序中使用
+* pub_key: 公钥，用于链上账户注册
+
 #### 步骤2: 通过水龙头来完成账户注册
-想一个专属的账户名(account_name),如DBXChain-genius
+
 替换下面curl命令中的 <account_name> and <public_key> 并在终端执行:
-curl 'https://opengateway.dbx.io/account/register' -H 'Content-type: application/json' -H 'Accept: application/json’ -d ‘{“account”:{“name”:”<account_name>”,”owner_key”:”<public_key>”,”active_key”:”<public_key>”,”memo_key”:”<public_key>”,”refcode”:null,”referrer”:null}}’
-在 GitHub 上编辑此页 上次更新: 2018/9/30 下午5:33:50
+
+```
+curl 'https://faucet.dbxchain.io/account/register' -H 'Content-type: application/json' -H 'Accept: application/json’ -d ‘{“account”:{“name”:”<account_name>”,”owner_key”:”<public_key>”,”active_key”:”<public_key>”,”memo_key”:”<public_key>”,”refcode”:null,”referrer”:null}}’
+```
