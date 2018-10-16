@@ -83,7 +83,7 @@ tar zxvf dbx_ubuntu_1.0.180809.beta.tar.gz
 # 启动完成后，可以观察./testnet_node/log/witness.log观察区块同步情况，区块同步过程中每10000个区块会打印一条日志，同步完成后，每3秒打印一条日志ß
 ```
 
-testnet 安装文档 ：https://github.com/dbxone/tech-doc/blob/contract/test%20net.md
+testnet 安装文档 ：https://github.com/dbxone/tech-doc/blob/master/testnet.md
 
 testnet 区块浏览器：https://testnet.explorer.dbxchain.org/#/
 
