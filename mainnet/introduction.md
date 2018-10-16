@@ -9,6 +9,8 @@ DBXChain公链，基于石墨烯技术，基于C++开发。dbxchain主要由witn
 witness_node  网络节点程序，它负责出块，同步数据块，网络共识等等。<br>
 cli_wallet  命令行钱包客户端，用以进行账户注册，转账，查看交易等等。
 
+主网接入点地址: <br> http://mainnet.dbxchain.io ; <br> ws://mainnet.dbxchain.io
+
 * [dbxui](dbxui_introduction.md) 
 
 web在线钱包，区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。 <br> 在线钱包地址: http://wallet.dbxchain.io
