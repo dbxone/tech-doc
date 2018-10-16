@@ -4,7 +4,7 @@
 
 | 命令 | 参数 | 说明 | 备注 |
 | :--- | :--- | :--- | :--- |
-| [get_objects](api/witness_node/getobjects.md) | &lt;ids&gt; | 根据ID查询目标对象 |  |
+| [get_objects](witness_node/getobjects.md) | &lt;ids&gt; | 根据ID查询目标对象 |  |
 | set_subscribe_callback | &lt;cb&gt; &lt;clear_filter&gt; | 注册全局订阅的回调 |  |
 | set_data_transaction_subscribe_callback | &lt;cb&gt; &lt;clear_filter&gt; | 注册数据交易的回调 |  |
 | unsubscribe_data_transaction_callback |  | 取消注册数据交易的回调 |  |
@@ -12,7 +12,7 @@
 | set_pending_transaction_callback | &lt;cb&gt; | 注册未确认的交易的回调 |  |
 | set_block_applied_callback | &lt;cb&gt; | 注册区块是否被应用的回调 |  |
 | cancel_all_subscriptions |  | 停止所有订阅（回调） |  |
-| [get_block_header](api/witness_node/getblock-header.md) | &lt;block_num&gt; | 获取区块头信息 |  |
+| [get_block_header](witness_node/getblock-header.md) | &lt;block_num&gt; | 获取区块头信息 |  |
 | get_transaction | &lt;block_num&gt; &lt;trx_in_block&gt; | 获得交易信息 |  |
 | get_block | &lt;block_num&gt; | 获取区块信息 |  |
 | get_recent_transaction_by_id | &lt;id&gt; | 根据TXID查询交易，若交易超出有效期则会返回空值 |  |
@@ -25,13 +25,13 @@
 | get_key_references | &lt;key&gt; | 返回所有指向公钥的帐户信息 |  |
 | is_public_key_registered | &lt;public_key&gt; | 验证公钥是否已经被注册 |  |
 | get_accounts | &lt;account_ids&gt; | 通过ID获取账户信息 |  |
-| [get_full_accounts](api/witness_node/getfullaccounts.md) | &lt;names_or_ids&gt; &lt;subscribe&gt; | 获取符合条件的所有账户相关信息 |  |
+| [get_full_accounts](witness_node/getfullaccounts.md) | &lt;names_or_ids&gt; &lt;subscribe&gt; | 获取符合条件的所有账户相关信息 |  |
 | get_account_by_name | &lt;name&gt; | 通过账户名获取账户信息 |  |
 | get_account_references | &lt;account_id&gt; | 获取账户account_id相关的账户id |  |
 | lookup_account_names | &lt;account_names&gt; | 通过账户名获取账户信息 |  |
-| [lookup_accounts](api/witness_node/lookupaccounts.md) | &lt;limit&gt; &lt;lower_bound_name&gt; | 获取已注册账户的账户名和ID |  |
+| [lookup_accounts](witness_node/lookupaccounts.md) | &lt;limit&gt; &lt;lower_bound_name&gt; | 获取已注册账户的账户名和ID |  |
 | get_account_count |  | 获取链上注册的所有账户数量 |  |
-| [get_account_balances](api/witness_node/getaccount-balances.md) | &lt;id&gt; &lt;assets&gt; | 通过账户ID和资产ID获取账户资产信息 |  |
+| [get_account_balances](witness_node/getaccount-balances.md) | &lt;id&gt; &lt;assets&gt; | 通过账户ID和资产ID获取账户资产信息 |  |
 | get_named_account_balances | &lt;name&gt; &lt;assets&gt; | 通过账户名和资产ID获取账户资产信息 |  |
 | get_balance_objects | &lt;&lt;\[address\]&gt;&gt; | 返回地址address上所有未领取的余额对象 |  |
 | get_vested_balances | &lt;objs&gt; | 通过账户余额ID获取可领取的资产信息 |  |
@@ -39,7 +39,7 @@
 | list_data_transaction_complain_requesters | &lt;start_date_time&gt; &lt;end_date_time&gt; &lt;limit&gt; | 通过开始和结束时间获取投诉的发起人，并返回前limit个 |  |
 | list_data_transaction_complain_datasources | &lt;start_date_time&gt; &lt;end_date_time&gt; &lt;limit&gt; | 通过开始和结束时间获取被投诉的数据源，并返回前limit个 |  |
 | get_assets | &lt;asset_ids&gt; | 通过资产ID获取资产 |  |
-| [list_assets](api/witness_node/listassets.md) | &lt;lower_bound_symbol&gt; &lt;limit&gt; | 通过资产符号名称获取资产信息，并返回前limit个 |  |
+| [list_assets](witness_node/listassets.md) | &lt;lower_bound_symbol&gt; &lt;limit&gt; | 通过资产符号名称获取资产信息，并返回前limit个 |  |
 | lookup_asset_symbols | &lt;symbols_or_ids&gt; | 通过资产符号获取资产列表 |  |
 | get_witnesses | &lt;witness_ids&gt; | 通过见证人ID获取见证人列表 |  |
 | get_witness_by_account | &lt;account&gt; | 通过账户ID获取见证人信息 |  |

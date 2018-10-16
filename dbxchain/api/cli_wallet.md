@@ -2,21 +2,21 @@
 
 | 命令 | 参数 | 说明 | 备注 |
 | :--- | :--- | :--- | :--- |
-| [set_password](api/cli_wallet/setpassword.md) | &lt;new_password&gt; | 对钱包设置一个新密码。首次启动钱包，需要设置密码 |  |
-| [unlock](api/cli_wallet/unlock.md) | &lt;my_password&gt; | 解锁钱包 |  |
-| [import_key](api/cli_wallet/importkey.md) | &lt;account_name_or_id&gt;         &lt;true&gt; &lt;wif_private_key&gt; | 将帐户的私钥导入到钱包 |  |
-| [dump_private_keys](api/cli_wallet/dumpprivate-keys.md) |  | 打印钱包拥有的所有私钥对 |  |
-| [get_account](api/cli_wallet/getaccount.md) | &lt;account_name_or_id&gt; | 查询指定帐户信息，参数可以为帐户名或者帐户id |  |
-| [list_account_balances](api/cli_wallet/listaccount-balances.md) | &lt;account_name_or_id&gt; | 查询帐户余额 |  |
-| [get_account_history](api/cli_wallet/getaccount-history.md) | &lt;account_name_or_id&gt;         &lt;limt_num&gt; | 查询帐户最近的交易记录 |  |
-| [get_relative_account_history](api/cli_wallet/getrelative-account-history.md) | &lt;account_name_or_id&gt;       &lt;start&gt; &lt;limit&gt; &lt;stop&gt; | 查询帐户最近的交易记录, 支持翻页 |  |
-| [get_account_history_by_operations](api/cli_wallet/getrelative-account-history_by_operations.md) | &lt;account_name_or_id&gt; &lt;\[\]&gt;  &lt;start&gt; &lt;limit_num&gt; | 根据oeration_type查询帐户最近的交易记录，并且返回 operation对应的txID |  |
-| [transfer](api/cli_wallet/transfer.md) | &lt;from_account&gt;                   &lt;to_account&gt; &lt;amount&gt;     &lt;DBX&gt; &lt;memo&gt; &lt;true&gt; | 转帐操作 |  |
-| [transfer2](api/cli_wallet/transfer2.md) | &lt;from_account&gt;                   &lt;to_account&gt; &lt;amount&gt;     &lt;DBX&gt; &lt;memo&gt; &lt;true&gt; | 转帐操作，参数同transfer, 返回结果中包含当前交易的id |  |
-| [get_block](api/cli_wallet/getblock.md) | &lt;block_num&gt; | 获取指定区块信息 |  |
-| [info](api/cli_wallet/info.md) |  | 获取区块链信息，可以用此命令查询最新区块高度 |  |
-| [help](api/cli_wallet/help.md) |  | 帮助命令，此命令会返回钱包支持的所有接口 |  |
-| [gethelp](api/cli_wallet/gethelp.md) | &lt;command&gt; | 帮助命令，查看指定钱包命令的调用方法 |  |
+| [set_password](cli_wallet/setpassword.md) | &lt;new_password&gt; | 对钱包设置一个新密码。首次启动钱包，需要设置密码 |  |
+| [unlock](cli_wallet/unlock.md) | &lt;my_password&gt; | 解锁钱包 |  |
+| [import_key](cli_wallet/importkey.md) | &lt;account_name_or_id&gt;         &lt;true&gt; &lt;wif_private_key&gt; | 将帐户的私钥导入到钱包 |  |
+| [dump_private_keys](cli_wallet/dumpprivate-keys.md) |  | 打印钱包拥有的所有私钥对 |  |
+| [get_account](cli_wallet/getaccount.md) | &lt;account_name_or_id&gt; | 查询指定帐户信息，参数可以为帐户名或者帐户id |  |
+| [list_account_balances](cli_wallet/listaccount-balances.md) | &lt;account_name_or_id&gt; | 查询帐户余额 |  |
+| [get_account_history](cli_wallet/getaccount-history.md) | &lt;account_name_or_id&gt;         &lt;limt_num&gt; | 查询帐户最近的交易记录 |  |
+| [get_relative_account_history](cli_wallet/getrelative-account-history.md) | &lt;account_name_or_id&gt;       &lt;start&gt; &lt;limit&gt; &lt;stop&gt; | 查询帐户最近的交易记录, 支持翻页 |  |
+| [get_account_history_by_operations](cli_wallet/getrelative-account-history_by_operations.md) | &lt;account_name_or_id&gt; &lt;\[\]&gt;  &lt;start&gt; &lt;limit_num&gt; | 根据oeration_type查询帐户最近的交易记录，并且返回 operation对应的txID |  |
+| [transfer](cli_wallet/transfer.md) | &lt;from_account&gt;                   &lt;to_account&gt; &lt;amount&gt;     &lt;DBX&gt; &lt;memo&gt; &lt;true&gt; | 转帐操作 |  |
+| [transfer2](cli_wallet/transfer2.md) | &lt;from_account&gt;                   &lt;to_account&gt; &lt;amount&gt;     &lt;DBX&gt; &lt;memo&gt; &lt;true&gt; | 转帐操作，参数同transfer, 返回结果中包含当前交易的id |  |
+| [get_block](cli_wallet/getblock.md) | &lt;block_num&gt; | 获取指定区块信息 |  |
+| [info](cli_wallet/info.md) |  | 获取区块链信息，可以用此命令查询最新区块高度 |  |
+| [help](cli_wallet/help.md) |  | 帮助命令，此命令会返回钱包支持的所有接口 |  |
+| [gethelp](cli_wallet/gethelp.md) | &lt;command&gt; | 帮助命令，查看指定钱包命令的调用方法 |  |
 
 ### **调用示例**
 
