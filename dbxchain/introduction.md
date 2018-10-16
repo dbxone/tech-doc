@@ -6,7 +6,7 @@ DBXChain是一条公有链，是DBXChain数据交易所的底层区块链，不�
 
 DBXChain主要有dbx-core、dbxui、dbxfaucet三大部分组成：
 
-* [dbx-core](dbxchain_introduction.md)
+* [<b>dbx-core</b>](dbxchain_introduction.md)
 
 DBXChain公链，基于石墨烯技术，基于C++开发。
 
