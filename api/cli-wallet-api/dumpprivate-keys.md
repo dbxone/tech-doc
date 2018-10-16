@@ -1,8 +1,8 @@
-# dump\_private\_keys
+# dump_private_keys
 
 ##### 说明：打印钱包拥有的所有公私钥对
 
-##### usage: dump\_private\_keys
+##### usage: dump_private_keys
 
 ##### 参数: 无
 
