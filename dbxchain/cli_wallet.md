@@ -59,7 +59,7 @@ unlocked >>> get_block 881577
 
 
 # cli_wallet退出
-witness\_node重启以后，需要重新启动cli_wallet。
+witness_node重启以后，需要重新启动cli_wallet。
 
 因为cli_wallet后台运行时，不会自动退出。
 
