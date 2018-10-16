@@ -105,19 +105,19 @@ grouped_orders插件选项
 
 # 退出witness_node
 
-* 如果witness\_node没有后台运行，则执行一次Ctrl + C, 然后等待程序保存内存数据后自动退出。
+* 如果witness_node没有后台运行，则执行一次Ctrl + C, 然后等待程序保存内存数据后自动退出。
 
-* 如果witness\_node运行在后台，执行`kill -s SIGINT $(pgrep witness_node)`，等待程序保存内存数据后自动退出。不能使用kill -9， 否则下次启动会重建索引，启动比较慢。
+* 如果witness_node运行在后台，执行`kill -s SIGINT $(pgrep witness_node)`，等待程序保存内存数据后自动退出。不能使用kill -9， 否则下次启动会重建索引，启动比较慢。
 
-* 如果异常退出，则重新启动时，很可能需要重建索引，启动比较慢。如果 witness\_node 出现异常，一般先尝试带 --replay-blockchain 参数重启，即手工触发重建索引。
+* 如果异常退出，则重新启动时，很可能需要重建索引，启动比较慢。如果 witness_node 出现异常，一般先尝试带 --replay-blockchain 参数重启，即手工触发重建索引。
 
 
 # 区块同步出错
 
-观察后台日志文件trusted\_node/logs/witness.log, 如果日志持续报错，如"unlinkable block", "block does not link to known chain"，这是区块同步出错了。
+观察后台日志文件trusted_node/logs/witness.log, 如果日志持续报错，如"unlinkable block", "block does not link to known chain"，这是区块同步出错了。
 
 解决方法：
 
-* 区块同步异常，有可能本地的区块链文件坏掉了。需要停止witness\_node程序，然后删除trusted\_node， 重新启动witness\_node。
+* 区块同步异常，有可能本地的区块链文件坏掉了。需要停止witness_node程序，然后删除trusted_node， 重新启动witness_node。
 
-* 或者不删除trusted\_node目录，启动命令加上参数--resync-blockchain， 会重新同步区块。
+* 或者不删除trusted_node目录，启动命令加上参数--resync-blockchain， 会重新同步区块。
