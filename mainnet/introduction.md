@@ -59,7 +59,7 @@ DBXChain采用账户模型，并且引入了推荐注册机制，因此在DBXCha
 有两种方式可以完成账户的注册:
 
 ### 1. 在线钱包
-使用在线钱包 <b>https://wallet.dbx.io</b> 在界面上完成上述步骤
+使用在线钱包 <b>https://wallet.dbxchain.io</b> 在界面上完成上述步骤
 
 ### 2. 手动注册
 推荐对私钥安全要求较高的开发者使用这种方式完成注册，保证私钥是离线的
@@ -86,5 +86,5 @@ cli_wallet --suggest-brain-key
 替换下面curl命令中的 <account_name> and <public_key> 并在终端执行:
 
 ```
-curl 'https://faucet.dbxchain.io/account/register' -H 'Content-type: application/json' -H 'Accept: application/json’ -d ‘{“account”:{“name”:”<account_name>”,”owner_key”:”<public_key>”,”active_key”:”<public_key>”,”memo_key”:”<public_key>”,”refcode”:null,”referrer”:null}}’
+curl 'https://wallet.dbxchain.io/account/register' -H 'Content-type: application/json' -H 'Accept: application/json’ -d ‘{“account”:{“name”:”<account_name>”,”owner_key”:”<public_key>”,”active_key”:”<public_key>”,”memo_key”:”<public_key>”,”refcode”:null,”referrer”:null}}’
 ```
