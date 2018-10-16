@@ -78,57 +78,12 @@ info
  # participation表示见证人参与率，见证人参与率必须大于70，网络才是正常的
 ```
 
-更多cli_wallet接口，可以查看[wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)。
 
 ### 5. 使用命令行钱包cli_wallet, 导入帐户私钥
 
 如果你还没有帐户，需要先下载DBXChain轻钱包，或者访问在线钱包，注册帐号\(记得备份，保存好私钥\)。
 
-| DBXChain轻钱包下载地址 | [https://www.dbx.io/\#downLoad](https://www.dbx.io/#downLoad) |
-| :--- | :--- |
-| 在线钱包地址 | [https://wallet.dbx.io](https://wallet.dbx.io/) |
 
-关于私钥和如何使用DBX，参考[DBXChain轻钱包使用手册](https://www.dbx.io/download/DBX使用操作说明.pdf)
-
-在命令行钱包执行命令：
-
-```
-// 导入帐户私钥
-unlocked >>> import_key account_name wif_key true
-```
-
-```
-// 查看本钱包能控制的所有帐户
-unlocked >>> list_my_accounts
-```
-
-```
-// 查看帐户信息
-unlocked >>> get_account account_name
-```
-
-```
-// 查看帐户余额
-unlocked >>> list_account_balances account_name
-```
-
-```
-// 转帐(需要帐户有余额)
-// 其中DBX代表公信股资产， DBX代表公信币资产
-unlocked >>> transfer from_account to_account 100 DBX "" true
-```
-
-```
-// 查询最新区块高度， 其中返回结果中head_block_number即最新区块高度
-unlocked >>> get_object 2.1.0
-```
-
-```
-// 查询区块信息，查询时指定区块号
-unlocked >>> get_block 881577
-```
-
-转帐有2个命令行接口:transfer和transfer2， 其中transfer2执行成功后，返回当前transaction的id
 
 ### 6. 后台运行cli_wallet
 
@@ -302,46 +257,6 @@ curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "para
   }
 }
 ```
-
-## 五、常见问题
-
-**区块同步时报错**
-
-1. 观察后台日志文件trusted\_node/logs/witness.log, 如果日志持续报错，如"unlinkable block", "block does not link to known chain"，这是区块同步出错了。
-
-   解决方法：
-
-   1. 区块同步异常，有可能本地的区块链文件坏掉了。需要停止witness\_node程序，然后删除trusted\_node， 重新启动witness\_node。
-
-   2. 或者不删除trusted\_node目录，启动命令加上参数--resync-blockchain， 会重新同步区块。
-
-2. **如何正常关闭witness\_node**
-
-   1. 如果witness\_node没有后台运行，则执行一次Ctrl + C, 然后等待程序保存内存数据后自动退出。
-   2. 如果witness\_node运行在后台， 执行`kill -s SIGINT $(pgrep witness_node)`，等待程序保存内存数据后自动退出。不能使用kill -9， 否则下次启动会重建索引，启动比较慢。
-
-3. witness\_node重启以后，需要重新启动cli_wallet。因为cli_wallet后台运行时，不会自动退出。关闭cli_wallet的方法：执行  
-   `kill -s SIGINT $(pgrep cli_wallet)`
-
-4. 如果异常退出，则重新启动时，很可能需要重建索引，启动比较慢。如果 witness\_node 出现异常，一般先尝试带 --replay-blockchain 参数重启，即手工触发重建索引。
-
-5. witness\_node重启后，需要重启cli_wallet。如果cli_wallet是后台运行的，cli_wallet不会因witness\_node退出而自动退出，也需要重启。
-
-6. **cli_wallet进程偶尔退出问题**
-
-   如果遇到cli_wallet后台运行一段时间后退出的情况，可能的原因是终端掉线，建议后台运行成功后，关闭当前终端。或者在启动命令行之前加上nohup:
-
-```
-nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log -r 127.0.0.1:38091 -d >>wallet.out 2>1 &
-```
-
-建议使用脚本启动程序\(脚本中的帐户id需要做修改\)：
-
-[witness\_node启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/witness_start.sh)
-
-和
-
-[cli_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
 
 ## 六、注意事项
 
