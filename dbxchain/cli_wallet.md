@@ -15,49 +15,6 @@
 | --chain-id arg | chain ID to connect to <br> 连接的链id |
 | -v [ --version ] | Display version information <br> 查看版本信息 |
 
-
-
-# 在命令行钱包执行命令
-
-```
-// 导入帐户私钥
-unlocked >>> import_key account_name wif_key true
-```
-
-```
-// 查看本钱包能控制的所有帐户
-unlocked >>> list_my_accounts
-```
-
-```
-// 查看帐户信息
-unlocked >>> get_account account_name
-```
-
-```
-// 查看帐户余额
-unlocked >>> list_account_balances account_name
-```
-
-```
-// 转帐(需要帐户有余额)
-// 其中DBX代表公信股资产， DBX代表公信币资产
-unlocked >>> transfer from_account to_account 100 DBX "" true
-```
-
-```
-// 查询最新区块高度， 其中返回结果中head_block_number即最新区块高度
-unlocked >>> get_object 2.1.0
-```
-
-```
-// 查询区块信息，查询时指定区块号
-unlocked >>> get_block 881577
-```
-
-转帐有2个命令行接口:transfer和transfer2， 其中transfer2执行成功后，返回当前transaction的id
-
-
 # cli_wallet退出
 witness_node重启以后，需要重新启动cli_wallet。
 
