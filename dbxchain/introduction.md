@@ -16,8 +16,13 @@ witness_node 通过 P2P 方式连接到DBXChain网络，从网络接收最新区
 
 cli_wallet 通过 websocket 方式连接到 witness_node， 管理钱包文件； 提供交易签名功能，签名后通过 witness_node 向外广播； 通过 http rpc 的方式提供 API 供其他程序调用。
 
-主网接入点地址: <b>`ws://mainnet.dbxchain.io`</b><br>
-测试网接入点地址: <b>`ws://testnet.dbxchain.io`</b>
+数据同步接入点地址
+主网: <b>`ws://mainnet.dbxchain.io`</b><br>
+测试网: <b>`ws://testnet.dbxchain.io`</b>
+
+客户端服务接入点地址
+主网: <b>`ws://mainnet.dbxchain.io`</b><br>
+测试网: <b>`ws://testnet.dbxchain.io`</b>
 
 * [dbxui](dbxui_introduction.md) 
 
@@ -37,7 +42,8 @@ web在线钱包，区块浏览器，同时也是在线的钱包。web形式的�
 
 # 技术要点
 * [编译安装](compile.md)
-* [搭建私链](private-chain.md)
-* [账户注册](register.md)
 * [witness_node参数介绍](witness_node.md)
 * [cli_wallet参数介绍](cli_wallet.md)
+* [同步节点](sync.md)
+* [账户注册](register.md)
+* [搭建私链](private-chain.md)
