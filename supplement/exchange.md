@@ -1,41 +1,3 @@
-# 交易所接入文档
-
-## 一、 介绍
-
-DBXChain\(DBX\)钱包的对接方式和比特股\(BTS\)一样，需要运行以下两个程序：见证节点 witness\_node 和命令行钱包 cli\_wallet。
-
-witness\_node 通过 P2P 方式连接到DBXChain网络，从网络接收最新区块，向网络广播本地签署的交易包。
-
-cli\_wallet 通过 websocket 方式连接到 witness\_node， 管理钱包文件； 提供交易签名功能，签名后通过 witness\_node 向外广播； 通过 http rpc 的方式提供 API 供其他程序调用。
-
-## 二、 软硬件需求
-
-使用 Ubuntu 16.04 LTS 64位系统， 机器内存 8GB+，50GB 硬盘。 不需要安装依赖包。
-
-witness\_node节点的运行要求当前的机器校准时间， 需要安装 NTP 服务：
-
-```
-sudo apt-get install ntp
-```
-
-## 三、 部署和启动程序
-
-### 1. 安装包下载
-
-选择其中一个下载即可。
-
-| 平台 | 下载地址 |
-| :--- | :--- |
-| github | [https://github.com/dbxone/dbxchain/releases/download/1.0.171031/dbx\_1.0.171031.tar.gz](https://github.com/dbxone/dbxchain/releases/download/1.0.171031/dbx_1.0.171031.tar.gz) |
-| 阿里云 | [http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx\_1.0.171031.tar.gz](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/dbx_1.0.171031.tar.gz) |
-
-### 2. 解压程序
-
-将程序放置你的deploy目录，然后执行命令：
-
-```
-tar zxvf dbx_1.0.171031.tar.gz
-```
 
 ### 3. 启动见证节点witness\_node， 同步数据
 
@@ -91,16 +53,16 @@ nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoin
 
 完全同步区块，大约需要30分钟以上。通过后台日志文件trusted\_node/logs/witness.log可查看区块同步进度，访问[DBXChain区块浏览器](https://block.dbx.io/)查看最新区块。区块同步完成后，可以运行命令行钱包。
 
-### 4. 运行命令行钱包cli\_wallet
+### 4. 运行命令行钱包cli_wallet
 
-命令行钱包cli\_wallet连接witness\_node:
+命令行钱包cli_wallet连接witness\_node:
 
 ```
 ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 \
 --enable-rpc-log -r 127.0.0.1:38091 --data-dir=trusted_node
 ```
 
-cli\_wallet启动参数：
+cli_wallet启动参数：
 
 ```
 # 连接见证人节点的websocket rpc地址
@@ -149,9 +111,9 @@ info
  # participation表示见证人参与率，见证人参与率必须大于70，网络才是正常的
 ```
 
-更多cli\_wallet接口，可以查看[wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)。
+更多cli_wallet接口，可以查看[wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)。
 
-### 5. 使用命令行钱包cli\_wallet, 导入帐户私钥
+### 5. 使用命令行钱包cli_wallet, 导入帐户私钥
 
 如果你还没有帐户，需要先下载DBXChain轻钱包，或者访问在线钱包，注册帐号\(记得备份，保存好私钥\)。
 
@@ -201,7 +163,7 @@ unlocked >>> get_block 881577
 
 转帐有2个命令行接口:transfer和transfer2， 其中transfer2执行成功后，返回当前transaction的id
 
-### 6. 后台运行cli\_wallet
+### 6. 后台运行cli_wallet
 
 在导入钱包私钥后，ctrl + c退出，此时会生成本地的钱包文件。再重新启动，启动时带上参数 -d &， 如下：
 
@@ -216,11 +178,11 @@ nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 \
 
 #### 通过账户查询账户的交易历史，以及获取交易的txID
 
-cli\_wallet不仅提供了命令行接口，还提供了json rpc接口。 钱包开启了 http rpc 方式的 API 服务时，效果与在钱包里输入命令相同。可以过wscat或者使用http客户端\(如curl\)来调用。
+cli_wallet不仅提供了命令行接口，还提供了json rpc接口。 钱包开启了 http rpc 方式的 API 服务时，效果与在钱包里输入命令相同。可以过wscat或者使用http客户端\(如curl\)来调用。
 
 其中method 传入命令名，params 数组传入参数清单\(无参数时，params传空数组\)， id为请求的标识，返回结果中的id和请求id一致。如果执行成功，结果会有 result ，否则会有 error
 
-cli\_wallet提供了3个查询交易历史的接口：get\_account\_history, get\_relative\_account\_history和get\_account\_history\_by\_operations。其中get\_account\_history\_by\_operations可以返回交易id\(txID\)。3个接口在[wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)里都有说明。以get\_account\_history\_by\_operations为例，步骤如下：
+cli_wallet提供了3个查询交易历史的接口：get\_account\_history, get\_relative\_account\_history和get\_account\_history\_by\_operations。其中get\_account\_history\_by\_operations可以返回交易id\(txID\)。3个接口在[wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)里都有说明。以get\_account\_history\_by\_operations为例，步骤如下：
 
 1. 解锁钱包。
 2. 根据帐户名，查询到帐户id。
@@ -344,7 +306,7 @@ curl --data '{"jsonrpc": "2.0", "method": "get_account_history_by_operations", "
 
 #### 不可回退区块
 
-调用cli\_wallet的get\_dynamic\_global\_properties接口，查看当前最大的不可回退区块号\(也即最大的不可回退区块高度\)。小于此区块高度的区块，其包含的交易都是已经被确认不可回退的。可用作用户提现时参考，区块不可回退时再处理用户提现。
+调用cli_wallet的get\_dynamic\_global\_properties接口，查看当前最大的不可回退区块号\(也即最大的不可回退区块高度\)。小于此区块高度的区块，其包含的交易都是已经被确认不可回退的。可用作用户提现时参考，区块不可回退时再处理用户提现。
 
 ```
 curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "params": [], "id": 1}' http://127.0.0.1:38091/rpc
@@ -391,16 +353,16 @@ curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "para
    1. 如果witness\_node没有后台运行，则执行一次Ctrl + C, 然后等待程序保存内存数据后自动退出。
    2. 如果witness\_node运行在后台， 执行`kill -s SIGINT $(pgrep witness_node)`，等待程序保存内存数据后自动退出。不能使用kill -9， 否则下次启动会重建索引，启动比较慢。
 
-3. witness\_node重启以后，需要重新启动cli\_wallet。因为cli\_wallet后台运行时，不会自动退出。关闭cli\_wallet的方法：执行  
+3. witness\_node重启以后，需要重新启动cli_wallet。因为cli_wallet后台运行时，不会自动退出。关闭cli_wallet的方法：执行  
    `kill -s SIGINT $(pgrep cli_wallet)`
 
 4. 如果异常退出，则重新启动时，很可能需要重建索引，启动比较慢。如果 witness\_node 出现异常，一般先尝试带 --replay-blockchain 参数重启，即手工触发重建索引。
 
-5. witness\_node重启后，需要重启cli\_wallet。如果cli\_wallet是后台运行的，cli\_wallet不会因witness\_node退出而自动退出，也需要重启。
+5. witness\_node重启后，需要重启cli_wallet。如果cli_wallet是后台运行的，cli_wallet不会因witness\_node退出而自动退出，也需要重启。
 
-6. **cli\_wallet进程偶尔退出问题**
+6. **cli_wallet进程偶尔退出问题**
 
-   如果遇到cli\_wallet后台运行一段时间后退出的情况，可能的原因是终端掉线，建议后台运行成功后，关闭当前终端。或者在启动命令行之前加上nohup:
+   如果遇到cli_wallet后台运行一段时间后退出的情况，可能的原因是终端掉线，建议后台运行成功后，关闭当前终端。或者在启动命令行之前加上nohup:
 
 ```
 nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log -r 127.0.0.1:38091 -d >>wallet.out 2>1 &
@@ -412,7 +374,7 @@ nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log
 
 和
 
-[cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
+[cli_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
 
 ## 六、注意事项
 
@@ -435,7 +397,7 @@ nohup ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090  --enable-rpc-log
 ##### 相关文档：
 
 1. [witness\_node启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/witness_start.sh)
-2. [cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
-3. [备用cli\_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/start_backup_wallet.exp)，脚本提供3个主网接入点，如果本地witness\_node暂时不可用，可以执行此脚本，连接主网接入点
+2. [cli_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
+3. [备用cli_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/start_backup_wallet.exp)，脚本提供3个主网接入点，如果本地witness\_node暂时不可用，可以执行此脚本，连接主网接入点
 4. [DBXChain冷钱包离线签名教程](https://doc.dbx.io/core/dbxleng-qian-bao-li-xian-qian-ming.html)
 5. [wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)
