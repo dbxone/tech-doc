@@ -1,13 +1,13 @@
-### 保存witness\_node节点内存数据快照
+### 保存witness_node节点内存数据快照
 
-#### 下载最新版witness\_node程序，下载地址
+#### 下载最新版witness_node程序，下载地址
 
 **程序可能会 更新，请**[**点击这里**](https://github.com/dbxone/dbxchain/releases/latest)**下载最新程序。**
 
 | :--- | :--- |
-| github | [https://github.com/dbxone/dbxchain/releases/download/1.0.180604/dbx\_1.0.180604.tar.gz](https://github.com/dbxone/dbxchain/releases/download/1.0.180604/dbx_1.0.180604.tar.gz) |
+| github | [https://github.com/dbxone/dbxchain/releases/download/1.0.180604/dbx_1.0.180604.tar.gz](https://github.com/dbxone/dbxchain/releases/download/1.0.180604/dbx_1.0.180604.tar.gz) |
 
-#### 启动witness\_node程序, 在启动参数里指定区块高度和快照文件路径
+#### 启动witness_node程序, 在启动参数里指定区块高度和快照文件路径
 
 ```
 ./programs/witness_node/witness_node --data-dir=trusted_node \
@@ -20,7 +20,7 @@
 
 其中--snapshot-at-block 9623000指定区块高度，即在此区块高度时，保存快照； --snapshot-to snapshot.0604.txt指定了快照文件，保存在当前目录下\(也可以使用绝对路径\)
 
-如果指定的区块高度小于最新区块高度，即过去某个时间点的快照，启动witness\_node时需要再加上--replay-blockchain参数
+如果指定的区块高度小于最新区块高度，即过去某个时间点的快照，启动witness_node时需要再加上--replay-blockchain参数
 
 #### 快照文件中将保存所有的内存数据对象，按行保存，每一行是一个json。如下：
 
@@ -51,5 +51,5 @@
 
 上面的json文件中，每一行是一个json，其中id为对象id, 1.25.x为忠诚计划余额对象, 2.5.x为余额对象; 对象id文件参考[这里](https://github.com/dbxone/dbxchain/wiki/Objects-and-IDS)
 
-如果要解析帐户DBX余额，需要解析1.25.x和2.5.x两个对象， asset\_id的1.3.1, owner为余额所属帐户。
+如果要解析帐户DBX余额，需要解析1.25.x和2.5.x两个对象， asset_id的1.3.1, owner为余额所属帐户。
 
