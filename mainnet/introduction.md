@@ -1,22 +1,30 @@
-# 快速开始
+# DBXChain主网节点技术文档
 
-## 环境要求
+主网节点主要有dbxchain、dbxui、dbxfaucet三大部分组成：
+
+| [dbxchain](dbxchain_introduction.md) | DBXChain公链，基于石墨烯技术，基于C++开发。 |
+| [dbxui](dbxui_introduction.md) | 区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。 |
+| [dbxfaucet](dbxfaucet_introduction.md) | 水龙头，用于区块浏览器及其他dbx客户端进行用户注册服务，基于ruby开发。 |
+
+
+## 运行环境要求
 * 系统: Ubuntu 16.04 LTS 64-bit, 4.4.0-63-generic 内核或更高
 * 内存: 8GB+
 * 硬盘: 100GB+
 
-## 节点安装
+## 安装
 以下的步骤演示的是主网节点的启动
 
 如果你是开发者，希望快速体验，可前往[测试网络](testnet/introduction.md) 
 
 如果你想基于DBXChain搭建私有链，可前往[私有链搭建](dbxchain/private-chain.md)
 
-### 1. 下载Release包
+下载Release包
+
 ```
 ```
 
-### 2. 启动节点
+## 同步节点数据
 
 ```
 witness_node --rpc-endpoint="127.0.0.1:38090" &
@@ -33,7 +41,7 @@ witness_node --rpc-endpoint="127.0.0.1:38090" &
 * 根据机器配置同步区块大约需要几个小时的时间。
 
 
-### 3. 查看日志
+查看日志
 
 ```
 tail -f trusted_node/logs/witness.log
@@ -59,10 +67,11 @@ DBXChain采用账户模型，并且引入了推荐注册机制，因此在DBXCha
 有两种方式可以完成账户的注册:
 
 ### 1. 在线钱包
-使用在线钱包 <b>https://wallet.dbxchain.io</b> 在界面上完成上述步骤
+使用在线钱包 <b>https://wallet.dbxchain.io</b> 在界面上完成注册步骤。
+注册时，页面会自动调用水龙头发起注册请求。
 
 ### 2. 手动注册
-推荐对私钥安全要求较高的开发者使用这种方式完成注册，保证私钥是离线的
+推荐对私钥安全要求较高的开发者使用这种方式完成注册，保证私钥是离线的。
 
 #### 步骤1: 通过cli_wallet来生成一对公私钥
 
