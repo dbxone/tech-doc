@@ -342,12 +342,3 @@ http://127.0.0.1:38091
     ]
 }
 ```
-
-### 
-
-测试工具
-
-推荐测试工具为POSTMAN
-
-[https://www.getpostman.com](https://www.getpostman.com)
-
