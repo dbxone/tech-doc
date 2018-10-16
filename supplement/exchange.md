@@ -1,7 +1,7 @@
 
-### 3. 启动见证节点witness\_node， 同步数据
+### 3. 启动见证节点witness_node， 同步数据
 
-进入dbx目录，启动DBXChain见证节点witness\_node
+进入dbx目录，启动DBXChain见证节点witness_node
 
 ```
 # 可以使用2个参数，节省内存： --track-account 和 --partial-operations=true
@@ -14,7 +14,7 @@ nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoin
 
 ```
 
-目前全节点程序占用内存12GB+，运行时使用上--track-account account\_id\(此处为1.2.x格式的帐户id\)和--partial-operations=true参数，内存中只保存交易所帐户的交易历史，内存可以控制在4GB内。
+目前全节点程序占用内存12GB+，运行时使用上--track-account account_id\(此处为1.2.x格式的帐户id\)和--partial-operations=true参数，内存中只保存交易所帐户的交易历史，内存可以控制在4GB内。
 
 ```
 
@@ -22,7 +22,7 @@ nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoin
 
 ### 4. 运行命令行钱包cli_wallet
 
-命令行钱包cli_wallet连接witness\_node:
+命令行钱包cli_wallet连接witness_node:
 
 ```
 ./programs/cli_wallet/cli_wallet -s ws://127.0.0.1:38090 \
@@ -104,7 +104,7 @@ cli_wallet不仅提供了命令行接口，还提供了json rpc接口。 钱包�
 
 其中method 传入命令名，params 数组传入参数清单\(无参数时，params传空数组\)， id为请求的标识，返回结果中的id和请求id一致。如果执行成功，结果会有 result ，否则会有 error
 
-cli_wallet提供了3个查询交易历史的接口：get\_account\_history, get\_relative\_account\_history和get\_account\_history\_by\_operations。其中get\_account\_history\_by\_operations可以返回交易id\(txID\)。3个接口在[wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)里都有说明。以get\_account\_history\_by\_operations为例，步骤如下：
+cli_wallet提供了3个查询交易历史的接口：get_account_history, get_relative_account_history和get_account_history_by_operations。其中get_account_history_by_operations可以返回交易id\(txID\)。3个接口在[wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)里都有说明。以get_account_history_by_operations为例，步骤如下：
 
 1. 解锁钱包。
 2. 根据帐户名，查询到帐户id。
@@ -144,7 +144,7 @@ curl --data '{"jsonrpc": "2.0", "method": "get_account_id", "params": ["dbx-ligh
 {"id":1,"result":"1.2.3054"}
 ```
 
-#### 3. 调用钱包的get\_account\_history\_by\_operations接口， 查询帐户交易历史，接口返回信息包含txID: 
+#### 3. 调用钱包的get_account_history_by_operations接口， 查询帐户交易历史，接口返回信息包含txID: 
 
 若没有调用unlock解锁钱包，则查询出的转帐交易memo是无法解密的。此处，只有交易双方才能解密memo。
 
@@ -228,7 +228,7 @@ curl --data '{"jsonrpc": "2.0", "method": "get_account_history_by_operations", "
 
 #### 不可回退区块
 
-调用cli_wallet的get\_dynamic\_global\_properties接口，查看当前最大的不可回退区块号\(也即最大的不可回退区块高度\)。小于此区块高度的区块，其包含的交易都是已经被确认不可回退的。可用作用户提现时参考，区块不可回退时再处理用户提现。
+调用cli_wallet的get_dynamic_global_properties接口，查看当前最大的不可回退区块号\(也即最大的不可回退区块高度\)。小于此区块高度的区块，其包含的交易都是已经被确认不可回退的。可用作用户提现时参考，区块不可回退时再处理用户提现。
 
 ```
 curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "params": [], "id": 1}' http://127.0.0.1:38091/rpc
@@ -267,19 +267,19 @@ curl --data '{"jsonrpc": "2.0", "method": "get_dynamic_global_properties", "para
    **memo长度和内容无限制，建议memo长度超过10位，并且以数字开头**。
 5. 钱包的json rpc接口，帐户名需要传入小写，不能有大写字母。用户提现到DBX时，需要将绑定的帐户名转为小写。
 6. **人工处理用户充值问题**：需要用户提供txID\(用户可以通过钱包查看当前转帐信息获得\)，txID可以保证用户充值转帐的唯一性。务必注意：**平台保存好人工处理过的txID, 同一txID只处理1次**。如果不同的注册用户使用同一txID提交工单的，属于欺骗！
-7. 系统中存在多种资产，其中资产id（asset\_id）1.3.1为DBX。监听用户充值时，请务必校验转帐交易中的asset\_id字段为1.3.1。
+7. 系统中存在多种资产，其中资产id（asset_id）1.3.1为DBX。监听用户充值时，请务必校验转帐交易中的asset_id字段为1.3.1。
 8. 用户提现。调用transfer/transfer2处理用户提现时，转帐数量请传入字段串，加双引号。如下：
 9. ```
    curl --data '{"jsonrpc": "2.0", "method": "transfer2", "params": ["from_account", "to_account", "100.01", "DBX", "",  true], "id": 1}' http://127.0.0.1:38091/rpc
    ```
-10. DBX精度，为小数点后5位，即最小单位为0.00001 DBX。DBXChain中没有小数，数字在系统中被放大了10万倍，所以get\_account\_history / get\_account\_history\_by\_operations接口返回的数字，比如转帐的数量，需要除以10万，才是真正的数量。
+10. DBX精度，为小数点后5位，即最小单位为0.00001 DBX。DBXChain中没有小数，数字在系统中被放大了10万倍，所以get_account_history / get_account_history_by_operations接口返回的数字，比如转帐的数量，需要除以10万，才是真正的数量。
 11. 钱包状态为locked状态时只能查询，不能转帐，不能解密转帐备注。如果需要转帐或者查询交易历史，需要先unlock。
 12. **transfer/transfer2转帐时，第3个参数转帐数量如果包含小数，必须加双引号，否则转帐会失败。建议转帐数量统一加上双引号。**
 
 ##### 相关文档：
 
-1. [witness\_node启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/witness_start.sh)
+1. [witness_node启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/witness_start.sh)
 2. [cli_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/wallet_start.sh)
-3. [备用cli_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/start_backup_wallet.exp)，脚本提供3个主网接入点，如果本地witness\_node暂时不可用，可以执行此脚本，连接主网接入点
+3. [备用cli_wallet启动脚本](http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/script/start_backup_wallet.exp)，脚本提供3个主网接入点，如果本地witness_node暂时不可用，可以执行此脚本，连接主网接入点
 4. [DBXChain冷钱包离线签名教程](https://doc.dbx.io/core/dbxleng-qian-bao-li-xian-qian-ming.html)
 5. [wallet api说明文档](https://doc.dbx.io/core/ming-ling-xing-qian-bao-cli-wallet-api-shuo-ming.html)
