@@ -8,50 +8,17 @@
 nohup ./programs/witness_node/witness_node --data-dir=trusted_node --rpc-endpoint=127.0.0.1:38090 \
 --p2p-endpoint=0.0.0.0:38091 --log-file --track-account "\"1.2.2999\""  --track-account "\"1.2.3000\"" \
 --partial-operations=true >>witness.out 2>&1 &
-```
-
-可使用--help 来查看命令参数 witness\_node启动参数：
-
-```
-# 指定数据及配置文件存储的目录
---data-dir=trusted_node
-
-# 指定rpc服务侦听地址及端口(端口可修改)，127.0.0.1限定本地访问rpc服务，若不限定本地访问，可指定0.0.0.0
---rpc-endpoint=127.0.0.1:38090
-
-# 用于连接p2p网络，此参数不建议修改
---p2p-endpoint=0.0.0.0:38091 
 
 # 输出日志文件，若无此参数，日志输出到控制台
 --log-file 
 
-# 内存中只跟踪指定帐户的交易历史，该选项可传入多次，跟踪多个帐户。请将1.2.2999 替换成交易所的账户数字 ID（在轻钱包账户页面里，账号头像下面会显示一个数字）
---track-account "\"1.2.2999\"" 
-
-# 每个账户在内存中最多保存NUM条交易记录，默认是全部
---max-ops-per-account=NUM 
-
-# 和--track-account / --max-ops-per-account 选项结合，可以进一步节省内存，建议带上此参数
---partial-operations=true 
-
-& 表示程序后台运行
-
-# 重放所有已下载的区块并重建索引，比较耗时
---replay-blockchain
-
-# 删除所有已下载数据，重新同步区块
---resync-blockchain
 ```
 
 目前全节点程序占用内存12GB+，运行时使用上--track-account account\_id\(此处为1.2.x格式的帐户id\)和--partial-operations=true参数，内存中只保存交易所帐户的交易历史，内存可以控制在4GB内。
 
 ```
-# 请将1.2.2999 替换成交易所的账户数字 ID ,"1.2."表示类型是账户
---track-account="\"1.2.2999\""
---partial-operations=true
-```
 
-完全同步区块，大约需要30分钟以上。通过后台日志文件trusted\_node/logs/witness.log可查看区块同步进度，访问[DBXChain区块浏览器](https://block.dbx.io/)查看最新区块。区块同步完成后，可以运行命令行钱包。
+
 
 ### 4. 运行命令行钱包cli_wallet
 

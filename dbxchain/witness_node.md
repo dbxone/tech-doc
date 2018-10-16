@@ -7,15 +7,15 @@
 | -d [ --data-dir ] arg (="witness_node_data_dir") | Directory containing databases, configuration file, etc. <br> 指定数据及配置文件存储的目录 |
 | -v [ --version ] | Display version information <br> 版本信息 |
 | --create-genesis-json arg | Path to create a Genesis State at. If a well-formed JSON file exists at the path, it will be parsed and any missing fields in a Genesis State will be added, and any unknown fields will be removed. If no file or an invalid file is found, it will be replaced with an example Genesis State. <br> 创建初始文件，如果文件已经存在，将对此文件进行解析，添加上不存在配置选项，同时删除不识别的选型。|
-| --replay-blockchain | Rebuild object graph by replaying all blocks |
-| --resync-blockchain | Delete all blocks and re-sync with  network from scratch |
+| --replay-blockchain | Rebuild object graph by replaying all blocks <br> 重放所有已下载的区块并重建索引，比较耗时 |
+| --resync-blockchain | Delete all blocks and re-sync with  network from scratch <br> 删除所有已下载数据，重新同步区块 |
 | --force-validate | Force validation of all transactions |
 | --genesis-timestamp arg | Replace timestamp from genesis.json  with current time plus this many  seconds (experts only!) |
 | --p2p-endpoint arg | Endpoint for P2P node to listen on <br> 用于节点之间的p2p链接服务 |
 | -s [ --seed-node ] arg | P2P nodes to connect to on startup (may specify multiple times) |
 | --seed-nodes arg | JSON array of P2P nodes to connect to  on startup |
 | -c [ --checkpoint ] arg | Pairs of [BLOCK_NUM,BLOCK_ID] that  should be enforced as checkpoints. |
-| --rpc-endpoint [=arg(=127.0.0.1:8090)] | Endpoint for websocket RPC to listen on <br> 用于给客户端提供rpc服务 |
+| --rpc-endpoint [=arg(=127.0.0.1:8090)] | Endpoint for websocket RPC to listen on <br> 指定rpc服务侦听地址及端口(端口可修改)，127.0.0.1限定本地访问rpc服务，若不限定本地访问，可指定0.0.0.0 |
 | --rpc-tls-endpoint [=arg(=127.0.0.1:8089)] | Endpoint for TLS websocket RPC to  listen on |
 | -p [ --server-pem ] [=arg(=server.pem)] | The TLS certificate file for this  server |
 | -P [ --server-pem-password ] arg | Password for this certificate |
@@ -45,8 +45,8 @@ account_history插件选项
 | 参数 | 说明 |
 |:--- |:--- |
 | --track-account arg | Account ID to track history for (may specify multiple times) <br> 内存中只跟踪指定帐户的交易历史，该选项可传入多次，跟踪多个帐户。请将1.2.2999 替换成你需要跟踪的账户数字 ID（在轻钱包账户页面里，账号头像下面会显示一个数字）|
-| --partial-operations arg | Keep only those operations in memory that are related to account history tracking |
-| --max-ops-per-account arg | Maximum number of operations per account will be kept in memory |
+| --partial-operations arg | Keep only those operations in memory that are related to account history tracking <br> 和--track-account / --max-ops-per-account 选项结合，可以进一步节省内存，建议带上此参数 |
+| --max-ops-per-account arg | Maximum number of operations per account will be kept in memory <br> 每个账户在内存中最多保存NUM条交易记录，默认是全部 |
 
 elasticsearch插件选项
 
