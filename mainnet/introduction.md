@@ -1,7 +1,8 @@
-# DBXChain主网节点技术文档
+# DBXChain主网节点
 
 主网节点主要有dbxchain、dbxui、dbxfaucet三大部分组成：
 
+| :--- | :--- |
 | [dbxchain](dbxchain_introduction.md) | DBXChain公链，基于石墨烯技术，基于C++开发。 |
 | [dbxui](dbxui_introduction.md) | 区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。 |
 | [dbxfaucet](dbxfaucet_introduction.md) | 水龙头，用于区块浏览器及其他dbx客户端进行用户注册服务，基于ruby开发。 |
