@@ -53,8 +53,8 @@ tail -f trusted_node/logs/witness.log
 DBXChain采用账户模型，并且引入了推荐注册机制，因此在DBXChain上注册一个账号，需要以下三个要素:
 
 * 推荐人，推荐人是链上已存在的账户，会使用你的账户名和公钥帮你注册一个账号
-* 账户名，账户名在链上是唯一的，所以请记住在DBXChain上，账户名即地址 (如DBXChain-genius)
-* ECC公钥，以DBX开头，Base64 编码的ECC公钥 (如何生成公钥？别担心，请往后看)
+* 账户名，账户名在链上是唯一的，所以请记住在DBXChain上，`账户名即地址`。
+* ECC公钥，以DBX开头，Base64 编码的ECC公钥。
 
 有两种方式可以完成账户的注册:
 
