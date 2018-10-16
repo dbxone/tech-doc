@@ -54,7 +54,7 @@ sudo nginx -s reload
 
 配置已经完成。此时仅限ip为192.168.1.118和192.168.1.119两台机器访问，其它IP访问，会返回403错误。
 
-钱包的rpc地址变为：[http://${host\_ip}:8888/rpc](http://%24%7Bhost_ip%7D:8888/rpc)其中${host\_ip}为钱包服务器的ip，端口为8888, nginx会将8888端口接收的请求转发至8091。
+钱包的rpc地址变为：[http://${host_ip}:8888/rpc](http://%24%7Bhost_ip%7D:8888/rpc)其中${host_ip}为钱包服务器的ip，端口为8888, nginx会将8888端口接收的请求转发至8091。
 
 
 
