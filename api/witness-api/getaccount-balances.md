@@ -1,4 +1,4 @@
-# get\_account\_balance
+# get_account_balance
 
 **说明：通过账户ID和资产ID获取账户资产信息**
 
