@@ -1,4 +1,4 @@
-# DBXChain主网节点
+# DBXChain链
 
 主网节点主要有dbxchain、dbxui、dbxfaucet三大部分组成：
 

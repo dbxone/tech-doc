@@ -12,5 +12,3 @@ cli\_wallet 通过 websocket 方式连接到 witness\_node， 管理钱包文件
 * [搭建私链](private-chain.md)
 * [witness\_node参数介绍](witness_node.md)
 * [cli_wallet参数介绍](cli_wallet.md)
-* [智能合约](../contract/introduction.md)
-
