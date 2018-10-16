@@ -58,7 +58,7 @@ DBXChain采用账户模型，并且引入了推荐注册机制，因此在DBXCha
 有两种方式可以完成账户的注册:
 
 ### 1. 在线钱包
-使用在线钱包https://wallet.gxb.io在界面上完成上述步骤
+使用在线钱包https://wallet.dbx.io在界面上完成上述步骤
 
 ### 2. 手动注册
 推荐对私钥安全要求较高的开发者使用这种方式完成注册，保证私钥是离线的
@@ -78,5 +78,5 @@ pub_key: 公钥，用于链上账户注册
 #### 步骤2: 通过水龙头来完成账户注册
 想一个专属的账户名(account_name),如DBXChain-genius
 替换下面curl命令中的 <account_name> and <public_key> 并在终端执行:
-curl 'https://opengateway.gxb.io/account/register' -H 'Content-type: application/json' -H 'Accept: application/json’ -d ‘{“account”:{“name”:”<account_name>”,”owner_key”:”<public_key>”,”active_key”:”<public_key>”,”memo_key”:”<public_key>”,”refcode”:null,”referrer”:null}}’
+curl 'https://opengateway.dbx.io/account/register' -H 'Content-type: application/json' -H 'Accept: application/json’ -d ‘{“account”:{“name”:”<account_name>”,”owner_key”:”<public_key>”,”active_key”:”<public_key>”,”memo_key”:”<public_key>”,”refcode”:null,”referrer”:null}}’
 在 GitHub 上编辑此页 上次更新: 2018/9/30 下午5:33:50
