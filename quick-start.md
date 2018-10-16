@@ -53,7 +53,7 @@ DBXChain采用账户模型，并且引入了推荐注册机制，因此在DBXCha
 
 * 推荐人，推荐人是链上已存在的账户，会使用你的账户名和公钥帮你注册一个账号
 * 账户名，账户名在链上是唯一的，所以请记住在DBXChain上，账户名即地址 (如DBXChain-genius)
-* ECC公钥，以GXC开头，Base64 编码的ECC公钥 (如何生成公钥？别担心，请往后看)
+* ECC公钥，以DBX开头，Base64 编码的ECC公钥 (如何生成公钥？别担心，请往后看)
 
 有两种方式可以完成账户的注册:
 
@@ -68,7 +68,7 @@ DBXChain采用账户模型，并且引入了推荐注册机制，因此在DBXCha
 {
   "brain_priv_key": "SHAP CASCADE AIRLIKE WRINKLE CUNETTE FROWNY MISREAD MOIST HANDSET COLOVE EMOTION UNSPAN SEAWARD HAGGIS TEENTY NARRAS",
   "wif_priv_key": "5J2FpCq3UmvcodkCCofXSNvHYTodufbPajwpoEFAh2TJf27EuL3",
-  "pub_key": "GXC75UwALPEFECfHLjHyNSxCk1j7XzSvApQiXKEbanWgr7yvXXbdG"
+  "pub_key": "DBX75UwALPEFECfHLjHyNSxCk1j7XzSvApQiXKEbanWgr7yvXXbdG"
 }
 字段解释
 
