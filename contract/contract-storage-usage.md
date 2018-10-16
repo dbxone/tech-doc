@@ -176,9 +176,9 @@ offer是表名字，根据业务需求自定义不能超过12个字符并且只�
 i64是索引类型，固定写i64即可  
 
 对于struct offer{...}就是普通的c++类，最下面的GRAPHENE_SERIALIZE(offer, (id)(idx1)(idx2)(stringidx))用于序列化  
-GRAPHEN\_SERIALIZE(类型名, (字段名1)(字段名2)(字段名3)(字段名4)...)  
+GRAPHEN_SERIALIZE(类型名, (字段名1)(字段名2)(字段名3)(字段名4)...)  
 
-uint64_t primary\_key() const { return id; } 这段代码的函数名和类型都是固定的，不能改动，用于指定唯一主键，这里把id作为主键  
+uint64_t primary_key() const { return id; } 这段代码的函数名和类型都是固定的，不能改动，用于指定唯一主键，这里把id作为主键  
 
 其他3个函数用于定义二级索引时使用  
 
@@ -221,7 +221,7 @@ offers.emplace(0, [&](auto &o) {
     o.stringidx = graphenelib::string_to_name(name.c_str());
 });
 ```
-uint64_t pk = offers.available\_primary\_key(); 用于获取自增主键的下一个合法主键，也可以自己指定  
+uint64_t pk = offers.available_primary_key(); 用于获取自增主键的下一个合法主键，也可以自己指定  
 
 ```c++
 offers.emplace(0, [&](auto &o) {  
