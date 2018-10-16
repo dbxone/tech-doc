@@ -11,11 +11,11 @@ cli_wallet  命令行钱包客户端，用以进行账户注册，转账，查�
 
 * [dbxui](dbxui_introduction.md) 
 
-web在线钱包，区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。 <br> http://wallet.dbxchain.io
+web在线钱包，区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。 <br> 在线钱包地址: http://wallet.dbxchain.io
 
 * [dbxfaucet](dbxfaucet_introduction.md) 
 
-水龙头，用于web钱包客户端连接，继续宁账户注册服务，基于ruby开发。
+水龙头，用于web钱包客户端连接，继续宁账户注册服务，基于ruby开发。<br> 水龙头地址: https://wallet.dbxchain.io/account/register
 
 
 # 主网账户注册
