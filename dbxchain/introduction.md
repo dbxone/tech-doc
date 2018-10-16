@@ -4,9 +4,9 @@ DBXChain是一条公有链，是DBXChain数据交易所的底层区块链，不�
 
 # DBXChain构成
 
-DBXChain主要有dbx-core、dbxui、dbxfaucet三大部分组成：
+DBXChain主要有`dbxchain`、`dbxui`、`dbxfaucet`三大部分组成：
 
-* [<b>dbx-core</b>](dbxchain_introduction.md)
+* [<b>dbxchain</b>](dbxchain_introduction.md)
 
 DBXChain公链，基于石墨烯技术，基于C++开发。
 
@@ -25,7 +25,7 @@ cli_wallet 通过 websocket 方式连接到 witness_node， 管理钱包文件�
 主网: <b>`ws://client.dbxchain.io`</b><br>
 测试网: <b>`ws://client.testnet.dbxchain.io`</b>
 
-* [dbxui](dbxui_introduction.md) 
+* [<b>dbxui</b>](dbxui_introduction.md) 
 
 web在线钱包，区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。
 
@@ -34,7 +34,7 @@ web在线钱包，区块浏览器，同时也是在线的钱包。web形式的�
 测试网: <b> http://wallet.testnet.dbxchain.io</b>
 
 
-* [dbxfaucet](dbxfaucet_introduction.md) 
+* [<b>dbxfaucet</b>](dbxfaucet_introduction.md) 
 
 水龙头，用于web钱包客户端连接，继续宁账户注册服务，基于ruby开发。
 
