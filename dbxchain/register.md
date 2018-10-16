@@ -42,7 +42,8 @@ curl '<url>' -H 'Content-type: application/json' -H 'Accept: application/json’
 ```
 
 url替换成主网或测试网url。
-主网url : https://wallet.dbxchain.io/account/register
-测试网url : https://wallet.testnet.dbxchain.io/account/register
+
+* 主网url : https://wallet.dbxchain.io/account/register
+* 测试网url : https://wallet.testnet.dbxchain.io/account/register
 
 account_name和public_key替换成对应的账号名称和公钥。私钥离线保存。
