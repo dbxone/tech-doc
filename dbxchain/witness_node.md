@@ -1,4 +1,4 @@
-# witness_node 参数介绍
+# witness_node 启动参数
 
 
 | 参数 | 说明 |
@@ -101,3 +101,10 @@ grouped_orders插件选项
 | 参数 | 说明 |
 |:--- |:--- |
 | --tracked-groups arg (=[10,100]) | Group orders by percentage increase on  price. Specify a JSON array of numbers  here, each number is a group, number 1  means 0.01%. |
+
+
+# 退出witness_node
+
+* 如果witness\_node没有后台运行，则执行一次Ctrl + C, 然后等待程序保存内存数据后自动退出。
+
+* 如果witness\_node运行在后台，执行`kill -s SIGINT $(pgrep witness_node)`，等待程序保存内存数据后自动退出。不能使用kill -9， 否则下次启动会重建索引，启动比较慢。
