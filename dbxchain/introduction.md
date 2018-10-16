@@ -40,6 +40,10 @@ web在线钱包，区块浏览器，同时也是在线的钱包。web形式的�
 测试网水龙头地址: <b> https://wallet.testnet.dbxchain.io/account/register</b>
 
 
+# DBXChain网络模型
+![](dbxchain.png)
+
+
 # 技术要点
 * [编译安装](compile.md)
 * [witness_node参数介绍](cmd/witness_node.md)
