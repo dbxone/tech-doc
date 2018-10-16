@@ -16,28 +16,31 @@ witness_node 通过 P2P 方式连接到DBXChain网络，从网络接收最新区
 
 cli_wallet 通过 websocket 方式连接到 witness_node， 管理钱包文件； 提供交易签名功能，签名后通过 witness_node 向外广播； 通过 http rpc 的方式提供 API 供其他程序调用。
 
-数据同步接入点地址
-主网: <b>`ws://mainnet.dbxchain.io`</b><br>
-测试网: <b>`ws://testnet.dbxchain.io`</b>
+数据同步接入点地址 <br>
+主网: <b>`ws://sync.dbxchain.io`</b><br>
+测试网: <b>`ws://sync.testnet.dbxchain.io`</b>
 
-客户端服务接入点地址
-主网: <b>`ws://mainnet.dbxchain.io`</b><br>
-测试网: <b>`ws://testnet.dbxchain.io`</b>
+
+客户端服务接入点地址 <br>
+主网: <b>`ws://client.dbxchain.io`</b><br>
+测试网: <b>`ws://client.testnet.dbxchain.io`</b>
 
 * [dbxui](dbxui_introduction.md) 
 
 web在线钱包，区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。
 
-主网在线钱包地址: <b> http://wallet.mainnet.dbxchain.io</b> <br>
-测试网在线钱包地址: <b> http://wallet.testnet.dbxchain.io</b>
+在线钱包地址 <br>
+主网: <b> http://wallet.dbxchain.io</b> <br>
+测试网: <b> http://wallet.testnet.dbxchain.io</b>
 
 
 * [dbxfaucet](dbxfaucet_introduction.md) 
 
 水龙头，用于web钱包客户端连接，继续宁账户注册服务，基于ruby开发。
 
-主网水龙头地址: <b> https://wallet.mainnet.dbxchain.io/account/register</b> <br>
-测试网水龙头地址: <b> https://wallet.testnet.dbxchain.io/account/register</b>
+水龙头地址 <br>
+主网: <b> https://wallet.mainnet.dbxchain.io/account/register</b> <br>
+测试网: <b> https://wallet.testnet.dbxchain.io/account/register</b>
 
 
 # DBXChain网络模型
