@@ -24,19 +24,19 @@
 | 1.13.x | 冻结中的财产对象vesting balance object |
 | 1.14.x | worker object |
 | 1.15.x | 余额对象balance object |
-| 2.0.x | 全局参数对象global\_property\_object |
-| 2.1.x | 动态全局参数对象dynamic\_global\_property\_object |
-| 2.3.x | 资产动态对象asset\_dynamic\_object |
-| 2.5.x | 账户余额对象account\_balance\_object |
-| 2.6.x | 账户统计对象account\_statistics\_object |
-| 2.7.x | 交易对象transaction\_object |
-| 2.8.x | 区块概要对象block\_summary\_object |
-| 2.9.x | 账户交易历史对象account\_transaction\_history\_object |
-| 2.10.x | blinded\_balance\_object |
-| 2.11.x | chain\_property\_object |
-| 2.12.x | 见证人轮班表对象witness\_schedule\_object |
-| 2.13.x | 预算记录对象budget\_record\_object |
-| 2.14.x | 特殊权威对象special\_authority\_object |
+| 2.0.x | 全局参数对象global_property_object |
+| 2.1.x | 动态全局参数对象dynamic_global_property_object |
+| 2.3.x | 资产动态对象asset_dynamic_object |
+| 2.5.x | 账户余额对象account_balance_object |
+| 2.6.x | 账户统计对象account_statistics_object |
+| 2.7.x | 交易对象transaction_object |
+| 2.8.x | 区块概要对象block_summary_object |
+| 2.9.x | 账户交易历史对象account_transaction_history_object |
+| 2.10.x | blinded_balance_object |
+| 2.11.x | chain_property_object |
+| 2.12.x | 见证人轮班表对象witness_schedule_object |
+| 2.13.x | 预算记录对象budget_record_object |
+| 2.14.x | 特殊权威对象special_authority_object |
 
 ## Examples
 
