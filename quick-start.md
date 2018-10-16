@@ -8,7 +8,7 @@
 ## 节点安装
 以下的步骤演示的是主网节点的启动
 
-如果你是开发者，希望快速体验，可前往[测试网络]() 
+如果你是开发者，希望快速体验，可前往[测试网络](testnet/introduction.md) 
 
 如果你想基于DBXChain搭建私有链，可前往[私有链搭建](dbxchain/private-chain.md)
 
