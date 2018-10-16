@@ -1,14 +1,14 @@
-# get\_block
+# get_block
 
 ##### 说明：获取指定区块信息
 
-##### usage: get\_block block\_num
+##### usage: get_block block_num
 
-##### 参数：block\_num
+##### 参数：block_num
 
 | 参数 | 说明 |
 | :--- | :--- |
-| block\_num | 区块号 |
+| block_num | 区块号 |
 
 
 
