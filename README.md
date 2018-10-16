@@ -7,7 +7,6 @@ DBXChain是一条公有链，是DBXChain数据交易所的底层区块链，不�
 
 ## DBXChain技术文档
 * [DBXChain](dbxchain/introduction.md)
-* [主网](mainnet/introduction.md)
 * [客户端](client/introduction.md)
 * [API参考](api/introduction.md)
 * [测试网络](testnet/introduction.md)
