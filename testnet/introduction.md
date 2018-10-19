@@ -1,9 +1,9 @@
 
-## 其它参考：
-#### 安装DBXChain testnet网络全节点程序
-如果不想使用testnet提供的接入点，也可以本地部署一个全节点。
-安装DBXChain testnet全节点安装方法：
+# 测试网络
 
+## 安装cli_wallet
+
+具体安装方法请查阅[快速开始](../contract/install.md)
 ```
 # 下载testnet的genesis.json文件
 wget http://dbx-package.oss-cn-hangzhou.aliyuncs.com/dbxchain/genesis/testnet-genesis.json -O genesis.json
