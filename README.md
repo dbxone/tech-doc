@@ -8,12 +8,9 @@ DBXChain主网已于2018年6月上线.
 
 
 ## DBXChain技术文档
-* [基础知识](base/introduction.md)
+* [基础介绍](base/introduction.md)
 * [主链核心模块dbxchain](dbxchain/introduction.md)
-> https://github.com/dbxone/dbxchain
-* [客户端](client/introduction.md)
-* [测试网络](testnet/introduction.md)
-* [搭建私链](dbxchain/private-chain.md)
-* [创建发行资产](asset/introduction.md)
+* [轻钱包](dbxui/introduction.md)
+* [区块浏览器](dbxui/introduction.md)
 * [智能合约开发](contract/introduction.md)
-* [API参考](api/introduction.md)
+* [开发者说明](api/introduction.md)
