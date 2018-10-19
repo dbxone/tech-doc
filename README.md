@@ -10,16 +10,20 @@ DBXChain主网已于2018年6月上线.
 ## DBXChain技术文档
 * 基础介绍
 > [DBXChain构成](introduction.md)
+[DBXChain网络模型](introduction.md#DBXChain网络模型)
 * 快速开始
 > [编译安装](compile.md)
 [同步节点](sync.md)
 [账户注册](register.md)
 [搭建私链](private-chain.md)
-
 * [轻钱包](node/cli_wallet.md)
-* [区块浏览器](wallet/introduction.md)
+* 区块浏览器(wallet/introduction.md)
+> [简要介绍]
 * [智能合约开发](contract/introduction.md)
-* [开发者参考](api/introduction.md)
-[witness_node参数介绍](node/cmd/witness_node.md)
-[cli_wallet参数介绍](node/cmd/cli_wallet.md)
-
+* 开发者参考
+>[witness_node 参数介绍](node/cmd/witness_node.md)
+[cli_wallet 参数介绍](node/cmd/cli_wallet.md)
+[witness_node api 介绍](api/witness_node.md)
+[cli_wallet api 介绍](api/cli_wallet.md)
+[智能合约 api 介绍](contract/contract-api.md)
+[测试网络](testnet/introduction.md)
