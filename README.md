@@ -21,8 +21,8 @@ DBXChain主网已于2018年6月上线.
 [创建发行资产](wallet/publish_asset.md)
 * 智能合约开发
 > [简介](contract/introduction.md)
-[快速开始](contract/introduction.md)
-[智能合约示例](contract/introduction.md)
+[快速开始](contract/quick_start.md)
+[智能合约示例](contract/examples.md)
 
 * 开发者参考
 >[witness_node 参数介绍](node/cmd/witness_node.md)
