@@ -1,10 +1,16 @@
 # 源码编译安装DBXChain
 
-目前支持Ubuntu16.04 LTS。
+## 环境要求
+* 系统: Ubuntu 16.04 LTS 64-bit, 4.4.0-63-generic 内核或更高
+* 内存: 8GB+
+* 硬盘: 100GB+
 
 ## 依赖安装
 
-DBXChain智能合约需要clang编译器支持；openssl依赖版本1.0.x ; cmake最低版本3.11.0；boost依赖版本1.67.0。
+* DBXChain智能合约需要clang编译器支持；
+* openssl最低依赖版本1.0.x ; 
+* cmake最低依赖版本3.11.0；
+* boost最低依赖版本1.67.0。
 
 ## 安装依赖包
 

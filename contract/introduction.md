@@ -43,11 +43,11 @@ selfdestruct(string account) 将资产转至recipient帐户，然后销毁合约
 
 可以本地编译搭建DBXChain私链，通过命令行方式编译、部署、调用智能合约。
 
-### 2.1 [编译DBXChain链](compile.md)
+* [编译安装DBXChain](compile.md)
 
-### 2.2 [搭建私链](../dbxchain/private-chain.md)
+* [搭建私链](../node/private-chain.md)
 
-### 2.3 [编译部署运行合约](contract-run.md)
+* [编译部署运行合约](contract-run.md)
 
 
 ## 3. 智能合约示例
