@@ -10,7 +10,7 @@ DBXChain主网已于2018年6月上线.
 ## DBXChain技术文档
 * 基础介绍
 > [构成](introduction.md)
-[网络模型](netword_model.md)
+[网络模型](network_model.md)
 * 快速开始
 > [编译安装](node/compile.md)
 [同步节点](node/sync.md)

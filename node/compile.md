@@ -1,6 +1,6 @@
 # 源码编译安装
 
-DBXChain见证节点和命令行钱包都是通过源码编译安装来完成的。
+DBXChain见证节点`witness_node`和命令行钱包`cli_wallet`都是通过源码编译安装来完成的。
 
 ## 环境要求
 * 系统: Ubuntu 16.04 LTS 64-bit, 4.4.0-63-generic 内核或更高

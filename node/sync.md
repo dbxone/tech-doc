@@ -1,25 +1,7 @@
-
-## 环境要求
-* 系统: Ubuntu 16.04 LTS 64-bit, 4.4.0-63-generic 内核或更高
-* 内存: 8GB+
-* 硬盘: 100GB+
-
-## 安装
-以下的步骤演示的是主网节点的启动
-
-如果你是开发者，希望快速体验，可前往[测试网络](testnet/introduction.md) 
-
-如果你想基于DBXChain搭建私有链，可前往[私有链搭建](dbxchain/private-chain.md)
-
-下载Release包
-
-```
-```
-
 ## 同步节点数据
 
 ```
-witness_node --rpc-endpoint="url" &
+witness_node --rpc-endpoint="url"
 ```
 
 就是这样了, 根据上面的步骤:
