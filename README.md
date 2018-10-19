@@ -16,8 +16,7 @@ DBXChain主网已于2018年6月上线.
 [搭建私链](node/private-chain.md)
 [轻钱包](node/cli_wallet.md)
 * 区块浏览器
-> [简介](wallet/introduction.md)
-[安装运行](wallet/install.md)
+>[安装运行](wallet/install.md)
 [账户注册](wallet/register.md)
 [创建发行资产](wallet/publish_asset.md)
 * 智能合约开发
