@@ -9,14 +9,14 @@ DBXChain主网已于2018年6月上线.
 
 ## DBXChain技术文档
 * 基础介绍
-> [DBXChain构成](introduction.md)
-[DBXChain网络模型](netword_model.md)
+> [构成](introduction.md)
+[网络模型](netword_model.md)
 * 快速开始
-> [编译安装](compile.md)
-[同步节点](sync.md)
-[账户注册](register.md)
-[搭建私链](private-chain.md)
-* [轻钱包](node/cli_wallet.md)
+> [编译安装](node/compile.md)
+[同步节点](node/sync.md)
+[账户注册](node/register.md)
+[搭建私链](node/private-chain.md)
+[轻钱包](node/cli_wallet.md)
 * 区块浏览器
 > [安装运行](wallet/install.md)
 [创建发行资产](wallet/publish_asset.md)
