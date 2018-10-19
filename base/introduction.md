@@ -15,11 +15,11 @@ dbxchain主要由`链核心模块`和`命令行钱包`程序组成。
 
 ## [<b>dbxui</b>](dbxui_introduction.md) 
 
-web在线钱包，区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。
+`web在线钱包` —— 区块浏览器，同时也是在线的钱包。web形式的浏览器客户端，基于Nodejs开发。
 
 ## [<b>dbxfaucet</b>](dbxfaucet_introduction.md) 
 
-水龙头，用于web钱包客户端连接，继续宁账户注册服务，基于ruby开发。
+水龙头，用于web钱包客户端连接，继续账户注册服务，基于ruby开发。
 
 
 # DBXChain网络模型
