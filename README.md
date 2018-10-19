@@ -20,6 +20,6 @@ DBXChain主网已于2018年6月上线.
 * [区块浏览器](wallet/introduction.md)
 * [智能合约开发](contract/introduction.md)
 * [开发者参考](api/introduction.md)
-[witness_node参数介绍](develop/witness_node.md)
-[cli_wallet参数介绍](develop/cli_wallet.md)
+[witness_node参数介绍](node/cmd/witness_node.md)
+[cli_wallet参数介绍](node/cmd/cli_wallet.md)
 
