@@ -9,7 +9,7 @@ DBXChain主网已于2018年6月上线.
 
 ## DBXChain技术文档
 * 基础介绍
-> [构成](introduction.md)
+> [构成](introduction.md)<p>
 > [网络模型](network_model.md)
 
 * 快速开始
@@ -20,7 +20,6 @@ DBXChain主网已于2018年6月上线.
 * 区块浏览器
 > [安装运行](wallet/install.md)
 > [账户注册](wallet/register.md)
-> [创建发行资产](wallet/publish_asset.md)
 
 * 智能合约开发
 > [简介](contract/introduction.md)
