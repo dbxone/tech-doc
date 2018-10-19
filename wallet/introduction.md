@@ -1,5 +1,5 @@
 
-* [创建发行资产](wallet/publish_asset.md)
+
 
 # dbxui介绍
 

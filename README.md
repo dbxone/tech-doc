@@ -13,12 +13,12 @@ DBXChain主网已于2018年6月上线.
 [网络模型](network_model.md)
 * 快速开始
 > [编译安装](node/compile.md)
-[同步节点](node/sync.md)
-[账户注册](node/register.md)
 [搭建私链](node/private-chain.md)
+[同步节点](node/sync.md)
 [轻钱包](node/cli_wallet.md)
 * 区块浏览器
 > [安装运行](wallet/install.md)
+[账户注册](wallet/register.md)
 [创建发行资产](wallet/publish_asset.md)
 * 智能合约开发
 > [基本介绍](contract/introduction.md)
