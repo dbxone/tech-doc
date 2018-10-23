@@ -104,7 +104,7 @@ unlocked >>> call_contract nathan apitest null show "{\"account_to\":\"alpha\", 
 | :--- | :--- |
 | nathan | Account calling the contract |
 | apitest | Which contract is called |
-| null | Set up the commission for calling the contract |
+| null | Set up the commission needed for calling the contract |
 | show | Which method in the contract is called |
 | {\"account_to\":\"alpha\", \"asset\":\"DBX\", \"amount\":\"50\"}" | Parameter of the method in the contract which is called |
 | DBX | Commission asset type |
@@ -120,7 +120,7 @@ unlocked >>> call_contract nathan apitest null transfer "{\"account_to\":\"alpha
 | :--- | :--- |
 | nathan | Account calling the contract |
 | apitest | Which contract is called |
-| null | Set up the commission for calling the contract |
+| null | Set up the commission needed for calling the contract |
 | transfer | Which method in the contract is called |
 | {\"account_to\":\"alpha\", \"asset\":\"DBX\", \"amount\":\"50\"}" | Parameter of the method in the contract which is called |
 | DBX | Commission asset type |
