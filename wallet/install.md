@@ -33,13 +33,11 @@ ELECTRON_MIRROR=http://npm.taobao.org/mirrors/electron/
 npm i -g yarn
 ```
 
-## 依赖安装
-
-调试模式依赖于babel-node, 在克隆的工程下执行以下命令安装依赖:
-
+## 下载及安装依赖包
 ```
-npm install -g babel-node
-npm install
+git clone https://github.com/dbxone/dbxui
+cd dbxui
+yarn
 ```
 
 ## 开发模式启动
@@ -47,12 +45,3 @@ npm install
 ```
 npm start
 ```
-
-## 部署和生产环境启动
-
-```
-npm run build
-npm run server
-```
-
-## 
