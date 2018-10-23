@@ -88,14 +88,14 @@ unlocked >>> call_contract nathan call-helloworld null call_hi "{\"act_id\":20}"
 | call-helloworld | Which contract is called |
 | null | Set up commission needed for calling the contract |
 | call_hi | Which method in the contract is called |
-| "{\"act_id\":20}" | 调用的合约方法的参数 |
-| DBX | 手续费资产类型 |
-| true | 发起广播 |
+| "{\"act_id\":20}" | Parameter of the method in the contract which is called |
+| DBX | Commission asset type |
+| true | Initiate broadcasting |
 
 
-## 5. 结果
+## 5. Outcome
 
-在witness_node运行日志中可以查看到如下运行信息:
+Run the log at witness_node to check the running information as follows:
 
 ```
 [(21,call_hi)->21] CONSOLE OUTPUT BEGIN =====================
@@ -111,4 +111,4 @@ hi
 [(20,hi)->20] CONSOLE OUTPUT END =====================
 ```
 
-可以看到helloworld的hi方法被调用。
+It will show the hi method of helloworld is called.
