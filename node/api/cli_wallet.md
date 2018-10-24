@@ -1,4 +1,4 @@
-## cli_wallet 命令列表
+# cli_wallet 命令列表
 
 | 命令 | 参数 | 说明 | 备注 |
 | :--- | :--- | :--- | :--- |
@@ -18,11 +18,52 @@
 | [help](cli_wallet/help.md) |  | 帮助命令，此命令会返回钱包支持的所有接口 |  |
 | [gethelp](cli_wallet/gethelp.md) | &lt;command&gt; | 帮助命令，查看指定钱包命令的调用方法 |  |
 
-### **调用示例**
+## **调用示例**
+
+命令行钱包cli_wallet连接witness_node:
+```
+./programs/cli_wallet/cli_wallet --data-dir=trusted_node -s ws://127.0.0.1:38090 -r 127.0.0.1:38091 
+```
+首先需要为钱包设置一个钱包密码(这个密码是本地的，用来解锁钱包)：
+
+new >>> set_password my_password
+
+执行成功后会显示:
+```
+locked >>>
+```
+
+解锁钱包:
+```
+locked >>> unlock my_password
+```
+
+解锁成功会显示：
+```
+unlocked >>>
+```
+
+使用 info 命令可以查看当前区块同步情况
+```
+unlocked >>> info
+info
+{
+  "head_block_num": 3913758,
+  "head_block_id": "003bb81eec2abfdb2cf58ffdf4dd547ea190530e",
+  "head_block_age": "3 seconds old",  # head_block_age表示最新的区块时间，系统每3秒出一块
+  "next_maintenance_time": "0 second ago",
+  "chain_id": "4f7d07969c446f8342033acb3ab2ae5044cbe0fde93db02de75bd17fa8fd84b8",
+  "participation": "100.00000000000000000",
+  ...
+ }
+ ```
+ 
+
+## jsonrpc 调用示例
 
 以get_account为例
 
-#### CURL  POST 命令行请求
+### CURL POST 命令行请求
 
 进入命令行（cmd），输入
 
@@ -47,7 +88,6 @@ http://127.0.0.1:38091
 ```
 
 注：params的格式为\[API类型，API指令，参数\]
-
 
 
 返回结果

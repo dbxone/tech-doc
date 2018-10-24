@@ -15,6 +15,9 @@
 | --chain-id arg | chain ID to connect to <br> 连接的链id |
 | -v [ --version ] | Display version information <br> 查看版本信息 |
 
+# 使用示例
+
+
 # cli_wallet退出
 witness_node重启以后，需要重新启动cli_wallet。
 
