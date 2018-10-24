@@ -40,6 +40,19 @@ cd dbxui
 yarn
 ```
 
+
+## 修改服务节点
+
+```
+vim dbxui/app/api/apiConfig.js
+```
+
+```
+{url: ws://ip:port", location: "Locally hosted"}
+DEFAULT_FAUCET: "http://ip:port",
+```
+修改这两行中的ip和port为私链地址和端口即可
+
 ## 开发模式启动
 
 ```

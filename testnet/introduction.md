@@ -8,8 +8,10 @@
 ## 连接测试网
 
 ```
-cli_wallet -w wallet.json -s ws://52.198.20.211:38090 -r 127.0.0.1:38091 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
+cli_wallet -w wallet.json -s ws://54.176.254.237:38090 -r 127.0.0.1:38091 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
+
+具体参数使用请查阅[cli_wallet使用](../node/cmd/cli_wallet.md)
 
 ## 智能合约开发
 
