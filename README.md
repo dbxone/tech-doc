@@ -16,6 +16,8 @@ DBXChain主网已于2018年6月上线.
 * [编译安装](node/compile.md)
 * [搭建私链](node/private-chain.md)
 * [轻钱包](node/cli_wallet.md)
+* [witness_node参数介绍](node/cmd/witness_node.md)
+* [cli_wallet参数介绍](node/cmd/cli_wallet.md)
 
 ### 区块浏览器
 * [安装运行](wallet/install.md)
@@ -27,8 +29,6 @@ DBXChain主网已于2018年6月上线.
 * [智能合约示例](contract/examples.md)
 
 ### 开发者参考
-* [witness_node 参数介绍](node/cmd/witness_node.md)
-* [cli_wallet 参数介绍](node/cmd/cli_wallet.md)
 * [witness_node api 介绍](node/api/witness_node.md)
 * [cli_wallet api 介绍](node/api/cli_wallet.md)
 * [智能合约 api 介绍](contract/contract-api.md)
