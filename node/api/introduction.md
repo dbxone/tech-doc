@@ -11,3 +11,10 @@
 
 因此，可以对api进行分类，分别为witness_node的`链api`、cli_wallet的`钱包api`和水龙头的`水龙头api`。
 
+# api服务接口的生成
+
+## 链api
+
+## 钱包api
+
+## 水龙头api
