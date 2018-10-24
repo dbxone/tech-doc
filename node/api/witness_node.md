@@ -1,12 +1,39 @@
 # 链api
 
 ## 访问方式
-链api的访问有两种方式，即 `http+jsonrpc2.0` 和 `websocket+jsonrpc2.0` 方式。
+链api的访问有两种方式，即 `http+rpc` 和 `websocket+rpc` 方式。
 
-### http+jsonrpc2.0
+### http+rpc
 jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
 
-### websocket+jsonrpc2.0
+eg.
+
+```
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"",[]]}'
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":["database","",[]]}'
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"get_accounts",[["1.2.17","1.2.18"]]]}'
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[3,"get_account_history",["1.2.26","1.11.0",10,"1.11.0"]]}'
+```
+
+
+对于database api，可以使用rpc格式。格式入下：
+```
+{
+    "id":1,     #id设置为自增
+    "method":"",
+    "params":[
+
+    ]
+}
+```
+
+eg.
+```
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"get_accounts","params": [["1.2.0","1.2.1","1.2.3","1.2.4","1.2.5","1.2.6","1.2.7","1.2.8","1.2.9","1.2.10","1.2.11","1.2.12","1.2.13","1.2.14","1.2.15","1.2.16","1.2.17","1.2.18","1.2.19"]]}'
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"get_assets","params":[["1.3.0","1.3.1"]]}'
+```
+
+### websocket+rpc
 jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
 
 ## api分类
