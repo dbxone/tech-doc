@@ -14,7 +14,23 @@
 # api服务接口的生成
 
 ## 链api
+链api的接口生成是在witness_node服务启动时的参数进行配置的。具体请查阅[witness_node参数介绍](../cmd/witness_node.md)
+
+访问链api请查阅[钱包api](../api/witness_node.md)
 
 ## 钱包api
+链api的接口生成是在cli_wallet服务启动时的参数进行配置的。具体请查阅[cli_wallet参数介绍](../cmd/cli_wallet.md)。
+
+```
+cli_wallet -w wallet.json -s ws://127.0.0.1:38090 -r 127.0.0.1:38091 -H 127.0.0.1:38092 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
+```
+
+* `-r 127.0.0.1:38091` 对外提供钱包rpc api服务，包括jsonrpc和websocket服务，详情请查阅[api调用逻辑](../api/introduction.md)
+* `-H 127.0.0.1:38092` 对外提供http jsonrpc api服务，详情请查阅[api调用逻辑](../api/introduction.md)
+
+访问钱包api请查阅[钱包api](../api/cli_wallet.md)
 
 ## 水龙头api
+水龙头api的接口生成是在水龙头配置文件中进行配置的。
+
+访问水龙头api请查阅[水龙头api](../api/faucet.md)
