@@ -1,44 +1,44 @@
-## Witness API command list
+## Witness API 命令列表
 
 ### database api
 
-| Command | Parameter | Explanation | Note |
+| 命令 | 参数 | 说明 | 备注 |
 | :--- | :--- | :--- | :--- |
-| [get_objects](witness_node/getobjects.md) | &lt;ids&gt; | Find the target objective according to its ID |  |
-| set_subscribe_callback | &lt;cb&gt; &lt;clear_filter&gt; | Callback for the registration of global subscription |  |
-| set_data_transaction_subscribe_callback | &lt;cb&gt; &lt;clear_filter&gt; | Callback for the registration of data transaction |  |
-| unsubscribe_data_transaction_callback |  | Callback for the cancellation of registrating data transaction |  |
-| set_data_transaction_products_subscribe_callback | &lt;cb&gt; &lt;ids&gt; | Data transaction callback for the registration of specific data product ID |  |
-| set_pending_transaction_callback | &lt;cb&gt; | Callback for the transaction whose registration has not been confirmed |  |
-| set_block_applied_callback | &lt;cb&gt; | Callback for whether Set up the current block as the one registered by callback |  |
-| cancel_all_subscriptions |  | Cancel all the subscriptions（callback） |  |
-| [get_block_header](witness_node/getblock-header.md) | &lt;block_num&gt; | Acquire the block head information |  |
-| get_transaction | &lt;block_num&gt; &lt;trx_in_block&gt; | Acquire the transaction information |  |
-| get_block | &lt;block_num&gt; | Acquire the block information |  |
-| get_recent_transaction_by_id | &lt;id&gt; | Query the transaction based on TXID, the return is empty if the transaction is overdue |  |
-| get_chain_properties |  | Acquire the chain property |  |
-| get_global_properties |  | Acquire global propoerty |  |
-| get_commission_percent |  | Acquire commission ratio |  |
-| get_config |  | Acquire the compiling constant |  |
-| get_chain_id |  | Acquire the chain ID |  |
-| get_dynamic_global_properties |  | Acquire the dynamic global property |  |
-| get_key_references | &lt;key&gt; | Return all the account information pointing to the public key |  |
-| is_public_key_registered | &lt;public_key&gt; | Verify whether the public key has been registered |  |
-| get_accounts | &lt;account_ids&gt; | Acquire the account information by ID |  |
-| [get_full_accounts](witness_node/getfullaccounts.md) | &lt;names_or_ids&gt; &lt;subscribe&gt; | Acquire all the realted information of accounts which satisfy the conditions |  |
-| get_account_by_name | &lt;name&gt; | Acquire the account information by the account name |  |
-| get_account_references | &lt;account_id&gt; | Acquire the account id related to account_id |  |
-| lookup_account_names | &lt;account_names&gt; | Acquire the account information by the account name |  |
-| [lookup_accounts](witness_node/lookupaccounts.md) | &lt;limit&gt; &lt;lower_bound_name&gt; | Acquire the name and ID of registered accounts |  |
-| get_account_count |  | Acquire the quantity of accounts which are registered on the chain |  |
-| [get_account_balances](witness_node/getaccount-balances.md) | &lt;id&gt; &lt;assets&gt; | Acquire the account asset information by account ID and asset ID |  |
-| get_named_account_balances | &lt;name&gt; &lt;assets&gt; | Acquire the account asset information by the account name and asset ID |  |
-| get_balance_objects | &lt;&lt;\[address\]&gt;&gt; | Return all the balance objective which has not been received on the address |  |
-| get_vested_balances | &lt;objs&gt; | Acquire the accessible asset information by the account balance ID |  |
-| get_vesting_balances | &lt;account_id&gt; | Acquire information of the balance which belongs to the account but not accessible temprorarily by the account ID |  |
-| list_data_transaction_complain_requesters | &lt;start_date_time&gt; &lt;end_date_time&gt; &lt;limit&gt; | Find the complaint initiator by the starting and ending time meanwhile return the first "limit" |  |
-| list_data_transaction_complain_datasources | &lt;start_date_time&gt; &lt;end_date_time&gt; &lt;limit&gt; | Acquire the data source which is complained by the starting and ending time meanwhile return the first "limit" |  |
-| get_assets | &lt;asset_ids&gt; | Acquire the asset by asset ID |  |
+| [get_objects](witness_node/getobjects.md) | &lt;ids&gt; | 根据ID查询目标对象 |  |
+| set_subscribe_callback | &lt;cb&gt; &lt;clear_filter&gt; | 注册全局订阅的回调 |  |
+| set_data_transaction_subscribe_callback | &lt;cb&gt; &lt;clear_filter&gt; | 注册数据交易的回调 |  |
+| unsubscribe_data_transaction_callback |  | 取消注册数据交易的回调 |  |
+| set_data_transaction_products_subscribe_callback | &lt;cb&gt; &lt;ids&gt; | 注册特定数据产品ID的数据交易回调 |  |
+| set_pending_transaction_callback | &lt;cb&gt; | 注册未确认的交易的回调 |  |
+| set_block_applied_callback | &lt;cb&gt; | 注册区块是否被应用的回调 |  |
+| cancel_all_subscriptions |  | 停止所有订阅（回调） |  |
+| [get_block_header](witness_node/getblock-header.md) | &lt;block_num&gt; | 获取区块头信息 |  |
+| get_transaction | &lt;block_num&gt; &lt;trx_in_block&gt; | 获得交易信息 |  |
+| get_block | &lt;block_num&gt; | 获取区块信息 |  |
+| get_recent_transaction_by_id | &lt;id&gt; | 根据TXID查询交易，若交易超出有效期则会返回空值 |  |
+| get_chain_properties |  | 获取链属性 |  |
+| get_global_properties |  | 获取全局属性 |  |
+| get_commission_percent |  | 获取佣金比例 |  |
+| get_config |  | 获取编译时常量 |  |
+| get_chain_id |  | 获取链ID |  |
+| get_dynamic_global_properties |  | 获取动态全局属性 |  |
+| get_key_references | &lt;key&gt; | 返回所有指向公钥的帐户信息 |  |
+| is_public_key_registered | &lt;public_key&gt; | 验证公钥是否已经被注册 |  |
+| get_accounts | &lt;account_ids&gt; | 通过ID获取账户信息 |  |
+| [get_full_accounts](witness_node/getfullaccounts.md) | &lt;names_or_ids&gt; &lt;subscribe&gt; | 获取符合条件的所有账户相关信息 |  |
+| get_account_by_name | &lt;name&gt; | 通过账户名获取账户信息 |  |
+| get_account_references | &lt;account_id&gt; | 获取账户account_id相关的账户id |  |
+| lookup_account_names | &lt;account_names&gt; | 通过账户名获取账户信息 |  |
+| [lookup_accounts](witness_node/lookupaccounts.md) | &lt;limit&gt; &lt;lower_bound_name&gt; | 获取已注册账户的账户名和ID |  |
+| get_account_count |  | 获取链上注册的所有账户数量 |  |
+| [get_account_balances](witness_node/getaccount-balances.md) | &lt;id&gt; &lt;assets&gt; | 通过账户ID和资产ID获取账户资产信息 |  |
+| get_named_account_balances | &lt;name&gt; &lt;assets&gt; | 通过账户名和资产ID获取账户资产信息 |  |
+| get_balance_objects | &lt;&lt;\[address\]&gt;&gt; | 返回地址address上所有未领取的余额对象 |  |
+| get_vested_balances | &lt;objs&gt; | 通过账户余额ID获取可领取的资产信息 |  |
+| get_vesting_balances | &lt;account_id&gt; | 通过账户ID获取归属该账户但暂时不可领取的余额信息 |  |
+| list_data_transaction_complain_requesters | &lt;start_date_time&gt; &lt;end_date_time&gt; &lt;limit&gt; | 通过开始和结束时间获取投诉的发起人，并返回前limit个 |  |
+| list_data_transaction_complain_datasources | &lt;start_date_time&gt; &lt;end_date_time&gt; &lt;limit&gt; | 通过开始和结束时间获取被投诉的数据源，并返回前limit个 |  |
+| get_assets | &lt;asset_ids&gt; | 通过资产ID获取资产 |  |
 | [list_assets](witness_node/listassets.md) | &lt;lower_bound_symbol&gt; &lt;limit&gt; | 通过资产符号名称获取资产信息，并返回前limit个 |  |
 | lookup_asset_symbols | &lt;symbols_or_ids&gt; | 通过资产符号获取资产列表 |  |
 | get_witnesses | &lt;witness_ids&gt; | 通过见证人ID获取见证人列表 |  |
