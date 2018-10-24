@@ -7,6 +7,7 @@
 jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
 
 ### websocket+jsonrpc2.0
+jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
 
 ## api分类
 
