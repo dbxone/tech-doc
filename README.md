@@ -13,7 +13,7 @@ DBXChain主网已于2018年6月上线.
 * [网络模型](network_model.md)
 
 ### 快速开始
-* [编译安装](node/compile.md)
+* [编译安装](node/install.md)
 * [搭建私链](node/private-chain.md)
 * [轻钱包](node/cli_wallet.md)
 * [witness_node参数介绍](node/cmd/witness_node.md)
