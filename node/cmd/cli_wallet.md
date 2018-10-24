@@ -18,12 +18,13 @@
 # 使用示例
 命令行钱包cli_wallet连接witness_node:
 ```
-cli_wallet -w wallet.json -s ws://127.0.0.1:38090 -r 127.0.0.1:38091 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
+cli_wallet -w wallet.json -s ws://127.0.0.1:38090 -r 127.0.0.1:38091 -H 127.0.0.1:38092 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
 
-* -w wallet.json 指定钱包文件
-* -s ws://127.0.0.1:38090  连接的witness_node节点
-* -r 127.0.0.1:38091 对外提供钱包rpc api服务
+* `-w wallet.json` 指定钱包文件
+* `-s ws://127.0.0.1:38090`  连接的witness_node节点
+* `-r 127.0.0.1:38091` 对外提供钱包rpc api服务，包括jsonrpc和websocket服务，详情请查阅[api调用逻辑](../api/introduction.md)
+* `-H 127.0.0.1:38092` 对外提供http jsonrpc api服务，详情请查阅[api调用逻辑](../api/introduction.md)
 * --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d 连接的链id
 
 
