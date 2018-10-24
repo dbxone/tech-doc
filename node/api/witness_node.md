@@ -6,12 +6,22 @@
 ### http+rpc
 jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
 
-eg.
+假如witness_node接口为 `<ip>:<port1>`，则此时的具体接口为
+
+`http://<ip>:<port1>/rpc`
+
+eg. 
 
 ```
+获取所有0(database) api接口
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"",[]]}'
+字符串方式也可
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":["database","",[]]}'
+
+获取database中的1.2.17和1.2.18账户的信息
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"get_accounts",[["1.2.17","1.2.18"]]]}'
+
+获取history中的1.2.26账户的10条交易历史
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[3,"get_account_history",["1.2.26","1.11.0",10,"1.11.0"]]}'
 ```
 
@@ -29,12 +39,63 @@ curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id
 
 eg.
 ```
+获取database中的1.2.*几个账户的信息
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"get_accounts","params": [["1.2.0","1.2.1","1.2.3","1.2.4","1.2.5","1.2.6","1.2.7","1.2.8","1.2.9","1.2.10","1.2.11","1.2.12","1.2.13","1.2.14","1.2.15","1.2.16","1.2.17","1.2.18","1.2.19"]]}'
+
+获取链上资产信息
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"get_assets","params":[["1.3.0","1.3.1"]]}'
 ```
 
 ### websocket+rpc
 jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
+
+假如witness_node接口为 `<ip>:<port1>`，则此时的具体接口为
+
+`ws://<ip>:<port1>`
+
+eg. 
+
+使用wscat进行测试，wscat安装方式`apt -y install wscat`
+
+```
+wscat -c ws://<ip>:<port1>
+```
+
+
+```
+获取所有0(database) api接口
+{"id":1,"method":"call","params":[0,"",[]]}
+
+字符串方式也可
+{"id":1,"method":"call","params":["database","",[]]}
+
+获取database中的1.2.17和1.2.18账户的信息
+{"id":1,"method":"call","params":[0,"get_accounts",[["1.2.17","1.2.18"]]]}
+
+获取history中的1.2.26账户的10条交易历史
+{"id":1,"method":"call","params":[3,"get_account_history",["1.2.26","1.11.0",10,"1.11.0"]]}
+```
+
+
+对于database api，可以使用rpc格式。格式入下：
+```
+{
+    "id":1,     #id设置为自增
+    "method":"",
+    "params":[
+
+    ]
+}
+```
+
+eg.
+```
+获取database中的1.2.*几个账户的信息
+{"id":1,"method":"get_accounts","params": [["1.2.0","1.2.1","1.2.3","1.2.4","1.2.5","1.2.6","1.2.7","1.2.8","1.2.9","1.2.10","1.2.11","1.2.12","1.2.13","1.2.14","1.2.15","1.2.16","1.2.17","1.2.18","1.2.19"]]}
+
+获取链上资产信息
+{"id":1,"method":"get_assets","params":[["1.3.0","1.3.1"]]}
+```
 
 ## api分类
 
