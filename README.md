@@ -29,6 +29,7 @@ DBXChain主网已于2018年6月上线.
 * [智能合约示例](contract/examples.md)
 
 ### 开发者参考
+* [api逻辑](node/api/introduction.md)
 * [witness_node api 介绍](node/api/witness_node.md)
 * [cli_wallet api 介绍](node/api/cli_wallet.md)
 * [智能合约 api 介绍](contract/contract-api.md)
