@@ -1,6 +1,6 @@
 # cli_wallet Command list
 
-| 命令 | 参数 | 说明 | 备注 |
+| Command | Parameter | Explanation | Note |
 | :--- | :--- | :--- | :--- |
 | [set_password](cli_wallet/setpassword.md) | &lt;new_password&gt; | Set a new password to the wallet. You need to set a password when opening the wallet at the first time. |  |
 | [unlock](cli_wallet/unlock.md) | &lt;my_password&gt; | Unlock the wallet |  |
@@ -13,39 +13,39 @@
 | [get_account_history_by_operations](cli_wallet/getrelative-account-history_by_operations.md) | &lt;account_name_or_id&gt; &lt;\[\]&gt;  &lt;start&gt; &lt;limit_num&gt; | Query recent transaction record of the account according to oeration_type, and return the txID corresponding to operation |  |
 | [transfer](cli_wallet/transfer.md) | &lt;from_account&gt;                   &lt;to_account&gt; &lt;amount&gt;     &lt;DBX&gt; &lt;memo&gt; &lt;true&gt; | Transfer |  |
 | [transfer2](cli_wallet/transfer2.md) | &lt;from_account&gt;                   &lt;to_account&gt; &lt;amount&gt;     &lt;DBX&gt; &lt;memo&gt; &lt;true&gt; | Transfer, parameter similar to transfer, the return including the currenct transaction id |  |
-| [get_block](cli_wallet/getblock.md) | &lt;block_num&gt; | 获取指定区块信息 |  |
-| [info](cli_wallet/info.md) |  | 获取区块链信息，可以用此命令查询最新区块高度 |  |
-| [help](cli_wallet/help.md) |  | 帮助命令，此命令会返回钱包支持的所有接口 |  |
-| [gethelp](cli_wallet/gethelp.md) | &lt;command&gt; | 帮助命令，查看指定钱包命令的调用方法 |  |
+| [get_block](cli_wallet/getblock.md) | &lt;block_num&gt; | Acquire the information of designated block |  |
+| [info](cli_wallet/info.md) |  | Acquire the blockchian information, able to find the newest block height by this command |  |
+| [help](cli_wallet/help.md) |  | Help command, which will return all the interfaces supported by the wallet |  |
+| [gethelp](cli_wallet/gethelp.md) | &lt;command&gt; | Help command,Find the calling method of the designated wallet command |  |
 
-## 调用示例
+## Calling case
 
-命令行钱包cli_wallet连接witness_node:
+Command line wallet cli_wallet connects to witness_node:
 ```
 cli_wallet -w wallet.json -s ws://127.0.0.1:38090 -r 127.0.0.1:38091 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
-首先需要为钱包设置一个钱包密码(这个密码是本地的，用来解锁钱包)：
+First you need to set a password fot your wallet (This is a local password which is used to unlock the wallet)：
 
 ```
 new >>> set_password my_password
 ```
 
-执行成功后会显示:
+It will show as follows when it executes susccessfully:
 ```
 locked >>>
 ```
 
-解锁钱包:
+Unlock the wallet:
 ```
 locked >>> unlock my_password
 ```
 
-解锁成功会显示：
+It will show as follows when it is unlocked successfully：
 ```
 unlocked >>>
 ```
 
-使用 info 命令可以查看当前区块同步情况
+You can find the synchronous status of the current block using info command
 ```
 unlocked >>> info
 info
@@ -86,34 +86,34 @@ info
 ```
 
 
-## jsonrpc 调用示例
+## jsonrpc calling case
 
-进入命令行（cmd），通过curl进行调用
+Enter command line（cmd），calling by curl
 
 ```
 curl --data '{"jsonrpc": "2.0", "method": "info", "params": [], "id": 1}' http://127.0.0.1:38091
 ```
 
-即可看到返回结果
+It will show the return
 
-### POST请求示例
+### POST request case
 
-请求URL如下
+Request URL as follows
 
 ```
 http://127.0.0.1:38091
 ```
 
-请求主体
+Requesting subjective
 
 ```
 {"jsonrpc": "2.0", "method": "info", "params": [], "id": 1}
 ```
 
-注：params的格式为`[API类型，API指令，参数]`
+Note：The format of params is`[API type，API instruction，parameter]`
 
 
-返回结果
+Return
 
 ```
 {
