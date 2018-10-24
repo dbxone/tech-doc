@@ -1,4 +1,14 @@
-## Witness API 命令列表
+# 链api
+
+## 访问方式
+链api的访问有两种方式，即 `http+jsonrpc2.0` 和 `websocket+jsonrpc2.0` 方式。
+
+### http+jsonrpc2.0
+jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](../jsonrpc2.0.pdf)
+
+### websocket+jsonrpc2.0
+
+## api分类
 
 ### database api
 
