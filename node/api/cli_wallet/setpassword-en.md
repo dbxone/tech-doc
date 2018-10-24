@@ -1,6 +1,6 @@
 # set_password
 
-##### Explanation：Set up a new password to the wallet. When opening the wallet at the first time, you need to set up your password
+##### Explanation：Set a new password to the wallet. When opening the wallet at the first time, you need to set your password
 
 ##### usage: set_password new_password
 
