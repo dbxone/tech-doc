@@ -47,21 +47,21 @@
 | get_witness_count |  | Acquire the qunatity of the registered witness |  |
 | get_committee_members | &lt;committee_member_ids&gt; | Acquire the information of the committee member by ID |  |
 | get_committee_member_by_account | &lt;account&gt; | Acquire the information of the committee member by account ID |  |
-| lookup_committee_member_accounts | &lt;account&gt; &lt;limit&gt; | 获得已注册理事会成员的ID和账户名,并返回前limit个 |  |
-| get_workers_by_account | &lt;account&gt; | 通过账户ID获取工作对象信息 |  |
-| lookup_vote_ids | &lt;votes&gt; | 通过投票对象ID来获得投票对象 |  |
-| get_transaction_hex | &lt;trx&gt; | 获取签名的交易信息的十六进制编码 |  |
-| get_required_signatures | &lt;trx&gt; &lt;available_keys&gt; | 获取签名的交易信息的签名公钥 |  |
-| get_potential_signatures | &lt;trx&gt; | 获取签名的交易信息的签名公钥 |  |
-| get_potential_address_signatures | &lt;trx&gt; | 获取签名的交易信息的地址 |  |
-| verify_authority | &lt;trx&gt; | 验证交易是否已满足全部签名要求 |  |
-| verify_account_authority | &lt;name_or_id&gt; &lt;signers&gt; | 验证签名人是否有足够的权力控制一个帐户 |  |
-| validate_transaction | &lt;trx&gt; | 在当前情况下验证交易而不广播交易 |  |
-| get_required_fees | &lt;ops&gt; &lt;id&gt; | 通过操作ID和资产ID获取手续费 |  |
-| get_proposed_transactions | &lt;id&gt; | 通过具体账户ID获得相关的被提议的交易 |  |
-| get_blinded_balances | &lt;id&gt; | 通过委托ID获取隐藏资产 |  |
-| get_data_transaction_product_costs | &lt;start&gt; &lt;end&gt; | 获取指定时间内数据交易的产品费用 |  |
-| get_data_transaction_total_count | &lt;start&gt; &lt;end&gt; | 获取指定时间内数据交易的次数 |  |
+| lookup_committee_member_accounts | &lt;account&gt; &lt;limit&gt; | Acquire ID and account name of the registered committee members, return the first "limit" |  |
+| get_workers_by_account | &lt;account&gt; | Acquire the working objective information by account ID |  |
+| lookup_vote_ids | &lt;votes&gt; | Acquire the voting objective by its ID |  |
+| get_transaction_hex | &lt;trx&gt; | Acquire the hexadecimal code of the signed transaction information |  |
+| get_required_signatures | &lt;trx&gt; &lt;available_keys&gt; | Acquire the signature public key of the signed transaction information |  |
+| get_potential_signatures | &lt;trx&gt; | Acquire the signature public key of the signed transaction information |  |
+| get_potential_address_signatures | &lt;trx&gt; | Acquire the address of the signed transaction information |  |
+| verify_authority | &lt;trx&gt; | Verify whether the transaction has satisfied all the signature request |  |
+| verify_account_authority | &lt;name_or_id&gt; &lt;signers&gt; | Verify whether the signer has enough authority to control an account |  |
+| validate_transaction | &lt;trx&gt; | Verify but not broadcast the transaction currently |  |
+| get_required_fees | &lt;ops&gt; &lt;id&gt; | Acquire the commission by the operation ID and asset ID |  |
+| get_proposed_transactions | &lt;id&gt; | Acquire the related proposed transaction by specific account ID |  |
+| get_blinded_balances | &lt;id&gt; | Acquire the hidden asset by the entrusting ID |  |
+| get_data_transaction_product_costs | &lt;start&gt; &lt;end&gt; | Acquire the product fee of data the transaction in the designated period |  |
+| get_data_transaction_total_count | &lt;start&gt; &lt;end&gt; | Acquire the quantity of data transaction in the designated period |  |
 | get_merchants_total_count |  | 获取当前商户个数 |  |
 | get_data_transaction_commission | &lt;start&gt; &lt;end&gt; | 获取指定时间内数据交易的佣金 |  |
 | get_data_transaction_pay_fee | &lt;start&gt; &lt;end&gt; | 获取指定时间内数据交易的手续费 |  |
