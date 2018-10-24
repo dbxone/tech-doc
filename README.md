@@ -8,10 +8,9 @@ DBXChain主网已于2018年6月上线.
 
 
 ## DBXChain技术文档
-### 基础介绍
-* [构成](introduction.md)
 
 ### 快速开始
+* [DBXChain构成](introduction.md)
 * [编译安装](node/install.md)
 * [搭建私链](node/private-chain.md)
 * [轻钱包](node/cli_wallet.md)
