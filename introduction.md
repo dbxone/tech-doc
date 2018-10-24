@@ -2,6 +2,8 @@
 
 DBXChain主要有`dbxchain`、`dbxui`、`dbxfaucet`三大部分组成：
 
+![](dbxchain.png)
+
 ## <b>dbxchain</b>
 
 DBXChain公链，基于石墨烯技术，基于C++开发。
