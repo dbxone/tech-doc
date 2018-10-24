@@ -14,7 +14,7 @@
 # api服务接口的生成
 
 ## 链api
-链api的接口生成是在witness_node服务启动时的参数进行配置的。具体请查阅[witness_node参数介绍](../cmd/witness_node.md)
+链api的接口生成可以在witness_node服务启动时的参数进行配置，也可以在链配置文件`config.ini`中进行配置，但witness_node启动参数优先级更高。具体请查阅[witness_node参数介绍](../cmd/witness_node.md)
 
 访问链api请查阅[钱包api](../api/witness_node.md)
 
