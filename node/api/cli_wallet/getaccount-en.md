@@ -15,7 +15,7 @@
 ### **Calling case**
 
 #### CURL  POST command line request
-Enter the command line进入命令行, input
+Enter the command line, input
 
 ```
 curl --data '{"jsonrpc": "2.0", "method": "call", "params": [0, "get_accounts", [["1.2.1","1.2.2"]]], "id": 1}'  https://node1.dbx.io/rpc
