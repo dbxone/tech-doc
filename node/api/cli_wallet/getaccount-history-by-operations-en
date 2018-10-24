@@ -1,6 +1,6 @@
 # get_account_history_by_operations
 
-##### Explanation：Search the recent transaction records of the account based on oeration_type, support visiting next page and returning the txID corresponding to operataions
+##### Explanation：Query the recent transaction records of the account based on oeration_type, support visiting next page and returning the txID corresponding to the operataion
 
 ##### usage: get_account_history_by_operations \[\] start limit_num
 
@@ -9,6 +9,6 @@
 | Parameter | Explanation |
 | :--- | :--- |
 | account_name_or_id | Account name or id |
-| \[\] | operation_type，For example if the transfer amount is 0, you can enter \[0\]. If the argument is "", it means to query all the operation_type |
-| start | Starting serial number, similar to get_relative_account_history |
+| \[\] | operation_type，for example if the transfer is 0, you can enter \[0\]. If the argument is "", it means to query all the operation_type |
+| start | Staring serial number, similar to get_relative_account_history |
 | limit_num | Display recent "limit" transaction records |
