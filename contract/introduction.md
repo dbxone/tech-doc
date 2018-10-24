@@ -1,18 +1,18 @@
-## Smart contract introduction
+## 智能合约介绍
 
-DBXChain smart contract 2.0，WebAssembly virtual machine as the basement technology and currently supporting the smart contract compiling in C++ language.
-Developers compile smart contracts in C++ language, convert the code to WebAssembly (WASM) by llvm then deploy it on the blockchain, finally realizes interaction through smart contract ABI (Application Binary Interface).
+DBXChain智能合约2.0，底层使用WebAssembly虚拟机，目前支持C++语言的智能合约编写。
+开发者使用C++编写智能合约，通过llvm将代码编译成WebAssembly（又名WASM），部署到区块链上，通过智能合约ABI(Application Binary Interface，应用程序的二进制接口)和智能合约交互。
 
-# Contract account design
-  1. There are two types of accounts：Common account and contract account
-  2. Contract account, established by common account through deploying contracts, does not have private key so that the asset access is controlled by the contract code
-  3. Contract account objective, code field stores contract code, abi stores contract code and abi
-  4. COntract code does not support any update
+# 合约帐户设计
+  1. 帐户分2种：普通帐户和合约帐户
+  2. 合约帐户，由普通帐户通过部署合约的方式创建，合约帐户无私钥，资产权限由合约代码控制
+  3. 合约帐户对象，code字段存储合约代码, abi存储合约代码和abi
+  4. 合约代码不支持更新
 
-# Sustainable storage of the contract
-  1. Define the data storage format of the contract; define the linear storing space, every element is one struct type
-  2. The sustainable storage mechanism of the contract is put into RAM when the witness_node is running; it is written into the disk when the program is quitted; RAM optimization could be considered in later period (disk+cache).
-  3. Envelope the API which support sustainable reading and writting storage, providing the interface of reading, writing, searching method to be called
+# 合约的持久化存储
+  1. 定义合约的数据存储格式； 定义线性存储空间，每个元素是一个struct类型
+  2. witness_node运行时，合约的持久化存储，放内存；程序退出时，写入磁盘；后期可以考虑优化内存(磁盘+缓存)。
+  3. 封装读写持久化存储的API，  提供读、写、检索方法的接口供合约调用
   4. 合约只能写自己的存储空间，可以读其它合约的存储空间，但不可直接写；  同一合约内不同帐户的存储空间，由用户合约代码控制权限
   5. 合约内可以根据区块号获取区块，读取外部状态
 
