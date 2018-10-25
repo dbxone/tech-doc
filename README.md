@@ -31,6 +31,6 @@ DBXChain主网已于2018年6月上线.
 * [api rpc格式](node/api/format.md)
 * [链api](node/api/witness_node.md)
 * [钱包api](node/api/cli_wallet.md)
-* [水龙头api](node/api/cli_wallet.md)
+* [水龙头api](node/api/faucet.md)
 * [智能合约 api 介绍](contract/contract-api.md)
 * [测试网络](testnet/introduction.md)
