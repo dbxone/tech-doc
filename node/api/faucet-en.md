@@ -32,7 +32,7 @@ you will see the calling result.
 }
 ```
 
-<b> return successfully </b>
+<b> Successful return </b>
 ```
 {
     "account":{
@@ -44,7 +44,7 @@ you will see the calling result.
 }
 ```
 
-<b> fails to return </b>
+<b> Failed return </b>
 ```
 {
     "error":{
