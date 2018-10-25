@@ -1,5 +1,8 @@
 # 钱包 api
+
+
 ## 钱包api
+
 | 命令 | 参数 | 参数 | 说明 |
 | :--- | :--- | :--- | :--- |
 | [set_password](cli_wallet/setpassword.md) | &lt;new_password&gt; | 对钱包设置一个新密码。首次启动钱包，需要设置密码 |  |
@@ -18,11 +21,31 @@
 | [help](cli_wallet/help.md) |  | 帮助命令，此命令会返回钱包支持的所有接口 |  |
 | [gethelp](cli_wallet/gethelp.md) | &lt;command&gt; | 帮助命令，查看指定钱包命令的调用方法 |  |
 
+## 2. 访问方式
+
+```
+cli_wallet -w wallet.json -s ws://<ip>:<port1> -r <ip>:<port2> -H <ip>:<port3> --chain-id <...>
+```
+
+* `-r <ip>:<port2>` 对外提供钱包rpc api服务，包括http和websocket服务。
+* `-H <ip>:<port3>` 对外提供rpc api服务，它只包含http服务，跟<port2>的区别在于，对于它的返回值是http格式的json格式，其它都相同。
 
 
-## jsonrpc 调用示例
+### <port2> http+rpc
 
-进入命令行（cmd），通过curl进行调用
+jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
+
+进入命令行，通过curl进行post请求调用
+
+```
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[api类型值,"api指令",[参数]]}'
+或
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":["api类型串","api指令",[参数]]}'
+```
+即可看到返回结果。
+
+
+进入命令行，通过curl进行调用
 
 ```
 curl --data '{"jsonrpc": "2.0", "method": "info", "params": [], "id": 1}' http://127.0.0.1:38091

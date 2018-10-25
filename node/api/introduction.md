@@ -25,8 +25,8 @@
 cli_wallet -w wallet.json -s ws://127.0.0.1:38090 -r 127.0.0.1:38091 -H 127.0.0.1:38092 --chain-id 6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d
 ```
 
-* `-r 127.0.0.1:38091` 对外提供钱包rpc api服务，包括jsonrpc和websocket服务，详情请查阅[api调用逻辑](../api/introduction.md)
-* `-H 127.0.0.1:38092` 对外提供http jsonrpc api服务，详情请查阅[api调用逻辑](../api/introduction.md)
+* `-r 127.0.0.1:38091` 对外提供钱包rpc api服务，包括jsonrpc和websocket服务。
+* `-H 127.0.0.1:38092` 对外提供http jsonrpc api服务。
 
 访问钱包api请查阅[钱包api](../api/cli_wallet.md)
 

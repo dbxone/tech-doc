@@ -96,19 +96,44 @@ DBX链api根据功能被分为如下几种类型：
 ## 2. 访问方式
 链api的访问有两种方式，即 `http+rpc` 和 `websocket+rpc` 方式。
 
+witness_node服务接口为 `<ip>:<port1>` 。
+
 ### http+rpc
+
 jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
 
-假如witness_node接口为 `<ip>:<port1>`，则此时的具体接口为
+进入命令行，通过curl进行post请求调用
+
+```
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[api类型值,"api指令",[参数]]}'
+或
+curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":["api类型串","api指令",[参数]]}'
+```
+即可看到返回结果。
+
+
+<b>具体请求URL为</b>
 
 `http://<ip>:<port1>/rpc`
+
+
+<b>请求主体</b>
+
+```
+{"id":1,"method":"call","params":[api类型值,"api指令",[参数]]}
+或
+{"id":1,"method":"call","params":["api类型串","api指令",[参数]]}
+```
+
+<b>返回结果为jsonrpc2.0格式</b>
+
 
 eg. 
 
 ```
 获取所有0(database) api接口
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"",[]]}'
-字符串方式也可
+类型字串方式也可
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":["database","",[]]}'
 
 获取database中的1.2.17和1.2.18账户的信息
@@ -119,15 +144,9 @@ curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id
 ```
 
 
-对于database api，可以使用rpc格式。格式入下：
+<b>对于database api，请求主体可以使用rpc格式</b>
 ```
-{
-    "id":1,     #id设置为自增
-    "method":"",
-    "params":[
-
-    ]
-}
+{"id":1,"method":"api指令","params":[参数]}
 ```
 
 eg.
@@ -142,18 +161,31 @@ curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id
 ### websocket+rpc
 jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
 
-假如witness_node接口为 `<ip>:<port1>`，则此时的具体接口为
 
-`ws://<ip>:<port1>`
-
-eg. 
-
-使用wscat进行测试，wscat安装方式`apt -y install wscat`
+进入命令行，通过wscat进行请求调用，wscat安装方式`apt -y install wscat`。
 
 ```
 wscat -c ws://<ip>:<port1>
 ```
 
+
+<b>具体请求URL为</b>
+
+`ws://<ip>:<port1>`
+
+
+<b>请求主体</b>
+
+```
+{"id":1,"method":"call","params":[api类型值,"api指令",[参数]]}
+或
+{"id":1,"method":"call","params":["api类型串","api指令",[参数]]}
+```
+
+<b>返回结果为jsonrpc2.0格式</b>
+
+
+eg.
 
 ```
 获取所有0(database) api接口
@@ -170,15 +202,9 @@ wscat -c ws://<ip>:<port1>
 ```
 
 
-对于database api，可以使用rpc格式。格式入下：
+<b>对于database api，请求主体可以使用rpc格式</b>
 ```
-{
-    "id":1,     #id设置为自增
-    "method":"",
-    "params":[
-
-    ]
-}
+{"id":1,"method":"api指令","params":[参数]}
 ```
 
 eg.
