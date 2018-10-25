@@ -28,7 +28,7 @@ DBXChain主网已于2018年6月上线.
 
 ### 开发者参考
 * [api调用逻辑](node/api/introduction.md)
-* [api rpc格式](node/api/format.md)
+* [api调用格式](node/api/format.md)
 * [链api](node/api/witness_node.md)
 * [钱包api](node/api/cli_wallet.md)
 * [水龙头api](node/api/faucet.md)
