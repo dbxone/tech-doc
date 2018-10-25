@@ -1,4 +1,4 @@
-# 链api
+# 链 api
 
 ## 1. api分类
 
@@ -14,7 +14,7 @@ DBX链api根据功能被分为如下几种类型：
 
 ### database api
 
-| 命令 | 参数 | 说明 | 备注 |
+| 命令 | 参数 | 返回值 | 说明 |
 | :--- | :--- | :--- | :--- |
 | [get_objects](witness_node/getobjects.md) | &lt;ids&gt; | 根据ID查询目标对象 |  |
 | set_subscribe_callback | &lt;cb&gt; &lt;clear_filter&gt; | 注册全局订阅的回调 |  |
