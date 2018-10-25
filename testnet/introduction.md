@@ -72,10 +72,3 @@ cli_wallet -w wallet.json -s ws://13.57.136.245:38090 -r 127.0.0.1:38091 --chain
 ```
 
 具体参数使用请查阅[cli_wallet使用](../node/cmd/cli_wallet.md)
-
-## 6. api开发示例
-
-
-## 智能合约开发
-
-具体安装方法请查阅[编译部署运行智能合约](../contract/contract-run.md)
