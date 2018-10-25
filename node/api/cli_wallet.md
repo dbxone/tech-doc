@@ -23,92 +23,100 @@
 
 ## 2. 访问方式
 
+进行api调用前，请详读[api rpc格式](format.md)
+
 ```
 cli_wallet -w wallet.json -s ws://<ip>:<port1> -r <ip>:<port2> -H <ip>:<port3> --chain-id <...>
 ```
 
 * `-r <ip>:<port2>` 对外提供钱包rpc api服务，包括http和websocket服务。
-* `-H <ip>:<port3>` 对外提供rpc api服务，它只包含http服务，跟<port2>的区别在于，对于它的返回值是http格式的json格式，其它都相同。
+* `-H <ip>:<port3>` 对外提供钱包rpc api服务，它只包含http服务，跟<port2>的区别在于，对于它的返回值是http格式的json格式，其它都相同。
+
+
+
+
 
 
 ### <port2> http+rpc
 
-jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
-
 进入命令行，通过curl进行post请求调用
 
 ```
-curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[api类型值,"api指令",[参数]]}'
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"api指令",[参数]]}'
 或
-curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":["api类型串","api指令",[参数]]}'
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"api指令","params":[参数]}'
 ```
 即可看到返回结果。
 
 
-进入命令行，通过curl进行调用
+<b>具体请求URL为</b>
+
+`http://<ip>:<port2>`
+
+
+eg.
+```
+获取api帮助信息
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"help","params": []}'
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"help",[]]}'
+
+解锁服务钱包
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"unlock","params": ["mypassword"]}'
+curl http://127.0.0.1:38091 -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"unlock",["mypassword"]]}'
+
+转账
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"transfer","params": ["user1","user2","1","DBX","memo", true]}'
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"transfer",["user1","user2","1","DBX","memo", true]]}'
+
+生成公私钥
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"suggest_brain_key","params": []}'
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"suggest_brain_key",[]}'
+
+注册账户
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"register_account","params": ["userx","pubkey","pubkey","root","root", 0, true]}'
+curl http://<ip>:<port2> -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"call","params":[0,"register_account",["userx","pubkey","pubkey","root","root", 0, true]]}'
+```
+
+
+
+
+
+
+
+### <port2> websocket+rpc
+
+进入命令行，通过wscat进行请求调用，wscat安装方式`apt -y install node-ws`。
 
 ```
-curl --data '{"jsonrpc": "2.0", "method": "info", "params": [], "id": 1}' http://127.0.0.1:38091
+wscat -c ws://<ip>:<port2>
 ```
 
-即可看到返回结果
 
-### POST请求示例
+<b>具体请求URL为</b>
 
-请求URL如下
+`ws://<ip>:<port2>`
 
+
+
+eg.
 ```
-http://127.0.0.1:38091
-```
+获取api帮助信息
+{"id":1,"method":"help","params": []}
+{"id":1,"method":"call","params":[0,"help",[]]}
 
-请求主体
+解锁服务钱包
+{"id":1,"method":"unlock","params": ["mypassword"]}
+{"id":1,"method":"call","params":[0,"unlock",["mypassword"]]}
 
-```
-{"jsonrpc": "2.0", "method": "info", "params": [], "id": 1}
-```
+转账
+{"id":1,"method":"transfer","params": ["user1","user2","1","DBX","memo", true]}
+{"id":1,"method":"call","params":[0,"transfer",["user1","user2","1","DBX","memo", true]]}
 
-注：params的格式为`[API类型，API指令，参数]`
+生成公私钥
+{"id":1,"method":"suggest_brain_key","params": []}
+{"id":1,"method":"call","params":[0,"suggest_brain_key",[]}
 
-
-返回结果
-
-```
-{
-    "id":1,
-    "jsonrpc":"2.0",
-    "result":{
-        "head_block_num":13862,
-        "head_block_id":"0000362698890c172bf31b055908a102c3b7df45",
-        "head_block_age":"3 seconds old",
-        "next_maintenance_time":"5 minutes in the future",
-        "chain_id":"6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
-        "participation":"100.00000000000000000",
-        "active_witnesses":[
-            "1.6.1",
-            "1.6.2",
-            "1.6.3",
-            "1.6.4",
-            "1.6.5",
-            "1.6.6",
-            "1.6.7",
-            "1.6.8",
-            "1.6.9",
-            "1.6.10",
-            "1.6.11"
-        ],
-        "active_committee_members":[
-            "1.5.0",
-            "1.5.1",
-            "1.5.2",
-            "1.5.3",
-            "1.5.4",
-            "1.5.5",
-            "1.5.6",
-            "1.5.7",
-            "1.5.8",
-            "1.5.9",
-            "1.5.10"
-        ]
-    }
-}
+注册账户
+{"id":1,"method":"register_account","params": ["userx","pubkey","pubkey","root","root", 0, true]}
+{"id":1,"method":"call","params":[0,"register_account",["userx","pubkey","pubkey","root","root", 0, true]]}
 ```

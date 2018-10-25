@@ -94,13 +94,19 @@ DBX链api根据功能被分为如下几种类型：
 
 
 ## 2. 访问方式
+
+进行api调用前，请详读[api rpc格式](format.md)
+
 链api的访问有两种方式，即 `http+rpc` 和 `websocket+rpc` 方式。
 
 witness_node服务接口为 `<ip>:<port1>` 。
 
-### http+rpc
 
-jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
+
+
+
+
+### http+rpc
 
 进入命令行，通过curl进行post请求调用
 
@@ -115,17 +121,6 @@ curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id
 <b>具体请求URL为</b>
 
 `http://<ip>:<port1>/rpc`
-
-
-<b>请求主体</b>
-
-```
-{"id":1,"method":"call","params":[api类型值,"api指令",[参数]]}
-或
-{"id":1,"method":"call","params":["api类型串","api指令",[参数]]}
-```
-
-<b>返回结果为jsonrpc2.0格式</b>
 
 
 eg. 
@@ -144,12 +139,7 @@ curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id
 ```
 
 
-<b>对于database api，请求主体可以使用rpc格式</b>
-```
-{"id":1,"method":"api指令","params":[参数]}
-```
-
-eg.
+<b>对于database api，其api类型值为0。因此还可以如下调用：</b>
 ```
 获取database中的1.2.*几个账户的信息
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"get_accounts","params": [["1.2.0","1.2.1","1.2.3","1.2.4","1.2.5","1.2.6","1.2.7","1.2.8","1.2.9","1.2.10","1.2.11","1.2.12","1.2.13","1.2.14","1.2.15","1.2.16","1.2.17","1.2.18","1.2.19"]]}'
@@ -158,31 +148,23 @@ curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id
 curl http://<ip>:<port1>/rpc -H "Content-Type:application/json" -X POST -d '{"id":1,"method":"get_assets","params":[["1.3.0","1.3.1"]]}'
 ```
 
+
+
+
+
+
+
 ### websocket+rpc
-jsonrpc2.0标准请查阅[jsonrpc2.0.pdf](jsonrpc2.0.pdf)
 
-
-进入命令行，通过wscat进行请求调用，wscat安装方式`apt -y install wscat`。
+进入命令行，通过wscat进行请求调用，wscat安装方式`apt -y install node-ws`。
 
 ```
 wscat -c ws://<ip>:<port1>
 ```
 
-
 <b>具体请求URL为</b>
 
 `ws://<ip>:<port1>`
-
-
-<b>请求主体</b>
-
-```
-{"id":1,"method":"call","params":[api类型值,"api指令",[参数]]}
-或
-{"id":1,"method":"call","params":["api类型串","api指令",[参数]]}
-```
-
-<b>返回结果为jsonrpc2.0格式</b>
 
 
 eg.
@@ -201,13 +183,7 @@ eg.
 {"id":1,"method":"call","params":[3,"get_account_history",["1.2.26","1.11.0",10,"1.11.0"]]}
 ```
 
-
-<b>对于database api，请求主体可以使用rpc格式</b>
-```
-{"id":1,"method":"api指令","params":[参数]}
-```
-
-eg.
+<b>对于database api，其api类型值为0。因此还可以如下调用：</b>
 ```
 获取database中的1.2.*几个账户的信息
 {"id":1,"method":"get_accounts","params": [["1.2.0","1.2.1","1.2.3","1.2.4","1.2.5","1.2.6","1.2.7","1.2.8","1.2.9","1.2.10","1.2.11","1.2.12","1.2.13","1.2.14","1.2.15","1.2.16","1.2.17","1.2.18","1.2.19"]]}
