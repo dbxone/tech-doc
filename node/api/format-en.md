@@ -26,7 +26,7 @@ equal to
 
 
 ## 2. Two formats of the return value
-<b> The return can be `jsonrpc2.0 format` or `jsonrpc2.0 format in http format`</b> bassed on different service types.
+<b> The return can be `jsonrpc2.0 format` or `jsonrpc2.0 format in http format`</b> based on different service types.
 
 Compared to `jsonrpc2.0 format`, `jsonrpc2.0 format in http format` directly add `\` to the controlling character in the returning result.
 
