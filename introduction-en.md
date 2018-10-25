@@ -18,7 +18,7 @@ Please refer to [Establish private chain] (node/private-chain.md) for establishi
 
 ## <b>dbxui</b>
 
-`web online wallet` —— block surfer, also the online wallet. The surfer client in web format, developed based on Nodejs.
+`web online wallet` —— block browser, also the online wallet. The surfer client in web format, developed based on Nodejs.
 
 ## <b>dbxfaucet</b>
 
