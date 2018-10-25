@@ -75,228 +75,228 @@ Thare two methods to use DBX：
 
 1. Use webpage wallet；
 
-2.下载钱包客户端后使用。两者在使用上没有差别，对于一般用户，我们推荐使用【网页版钱包】。
+2. Download the wallet client to use. There is no difference betweent the two methods, for common users, we recommend to use【Webpage wallet】.
 
-### **网页版钱包的注册**
+### **Webpage wallet registration**
 
 ---
 
-在浏览器中输入[https://wallet.dbx.io](https://wallet.dbx.io)，打开网页版钱包，点击页面右侧的【创建账户】
+Enter [https://wallet.dbx.io](https://wallet.dbx.io) in your browser，open the webpage wallet, click【Creat account】 on the right side of the page
 
 ![](/assets/网页钱包.jpg)
 
-然后，你将来到账户创建页面，设置你钱包的账户名和密码。注意，钱包账户名需为字母+数字的组合，不可设置为中文，样式如下：
+Then, you are directed to the account creation page, set your wallet account name and password. Please note that the wallet account name should be combination of letters and numbers without any Chinese characters, the sample is as follows：
 
 ![](/assets/注册.jpg)
 
-请务必妥善保管你的钱包账户名和密码。DBX基于BTS的架构开发，钱包账户名就是转账和收款的地址，当你给其他钱包转账时，发现对方提供不是一长串乱码，不必奇怪。
+Please keep your wallet account name and password safe. DBX is developed based on BTS framework, the wallet account name is the address for transferring and receiving asset, so when you transfer to other wallets, do not be surprised when the transaction party provides you a series of code.
 
-注意，账户创建成功后，请务必保管好你的**钱包文件**和**密码**。如果你的密码丢失或忘记，而你又没有保存好私钥，你将无法对你的钱包资产进行管理，就像丢失了比特币地址的私钥一样，钱包内的资产将被永久锁死。
+Please remember after creating the account successfully, keep your **Wallet file** and **Password** safe. If you forget your password also lose your private key, you are not able to manage asset in your wallet, which is similar to the occasion that asset in the wallet will be locked permanently in Bitcoin network if the private key of the Bitcoin address is lost.
 
-### **客户端钱包的下载和注册**
+### **Download and registration of the client wallet**
 
 ---
 
-DBXChain客户端的下载地址是：[https://www.dbx.io](https://www.dbx.io)，进入页面，下滑网页到【下载】页面，选择对应的客户端进行下载：
+The downloading address of DBXChain client is：[https://www.dbx.io](https://www.dbx.io)，go to the page，scroll down the page to 【Download】page, select the corresponding client to download：
 
 ![](/assets/download.jpg)
 
-1.windows系统选择第一个图标：32位windows系统的选择上方客户端，64位windows系统的选择下方客户端
+1. Select the first icon for windows system：for 32 unit windows system or above, choose the upper client, for 64 unit windows system, choose the lower client
 
-\*可百度“如何查看windows系统类型”，了解自己的windows系统版本
+\*Baidu search “windows system type”, to know your windows system version
 
-2.OS X系统选择第二个图标。
+2. Select the second icon for OS X system 
 
-客户端下载完成后，账户注册方法和流程与网页版钱包一致。
+Once the client is downloaded, the account registration method and procedure is the same as that of webpage wallet.
 
-完成钱包注册后，接下来是最关键的一步，请见“如何备份DBX”，事关钱包中的资产安全，务必仔细阅读和操作。
+After finishing registrating the wallet, please refer to “How to back up DBX” for the next key step, for your asset security reason in your wallet, please read and operate carefully.
 
-### **如何备份DBX**
+### **How to back up DBX**
 
 ---
 
-完成钱包注册后，会进入钱包备份页面，点击【为钱包（DEFAULT）创建备份】
+After registrating the wallet, you will be directed to the wallet back up page, click 【Create（DEFAULT）wallet back up】
 
 ![](/assets/wallet backup 1.jpg)
 
 ![](/assets/wallet backup2.jpg)
 
-点击备份后，会生成属于你钱包的备份文件，点击【下载】，将钱包文件保存好。
+After you click back up, it will generate the backup file belonging to your wallet, click 【Download】, save the wallet file properly.
 
 ![](/assets/wallet backup3.jpg)
 
-钱包备份文件务必复制多份，分开保存，建议保存在多个U盘中。与其他数字资产钱包一样，DBX只能在注册所在的电脑上使用，在其他电脑需要打开你的钱包时，需要重新导入钱包备份文件或私钥方可使用，注意：在导入钱包备份时，是需要用到钱包密码的，密码务必保存记录好。
+Please do make several copies of the wallet backup files and save them separately, it is recommended in multiple USB disks. Similar to other cryptocurrency wallets, DBX can only be used in the computer where it is registered. When you want to open your wallet on other computers, it need to import wallet backup files or the private key again, please note: when importing the wallet back up, it needs the wallet password, so please keep your password safe.
 
-PS：如果注册账号后没有及时备份，可点击右下角状态栏的【需要备份】进行备份
+PS：If you do not back up in time after registrating your account, you can click 【Need back up】 in the status colomun at the right corner in the bottom to back t up.
 
-### **如何保存私钥**
+### **How to store the private key**
 
 ---
 
-当发生客户端被删除、电脑丢失损毁、或是要在其他电脑上使用钱包的情况，除了重新导入钱包备份文件恢复之外，也可以通过钱包的【私钥】来恢复。所以，私钥也需要好好保存。钱包的私钥保存方式如下：
+When emergencies that the client is delete, your computer is lost or damaged or you want to use the wallet on other computers, in addition to recovering by importing the wallet backup files again, you can also do it by 【Private key】 of the wallet. Thus, the private key is also needed to be kept safe. The storing method of the wallet private key is as follows：
 
-1.首先，点击钱包界面上方左侧的【账户】，再点击左侧下方的【权限】，进入钱包的权限界面，如下：
+1. First, click 【Account】 at the left side on the upper part of the wallet page, then click 【Permission】 at the left side on the lower part of the page，go to the permission page of the wallet, shown as follows：
 
 ![](/assets/get private key.jpg)
 
-然后点击页面钥匙状图标右侧的钱包公钥，弹出私钥查看菜单，然后点击【显示】
+Then click the wallet public key right besides the key shaped icon，it will pop up the private key checking menu, then click 【Display】
 
 ![](/assets/private key1.jpg)
 
-输入钱包密码后，就会展示出你钱包的私钥，请务必妥善抄录后分开保存，绝对不要透露给他人，
+After entering the wallet password, it will show your wallet private key, please jot it down and store it separately and do not disclose it to others,
 
-任何人窃取了你的私钥都可以控制你的账户。
+Anyone who knows your private key can control your account.
 
 ![](/assets/private key2.jpg)
 
-### **如何恢复和导入钱包**
+### **How to recover and import your wallet**
 
 ---
 
-跟其他数字资产钱包一样，DBX只能在钱包注册的电脑使用。在同一台电脑使用DBX，也是不需要反复登陆的。如果你需要在其他电脑使用之前的钱包，或是你的钱包客户端被删除过，就要重新导入钱包备份文件或是钱包私钥，操作方法如下：
+Similar to other cryptocurrency wallets, DBX can only be used on the computer where it is registrated. You are not required to log in repeatedly when using DBX on one computer. If you need to use former wallet on other computers, or your wallet client was once deleted, you need to import wallet back up files or wallet private key again, the operating approach is as follows：
 
-首先，打开钱包，点击右上角齿轮状的图标【设置】
+First, Open wallet, click 【Settings】 as a gear shaped icon at the upper right corner.
 
 ![](/assets/recover via PK.jpg)
 
-然后，点击左侧菜单栏的【恢复\导入】，这里可以选择三种方式导入钱包，这次主要讲从钱包备份导入和从私钥导入两种方法。
+Then click 【Recover\Import】 in the menu at the left side, there are three methods to import the wallet, here we only focus on importing by wallet backup and wallet private key.
 
 ![](/assets/PK2.jpg)
 
-**第一种方式：从钱包备份文件恢复**
+**The first method：Recover by the wallet backup file**
 
-在选择栏选择【从钱包备份文件恢复（.bin）】,然后在第二栏选择你此前备份的钱包文件
+Select 【Recover from wallet backup（.bin）】 in the selection column, then select the wallet files you backed up before in the second column
 
 ![](/assets/PK3.jpg)
 
-导入文件后，要输入钱包密码，方可完成钱包文件的导入
+After importing the files, you are required to enter the password to finish the whole process.
 
 ![](/assets/PK4.jpg)
 
-**第二种方式：用钱包私钥恢复**
+**The second method：Recover by the wallet private key**
 
-用钱包私钥恢复，无需知晓之前钱包的密码，而是需要重新建立一个钱包，将原账户的信息和资产导入新钱包。操作方式如下：
+It's no need to know your former wallet password if you choose to recover it by the private key, instead creating a new wallet and then import the information and asset of the original account to the new wallet, the operating approach is as follows：
 
-在选择栏选择【导入私钥】，然后输入新建钱包的密码，并重输一遍确认
+Select 【Import private key】 in the selection column, then enter the password of the new wallet and reenter to confirm
 
 ![](/assets/PK5.jpg)
 
-输入完成后，等于新创建了一个钱包，再回到钱包首页，点击右上角齿轮状图标——点击恢复\导入，然后输入要导入的钱包私钥
+After entering the password, it means you create a new wallet, then go to the home page of the wallet, click the gear shaped icon at the upper right corner——click recover\import, then enter the private key of the wallet you want to import
 
 ![](/assets/PK6.jpg)
 
-再点绿色的【导入私钥】按钮，完成导入，原钱包的信息和资产都进入新钱包。
+Next, click the 【Import private key】 button in green to finish the import so that the information and asset of the original wallet is imported to the new wallet.
 
-### **充值和提现说明**
+### **Charge and withdrawal instruction**
 
 ---
 
-**1.提现地址说明**
+**1.Withdrawing address instruction**
 
-当别人要给你的钱包转账或充值DBX时，你的**钱包账户名**就是你的钱包充值地址，比如下图中钱包账户名为zhangsan113，zhangsan113就是你的钱包地址。
+When others want to transfer or charge DBX to your wallet, your**Wallet account name ** is your wallet charging address, for example, in the following picture, the wallet account name is zhangsan113, which means zhangsan113 is also your wallet address.
 
 ![](/assets/transfer.jpg)
 
-从交易平台提现DBX情况也一样，在交易所提现菜单的区块链地址中，填写你的钱包账户名，以上图钱包账户为例，填写的钱包地址就是：zhangsan113
+Withdrawing DBX from the trading platform has the same condition, fill in your wallet account name in the blockchain address area in the withdrawing menu of the exchange, taking the picture above as an example, the address filled in is：zhangsan113
 
-特别提醒：跟比特币和其他数字资产一样，DBX也是去中心化和匿名的。从交易平台提现填错地址导致提现至他人账户时，没有人可以联络到该账户和追回你的数字资产，所以在提现时务必反复核对提现地址。
+Particular reminder：Similar to Bitcoin and other crypto assets, DBX is also decentralized and anonymous. When you withdraw to other accounts due to filling in a wrong address in the trading platform, no one could contact the account and return your crypto asset, so please check the address several times when you withdraw your asset.
 
-**2.转账说明**
+**2.Transfer instruction**
 
-1）.用钱包给他人转账
+1）.Transfer to others by your wallet
 
-进入你的钱包账户，点击左上角【账户】来到账户页面，点击左侧菜单的【转账】开始转账
+Go to your wallet account, click 【Account】 at the upper left corner to go to the account page, click 【Transfer】 in the leftside menu to start transferring
 
 ![](/assets/transfer2.jpg)
 
-进入转账界面后，输入对方的钱包账户（钱包地址）、转账DBX数量，并可在【备注消息】（英文称为MEMO）附上相关说明，没有可以不填。最下方的手续费会根据MEMO的字符长短自动计算，不必自行设置（以最后的转账信息确认页为准）
+After you are in the transferring page, enter the receiver's wallet account (wallet address), transferring amount in DBX, attach realted instruction in【Memo】 if needed. The commission at the bottom will be calculated automatically based on the length of MEMO words，you don't need to set it artificially (Based on the final transfer information confirmation page)
 
 ![](/assets/transfer3.jpg)
 
-点击发送后，需要你输入钱包的密码，来解锁钱包允许转账
+After clicking send, you are required to enter your wallet password to unlock the wallet for transferring
 
 ![](/assets/transfer4.jpg)
 
-转账发送前，会显示完整的转账信息，供你确认，如下：
+Before the transfer is sent, it will show the completed transfer information for your confirmation, shown as follows：
 
 ![](/assets/transfer5.jpg)
 
-点击发送后，转账很快就就会完成，并会在右侧出现转账被确认的信息提醒
+After clicking send, the transfer will be processed soon, and there will be message emerging on the right side to remind you the transfer has been confirmed
 
 ![](/assets/transfer6.jpg)
 
-2）.交易平台充值DBX
+2）.Charging DBX to the trading platform
 
-用钱包给交易平台充值，和给别的账户转账操作一样。交易所的钱包地址可以在交易所中查到。
+Charging the trading platform by the wallet is the same as transferring to other accounts. The exchange wallet address could be found in the exchange.
 
-与之前不同的是，**一定要填写交易所告知你的MEMO，**充值备注（MEMO）就是在这个平台，属于你的专属充值编号，平台通过这个编号来识别是谁给平台充值了数字资产。所以在转账充值时务必填写备注，并核对填写信息正确，填错可能导致DBX资产误充至他人账户导致无法追回。
+The difference is，**You must fill in the MEMO which is given by the exchange，**MEMO is your own charging number on this platform. The platform will identify who charges crypto asset to it by this number. Thus keep in mind you must fill in the memo when you charge the platform and check if the information you enter is correct, otherwise your DBX asset could be charged to other accounts not refundable.
 
-根据以上情况，zhangsan113账户如果要给该平台充值0.5个DBX，钱包转账信息应该如下填写：
+Based on the case above, if account zhangsan113 wants to charge 0.5DBX to the platform, the wallet transfer information should be entered as follows：
 
 ![](/assets/deposit.jpg)
 
 ![](/assets/deposit2.jpg)
 
-## 高级功能
+## Premium functionality
 
-### 发行资产
-
----
-
-//在DBXChain发行资产
-
-### 分发资产
+### Issue asset
 
 ---
 
-//链上分配资产
+//Issue asset on DBXChain
 
-### 投票
-
----
-
-用于给见证人候选人投票，从而选举出见证人
-
-投票功能待更新（暂未开放）
-
-### 商家认证
+### Distribute asset
 
 ---
 
-申请成为商家，获得在DBXChain数据交易所交易数据的权限。
+//Allocate asset on the chain
 
-方法详见[DBXChain](/dbxui.md)。
-
-### 忠诚计划
+### Voting
 
 ---
 
-忠诚计划，旨在激励公新股（DBX）持有人长期持有公信股。参与者要求在钱包内，按照计划规定的时间锁定一定量的公信股。DBXChain将在拿出一部分份额奖励忠诚计划参与者。
+Vote for the witness candidates to elect out the witness
 
-DBX转入钱包后，在DBX的首页（点击钱包顶端导航栏的“账户”可回到首页），点击DBX栏目下点击【加入忠诚计划】，如下图：![](/assets/loyalty.jpg)
+Voting functionality is needed to be updated（Not opened yet）
 
-点击【加入忠诚计划】后，会出现忠诚计划的设置页面。首先，选择你的参与计划时长，目前有3个月、9个月和24个月3个周期可供选择，不同的周期对应着不同DBX奖励比例，请见下图：
+### Merchant verification
 
-1. 锁定周期及到期奖励比率
+---
 
-| 锁定周期 | 年化收益 |
+Apply to be a merchant, acquire the permission to trade your data in DBXChain data exchange.
+
+Please refer to [DBXChain](/dbxui.md) for detailed methods.
+
+### Loyalty plan
+
+---
+
+Loyalty plan, aiming to encourage DBX holders to hold DBX in the long term. Participants are required to lock certain amount of DBX for a stipulated period of time in their wallets. DBXChain will take some shares of bonus to reward the participants.
+
+After DBX is transferred to the wallet, at DBX home page (Click “Account” in the top navigating column of the wallet to go back to the home page), click DBX column then click 【Join in loyalty plan】, shown as the following picture：![](/assets/loyalty.jpg)
+
+After clicking 【Join in loyalty plan】, you are directed to the loyalty plan setting page.First, select the term you want to join in this plan, there are three avaiable terms which are 3 months, 9 months and 24 months. Different terms corresponds to different DBX reward ratio, please see the following picture：
+
+1. Locking period and expiring reward ratio
+
+| Locking period | Annualized profit |
 | :---: | :---: |
-| 3个月 | 4% |
-| 9个月 | 6% |
-| 24个月 | 8% |
+| 3 months | 4% |
+| 9 months | 6% |
+| 24 months | 8% |
 
-选定参与周期后，在【锁定金额】栏输入你要锁定的DBX数量，根据你输入的锁定数量，下方会自动计算出到期后可获得的奖励DBX数量，如下图：
+After determining the period, enter the DBX amount you want to lock in the 【Locking amount】, it will automatically calculate the rewarding DBX amount athe expiration date based on the amount you entered, shown as follows:
 
-![](/assets/loyalty2.jpg)设置完你参与的计划周期和参与数量后，点击【加入忠诚计划】的黑色按钮进行提交。你会收到一个锁仓提示——加入忠诚计划的金额将被锁定，期间不可卖出。
+![](/assets/loyalty2.jpg) Aftering setting the period and locking amount, click the black button 【Join in loyalty plan】 to submit. You will receive a locking reminder——The amount joining in the loyalty plan will be locked and cannot be sold during the plan term.
 
-![](/assets/loyalty3.jpg)**一旦你确认参与，无论是你本人还是DBXChain项目方，无人有权限将参与计划的DBX解锁和释放。所以，在确认参与忠诚计划之前，请务必做好你的资金规划。**
+![](/assets/loyalty3.jpg)**Once you confirm to join in the plan, no one has the permission to unlock and release the DBX amount in the plan no matter it is you or DBXChain project. Thus, before confirming to join in the loyalty plan, please carefully plan your budget.**
 
-点击确认参与后，需输入你的钱包密码，最终完成你对这笔锁仓操作的授权。
+After clicking confirm to join in, you are required to enter your wallet password to finish the authorization to the locking operation.
 
-如果想要查看你已参与忠诚计划的情况，可以在钱包首页左侧下方点击【待解冻余额】，就可以查看到你已经参与的金额和时间情况（如下图）。
+If you want to check the status you are in the plan, you can click 【Balance to be unlocked】 at the lower left side to see the amount you put in the plan and the time period of your plan (shown in the following picture).
 
-![](/assets/loyalty4.jpg)目前，DBXChain的网页钱包和新版钱包客户端已经完成忠诚计划功能的上线。
+![](/assets/loyalty4.jpg)Up till now, the loyalty plan has been launched to the webpage wallet and new verison wallet client of DBXChain.
 
-最新版钱包客户端，在访问DBXChain官网[www.dbx.io](/www.dbx.io)点击【钱包下载】下载新版钱包文件，重新安装后即可使用（无需删除原客户端和重新导入钱包）。
+As to the newest version of the wallet client, after visiting DBXChain official website [www.dbx.io](/www.dbx.io) click 【Download wallet】 to download the new version wallet file, and reinstall to use (No need to delete the orginal client and import the wallet again).
 
-\*在使用钱包时，请务必做好钱包文件和私钥的备份，这是你控制钱包核心凭证；此外，在使用网页版钱包时，我们强烈建议用户使用电脑来访问和使用网页版钱包，而不是手机，因为手机浏览器容易在清理缓存时把钱包也清理掉，这时就需要重新导入钱包备份文件或私钥后方可使用。
+\*When using the wallet, please back up wallet files and the private key, which is the core proof to show your ownership; what's more, when using webpage wallet, we strongly recommend users to access and use webpage wallet on their computers instead of cellphones, since the cellphone surfer is very easy to remove the wallet when it clears the caches，in which case you need to import wallet back up files or the private key again to continue using the wallet.
