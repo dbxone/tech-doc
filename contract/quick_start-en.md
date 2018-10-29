@@ -4,6 +4,6 @@ Able to compile and establish private chains of DBXChain locally; compile, deplo
 
 * [Compile installing DBXChain](install.md)
 
-* [Establish private chains](../node/private-chain.md)
+* [Establish private chains](../node/private-chain-en.md)
 
-* [Compile deploying and running contracts](contract-run.md)
+* [Compile deploying and running contracts](contract-run-en.md)
