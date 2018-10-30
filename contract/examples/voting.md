@@ -2,6 +2,7 @@
 投票合约，记录查看删除候选人的id，姓名，票数等。
 
 # 合约代码
+https://github.com/dbxone/dbxchain/blob/master/contracts/examples/voting/voting.cpp
 
 # 编译合约
 ```
