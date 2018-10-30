@@ -78,4 +78,4 @@ Once recording successfully, it will return a series of stylized json string
 
 ### 4. Check on the blockchain surfer
 
-Visit the blockchain surfer https://block.dbx.io/\#/
+Visit the blockchain browser https://block.dbx.io/\#/
